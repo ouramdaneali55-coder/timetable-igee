@@ -122,25 +122,25 @@ h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
   header{padding:12px 14px}
   .hd{gap:8px}
   .logo{gap:9px}
-  .ico{width:44px;height:44px;font-size:25px}
-  h1{font-size:17px}
-  .logo p{font-size:10px}
-  .acts{gap:5px}
-  .bi{width:36px;height:36px;font-size:15px}
-  .f{padding:14px}
-  .fg{min-width:100%;}
-  .quick{margin-bottom:10px}
-  .qb{padding:7px 10px}
-  .gv{border-radius:12px}
-}
-@media print{.quick,.share-note{display:none!important}.gh{position:relative!important}}
+  .ico {
+    width: 70px;       /* Un peu plus grand */
+    height: 70px;
+    background: transparent; /* Enlève le fond gris/blanc */
+    border-radius: 50%; /* Donne une forme ronde parfaite */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;  /* S'assure que l'image ne dépasse pas */
+}@media print{.quick,.share-note{display:none!important}.gh{position:relative!important}}
 </style></head>
 <body>
 
 <header>
   <div class="hd">
     <div class="logo">
-      <div class="ico">⚡</div>
+      <div class="ico">
+    <img src="logo-igee.png" alt="Logo IGEE" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;">
+</div>
       <div>
         <h1>IGEE — Timetable</h1>
         <p>Institute of Electrical and Electronic Engineering — 2026/2027 — S1</p>
@@ -1844,3 +1844,4 @@ const UI_EN={Saturday:'Saturday',Sunday:'Sunday',Monday:'Monday',Tuesday:'Tuesda
 
 </body>
 </html>
+"Ajout du nouveau logo IGEE"
