@@ -1902,6 +1902,131 @@ document.addEventListener('DOMContentLoaded', () => {
   remplirSelects();
   rendreGrille();
 });
+/* ===== DONNÉES DE LA LÉGENDE ===== */
+const legendData = {
+  "L1 — LICENCE 1": [
+    {code: "EE171", name: "Maths I"},
+    {code: "EE121", name: "Algorithmique"},
+    {code: "EE173", name: "Physics I"},
+    {code: "EE175", name: "Chemistry I"},
+    {code: "EE123", name: "Free and Open-Source Software"},
+    {code: "EE173L", name: "Physics I Lab"},
+    {code: "EL101", name: "English I"},
+    {code: "EL103", name: "Writing Methods, Ethics and Deontology"}
+  ],
+  "L2 — LICENCE 2": [
+    {code: "EE271", name: "Maths IV"},
+    {code: "EE273", name: "Physics III"},
+    {code: "EE241", name: "Active Devices I"},
+    {code: "EE221", name: "Digital Systems I"},
+    {code: "EE201", name: "Electrical Engineering II"},
+    {code: "EE273L", name: "Physics III Lab"},
+    {code: "EE241L", name: "Active Devices I Lab"},
+    {code: "EE221L", name: "Digital Systems I Lab"},
+    {code: "EE201L", name: "Electrical Engineering II Lab"}
+  ],
+  "L3 — LICENCE 3": [
+    {code: "EE351", name: "Linear Systems II"},
+    {code: "EE361", name: "Electromagnetic Field Theory"},
+    {code: "EE321", name: "Computer Architecture"},
+    {code: "EE331", name: "Power Electronics"},
+    {code: "EE353", name: "Process Control and Instrumentation"},
+    {code: "EE331L", name: "Power Electronics Lab"},
+    {code: "EE353L", name: "Process Control and Instrumentation Lab"},
+    {code: "EE341", name: "Engineering Analysis and Design"}
+  ],
+  "M1 — MASTER 1": [
+    {code: "EE621", name: "Advanced Electronics"},
+    {code: "EE421", name: "Advanced Control Systems"},
+    {code: "EE473", name: "Digital Communications"},
+    {code: "EE459", name: "Embedded Systems"},
+    {code: "EE423", name: "Information Theory"},
+    {code: "EE479", name: "Nonlinear Control"},
+    {code: "EE455", name: "Power Systems"},
+    {code: "EE419", name: "Industrial Automation"},
+    {code: "EE429", name: "Robotics"},
+    {code: "EE471", name: "Optimization Techniques"},
+    {code: "EE441", name: "Digital Signal Processing"},
+    {code: "EE427", name: "Advanced Programming"},
+    {code: "EE475", name: "Machine Learning"},
+    {code: "EE451", name: "Power Electronics Systems"},
+    {code: "EE431", name: "Renewable Energy"},
+    {code: "EE477", name: "Electric Drives"},
+    {code: "EE433", name: "Smart Grids"},
+    {code: "EE461", name: "Antennas and Propagation"},
+    {code: "EE413", name: "Microwave Engineering"},
+    {code: "EE411", name: "Optical Communications"},
+    {code: "EE463", name: "Mobile Networks"},
+    {code: "EE415", name: "Satellite Communications"},
+    {code: "EE417", name: "Network Security"},
+    {code: "EE425", name: "Wireless Communications"}
+  ],
+  "M2 — MASTER 2": [
+    {code: "EE521", name: "Advanced Computer Architecture"},
+    {code: "EE527", name: "Artificial Intelligence"},
+    {code: "EE523", name: "Cloud Computing"},
+    {code: "EE581", name: "Research Methodology"},
+    {code: "EE525", name: "Deep Learning"},
+    {code: "EL501", name: "English for Science"},
+    {code: "EE553", name: "Advanced Control Systems II"},
+    {code: "EE551", name: "Digital Control"},
+    {code: "EE557", name: "Computer Vision"},
+    {code: "EE559", name: "Embedded AI"},
+    {code: "EE555", name: "Robotics II"},
+    {code: "EE539", name: "Power System Dynamics"},
+    {code: "EE529", name: "Advanced Power Electronics"},
+    {code: "EE535", name: "Energy Management"},
+    {code: "EE537", name: "Electric Vehicles"},
+    {code: "EE511", name: "5G Networks"},
+    {code: "EE517", name: "Cybersecurity"},
+    {code: "EE513", name: "IoT"},
+    {code: "EE541", name: "Radar Systems"},
+    {code: "EE515", name: "Advanced Digital Communications"}
+  ]
+};
+
+/* ===== GÉNÉRATION ET AFFICHAGE DE LA LÉGENDE ===== */
+function renderLegend() {
+  const container = document.getElementById('legendContent');
+  if (!container) return;
+  
+  container.innerHTML = '';
+  
+  for (const [level, courses] of Object.entries(legendData)) {
+    const card = document.createElement('div');
+    card.className = 'legend-card';
+    
+    let html = `<h3>${level}</h3>`;
+    courses.forEach(c => {
+      html += `
+        <div class="legend-item">
+          <span class="code">${c.code}</span>
+          <span class="name">${c.name}</span>
+        </div>
+      `;
+    });
+    
+    card.innerHTML = html;
+    container.appendChild(card);
+  }
+}
+
+/* ===== FONCTION POUR OUVRIR/FERMER LA LÉGENDE ===== */
+function toggleLegend() {
+  const content = document.getElementById('legendContent');
+  const arrow = document.getElementById('legendArrow');
+  
+  if (content.classList.contains('hidden')) {
+    content.classList.remove('hidden');
+    arrow.style.transform = 'rotate(0deg)';
+  } else {
+    content.classList.add('hidden');
+    arrow.style.transform = 'rotate(-90deg)';
+  }
+}
+
+// Initialiser la légende au chargement de la page
+document.addEventListener('DOMContentLoaded', renderLegend);
 </script>
 
 </body>
