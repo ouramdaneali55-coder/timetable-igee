@@ -4,7 +4,79 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Emploi du temps — IGEE</title>
-<style>
+
+/* ===== LÉGENDE DES COURS ===== */
+.legend-container {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.legend-header {
+  padding: 16px 20px;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.03);
+  transition: background 0.2s;
+}
+.legend-header:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+.legend-arrow {
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+}
+.legend-content {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  border-top: 1px solid var(--border);
+}
+.legend-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+.legend-card h3 {
+  color: var(--accent);
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.legend-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 0.88rem;
+  border-bottom: 1px dashed rgba(255,255,255,0.05);
+}
+.legend-item:last-child {
+  border-bottom: none;
+}
+.legend-item .code {
+  color: var(--muted);
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+}
+.legend-item .name {
+  color: var(--text);
+  text-align: right;
+  max-width: 65%;
+}
+.hidden {
+  display: none !important;
+}  <style>
 :root{
   --bg:#f4f6fb; --card:#fff; --text:#1a2238; --muted:#6b7a99;
   --border:#e3e8f0; --accent:#2d6cdf; --accent2:#1e4fa8;
