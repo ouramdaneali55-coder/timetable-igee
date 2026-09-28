@@ -173,7 +173,16 @@ header{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#ff
 </style>
 </head>
 <body>
-
+  <!-- LÉGENDE DES COURS -->
+  <div class="legend-container">
+    <div class="legend-header" onclick="toggleLegend()">
+      <span>📖 Légende des cours — Noms complets</span>
+      <span class="legend-arrow" id="legendArrow">▼</span>
+    </div>
+    <div class="legend-content" id="legendContent">
+      <!-- Le contenu sera généré automatiquement par JavaScript -->
+    </div>
+  </div>
 <header>
   <div class="hd">
     <div class="logo">
