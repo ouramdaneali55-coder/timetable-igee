@@ -1,273 +1,301 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">
+<html lang="fr" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Emploi du temps — IGEE</title>
+<meta name="generator" content="GitHub Pages">
+<meta name="description" content="Emploi du temps de l’Institut de Génie Électrique et Électronique (IGEE), semestre 1 2026/2027.">
+<title>IGEE — Emploi du temps 2026/2027 — S1</title>
+<style>
+/* ==== Logo IGEE ==== */
+.ico{
+  background:#ffffff !important;
+  padding:4px !important;
+  overflow:hidden !important;
+  width:60px !important;
+  height:60px !important;
+  border-radius:12px !important;
+  box-shadow:0 4px 14px rgba(0,0,0,.25), 0 0 0 2px rgba(255,255,255,.4) inset;
+  display:flex !important;
+  align-items:center;
+  justify-content:center;
+  backdrop-filter:none !important;
+  font-size:0 !important;
+}
+.ico img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  border-radius:8px;
+  display:block;
+}
+header .ico{
+  width:60px !important;
+  height:60px !important;
+  background:#fff !important;
+}
+@media (max-width:600px){
+  .ico{
+    width:48px !important;
+    height:48px !important;
+    padding:3px !important;
+    border-radius:10px !important;
+  }
+  header .ico{
+    width:48px !important;
+    height:48px !important;
+  }
+}
 
-/* ===== LÉGENDE DES COURS ===== */
-.legend-container {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  margin-bottom: 20px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-}
-.legend-header {
-  padding: 16px 20px;
-  font-weight: 700;
-  font-size: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.03);
-  transition: background 0.2s;
-}
-.legend-header:hover {
-  background: rgba(255, 255, 255, 0.08);
-}
-.legend-arrow {
-  transition: transform 0.3s ease;
-  font-size: 0.8rem;
-}
-.legend-content {
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  border-top: 1px solid var(--border);
-}
-.legend-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 16px;
-}
-.legend-card h3 {
-  color: var(--accent);
-  font-size: 1.05rem;
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--border);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-.legend-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 6px 0;
-  font-size: 0.88rem;
-  border-bottom: 1px dashed rgba(255,255,255,0.05);
-}
-.legend-item:last-child {
-  border-bottom: none;
-}
-.legend-item .code {
-  color: var(--muted);
-  font-family: 'Courier New', monospace;
-  font-weight: 700;
-}
-.legend-item .name {
-  color: var(--text);
-  text-align: right;
-  max-width: 65%;
-}
-.hidden {
-  display: none !important;
-}  <style>
-:root{
-  --bg:#f4f6fb; --card:#fff; --text:#1a2238; --muted:#6b7a99;
-  --border:#e3e8f0; --accent:#2d6cdf; --accent2:#1e4fa8;
-  --lect:#e8f0ff; --lect-b:#2d6cdf;
-  --lab:#e8fff3; --lab-b:#16a34a;
-  --rec:#fff4e6; --rec-b:#ea8a1f;
-  --shadow:0 2px 8px rgba(20,40,90,.06);
-}
-[data-theme="dark"]{
-  --bg:#0f1626; --card:#1a2338; --text:#e8eefb; --muted:#93a3c0;
-  --border:#2a3654; --accent:#5b8def; --accent2:#3a6fd8;
-  --lect:#1e2a44; --lect-b:#5b8def;
-  --lab:#1a3a2a; --lab-b:#4ade80;
-  --rec:#3a2a1a; --rec-b:#fb923c;
-  --shadow:0 2px 10px rgba(0,0,0,.35);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;transition:background .25s,color .25s}
+/* ==== Styles principaux ==== */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f4f6fb;--bg2:#fff;--txt:#1a1d29;--txt2:#6b7280;--bd:#e5e7eb;--pri:#4f46e5;--pri2:#eef2ff;--pri3:#4338ca;--sh:0 4px 6px -1px rgba(0,0,0,.07);--sh2:0 10px 15px -3px rgba(0,0,0,.08);--r:12px;--r2:8px}
+[data-theme=dark]{--bg:#0f1117;--bg2:#1e2230;--txt:#f1f5f9;--txt2:#94a3b8;--bd:#2d3348;--pri:#818cf8;--pri2:#1e1b4b;--pri3:#6366f1}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5;transition:all .25s;min-height:100vh}
+header{background:linear-gradient(135deg,#4f46e5,#4338ca);color:#fff;padding:18px 28px;box-shadow:var(--sh2);position:sticky;top:0;z-index:100}
+.hd{max-width:1600px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.logo{display:flex;align-items:center;gap:14px}
+.ico{font-size:32px;background:rgba(255,255,255,.15);width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:var(--r);backdrop-filter:blur(10px)}
+h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
+.logo p{font-size:12px;opacity:.85}
+.acts{display:flex;gap:8px}
+.bi{background:rgba(255,255,255,.15);border:0;color:#fff;width:42px;height:42px;border-radius:var(--r2);cursor:pointer;font-size:17px;transition:.2s;backdrop-filter:blur(10px)}
+.bi:hover{background:rgba(255,255,255,.3);transform:translateY(-2px)}
+.f{max-width:1600px;margin:22px auto;padding:18px 22px;background:var(--bg2);border-radius:var(--r);box-shadow:var(--sh);display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end}
+.fg{display:flex;flex-direction:column;gap:5px;flex:1;min-width:150px}
+.fg label{font-size:11px;font-weight:700;color:var(--txt2);text-transform:uppercase;letter-spacing:.5px}
+.fg select,.fg input{padding:9px 13px;border:1.5px solid var(--bd);border-radius:var(--r2);background:var(--bg);color:var(--txt);font-family:inherit;font-size:13px;transition:.2s;cursor:pointer}
+.fg select:focus,.fg input:focus{outline:0;border-color:var(--pri);box-shadow:0 0 0 3px var(--pri2)}
+.br{padding:10px 20px;background:var(--pri);color:#fff;border:0;border-radius:var(--r2);font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:.2s;height:40px}
+.br:hover{background:var(--pri3);transform:translateY(-1px)}
+.st{max-width:1600px;margin:0 auto 22px;padding:0 22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.sc{background:var(--bg2);padding:18px 22px;border-radius:var(--r);box-shadow:var(--sh);border-left:4px solid var(--pri);transition:.2s}
+.sc:hover{transform:translateY(-2px);box-shadow:var(--sh2)}
+.sv{display:block;font-size:30px;font-weight:800;color:var(--pri);line-height:1.1}
+.sl{display:block;font-size:12px;color:var(--txt2);font-weight:600;margin-top:3px}
+.legend-section{max-width:1600px;margin:0 auto 22px;padding:0 22px}
+.legend-toggle{width:100%;padding:14px 22px;background:var(--bg2);border:1.5px solid var(--bd);border-radius:var(--r);font-family:inherit;font-size:14px;font-weight:700;color:var(--txt);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:.2s;box-shadow:var(--sh)}
+.legend-toggle:hover{border-color:var(--pri);color:var(--pri)}
+.legend-toggle .arrow{transition:.3s;font-size:12px}
+.legend-toggle.open .arrow{transform:rotate(180deg)}
+.legend-content{background:var(--bg2);border-radius:var(--r);box-shadow:var(--sh2);margin-top:12px;padding:22px;display:none}
+.legend-content.open{display:block;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.legend-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.legend-level{background:var(--bg);border-radius:var(--r2);padding:16px;border-left:4px solid var(--pri)}
+.legend-level h3{font-size:14px;font-weight:800;color:var(--pri);text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--bd)}
+.legend-item{display:flex;gap:10px;padding:6px 0;font-size:12.5px;border-bottom:1px dashed var(--bd);align-items:flex-start}
+.legend-item:last-child{border-bottom:0}
+.legend-item .code{min-width:70px;font-weight:800;color:var(--pri);font-family:'Courier New',monospace;font-size:12.5px}
+.legend-item .name{color:var(--txt);flex:1;line-height:1.4}
+@media(max-width:600px){.legend-grid{grid-template-columns:1fr}}
+.ts{max-width:1600px;margin:0 auto 40px;padding:0 22px}
+.vt{display:flex;gap:8px;margin-bottom:14px}
+.vb{padding:9px 18px;background:var(--bg2);border:1.5px solid var(--bd);border-radius:var(--r2);color:var(--txt2);font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:.2s}
+.vb.active{background:var(--pri);color:#fff;border-color:var(--pri)}
+.vb:hover:not(.active){border-color:var(--pri);color:var(--pri)}
+.gv{background:var(--bg2);border-radius:var(--r);box-shadow:var(--sh2);overflow:hidden}
+.gh{display:grid;grid-template-columns:110px repeat(6,1fr);background:var(--pri);color:#fff}
+.gb{display:flex;flex-direction:column}
+.gr{display:grid;grid-template-columns:110px repeat(6,1fr);border-bottom:1px solid var(--bd);min-height:88px}
+.gr:last-child{border-bottom:0}
+.gc{padding:8px;border-right:1px solid var(--bd);display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;overflow:hidden}
+.gc:last-child{border-right:0}
+.hc{font-weight:700;font-size:13px;padding:14px 8px;text-transform:uppercase;letter-spacing:.5px}
+.tc{background:var(--pri2);color:var(--pri3);font-weight:700;font-size:12px}
+[data-theme=dark] .tc{color:var(--pri)}
+.sess{width:100%;padding:7px 9px;border-radius:var(--r2);font-size:11px;line-height:1.35;cursor:pointer;transition:.2s;border-left:3px solid;text-align:left;margin-bottom:3px}
+.sess:hover{transform:scale(1.03);box-shadow:var(--sh2)}
+.sess .m{font-weight:800;font-size:12.5px;display:block;margin-bottom:1px}
+.sess .tb{display:inline-block;font-size:9px;font-weight:800;padding:1px 5px;border-radius:3px;margin-bottom:2px;text-transform:uppercase;letter-spacing:.3px}
+.sess .cn{display:block;font-size:9.5px;opacity:.75;font-style:italic;margin-bottom:3px;line-height:1.2;color:inherit}
+.sess .s{display:block;font-size:10.5px;opacity:.85}
+.sess .e{display:block;font-size:10px;opacity:.7;font-style:italic}
+.t-LECT{background:#eef2ff;border-color:#4f46e5;color:#312e81}
+.t-LAB{background:#ecfdf5;border-color:#10b981;color:#064e3b}
+.t-REC{background:#fff7ed;border-color:#f59e0b;color:#78350f}
+[data-theme=dark] .t-LECT{background:#1e1b4b;border-color:#818cf8;color:#c7d2fe}
+[data-theme=dark] .t-LAB{background:#064e3b;border-color:#34d399;color:#a7f3d0}
+[data-theme=dark] .t-REC{background:#78350f;border-color:#fbbf24;color:#fde68a}
+.t-LECT .tb{background:#4f46e5;color:#fff}
+.t-LAB .tb{background:#10b981;color:#fff}
+.t-REC .tb{background:#f59e0b;color:#fff}
+.lv{background:var(--bg2);border-radius:var(--r);box-shadow:var(--sh2);padding:6px}
+.li{display:flex;align-items:center;gap:14px;padding:12px 16px;border-radius:var(--r2);border-bottom:1px solid var(--bd);cursor:pointer;transition:.2s}
+.li:hover{background:var(--pri2)}
+.li:last-child{border-bottom:0}
+.li .jb{min-width:85px;font-weight:800;font-size:11.5px;color:var(--pri);text-transform:uppercase}
+.li .hh{min-width:100px;font-size:12.5px;color:var(--txt2);font-weight:700}
+.li .mm{font-weight:800;font-size:13.5px;flex:1}
+.li .cn2{display:block;font-size:11px;font-weight:400;opacity:.7;font-style:italic;margin-top:1px}
+.li .ss,.li .ee{font-size:12.5px;color:var(--txt2);min-width:115px}
+.mo{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;z-index:1000;padding:20px;animation:fi .2s}
+.mo.hidden{display:none}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+.mc{background:var(--bg2);border-radius:var(--r);max-width:480px;width:100%;padding:28px;box-shadow:var(--sh2);position:relative;animation:su .3s}
+@keyframes su{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+.mx{position:absolute;top:14px;right:14px;background:var(--bg);border:0;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:15px;color:var(--txt2);transition:.2s}
+.mx:hover{background:#ef4444;color:#fff}
+.md{display:flex;flex-direction:column;gap:12px}
+.md h2{font-size:21px;font-weight:800;color:var(--pri);margin-bottom:6px}
+.md .row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--bd)}
+.md .row:last-child{border-bottom:0}
+.md .l{font-weight:700;color:var(--txt2);font-size:12.5px}
+.md .v{font-weight:700;color:var(--txt);font-size:13.5px;text-align:right}
+.md .v small{display:block;font-size:11.5px;font-weight:400;font-style:italic;opacity:.75;margin-top:2px}
+.ft{text-align:center;padding:22px;color:var(--txt2);font-size:12px;border-top:1px solid var(--bd);margin-top:40px}
 .hidden{display:none!important}
-header{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;padding:16px 24px;position:sticky;top:0;z-index:50;box-shadow:0 2px 12px rgba(0,0,0,.15)}
-.hd{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1500px;margin:0 auto}
-.logo{display:flex;align-items:center;gap:12px}
-.ico{width:56px;height:56px;background:transparent;border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.ico img{width:100%;height:100%;object-fit:contain}
-.logo h1{font-size:1.15rem;font-weight:700}
-.logo p{font-size:.8rem;opacity:.85}
-.hd-actions{display:flex;gap:8px;flex-wrap:wrap}
-.hd-actions button{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:.85rem;transition:.2s;display:flex;align-items:center;gap:6px}
-.hd-actions button:hover{background:rgba(255,255,255,.28)}
-.container{max-width:1500px;margin:0 auto;padding:20px}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:18px}
-.stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
-.stat .lbl{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
-.stat .val{font-size:1.6rem;font-weight:700;color:var(--accent);margin-top:4px}
-.filters{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:18px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
-.filters input,.filters select{padding:9px 12px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:.9rem;width:100%}
-.filters input:focus,.filters select:focus{outline:2px solid var(--accent);border-color:transparent}
-.filters button{padding:9px 16px;background:var(--accent);color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:600}
-.filters button:hover{background:var(--accent2)}
-.quick{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-.qb{padding:7px 16px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;font-size:.85rem;font-weight:600;transition:.2s}
-.qb:hover{border-color:var(--accent);color:var(--accent)}
-.qb.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-.view-switch{display:flex;gap:0;margin-bottom:16px;background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;width:fit-content}
-.view-switch button{padding:9px 20px;border:none;background:transparent;color:var(--muted);cursor:pointer;font-weight:600;font-size:.88rem}
-.view-switch button.active{background:var(--accent);color:#fff}
-.grid-wrap{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:auto;box-shadow:var(--shadow)}
-.gh,.gr{display:grid;grid-template-columns:110px repeat(6,minmax(170px,1fr));min-width:1130px}
-.gh{background:var(--accent);color:#fff;font-weight:600;font-size:.82rem;position:sticky;top:0;z-index:5}
-.gh>div{padding:12px 8px;text-align:center;border-right:1px solid rgba(255,255,255,.15)}
-.gr{border-bottom:1px solid var(--border)}
-.gr:last-child{border-bottom:none}
-.gc{padding:8px;border-right:1px solid var(--border);min-height:90px}
-.gc.tc{background:var(--bg);font-weight:700;font-size:.82rem;color:var(--muted);display:flex;align-items:center;justify-content:center;text-align:center}
-.sess{border-radius:8px;padding:8px;margin-bottom:6px;cursor:pointer;border-left:4px solid;font-size:.78rem;transition:transform .15s,box-shadow .15s}
-.sess:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.12)}
-.sess .tb{display:inline-block;font-size:.68rem;font-weight:700;padding:1px 6px;border-radius:4px;background:rgba(0,0,0,.08);margin-bottom:3px}
-.sess .m{display:block;font-weight:700;font-size:.85rem}
-.sess .s,.sess .e{display:block;font-size:.72rem;color:var(--muted);margin-top:2px}
-.t-LECT{background:var(--lect);border-color:var(--lect-b)}
-.t-LAB{background:var(--lab);border-color:var(--lab-b)}
-.t-REC{background:var(--rec);border-color:var(--rec-b)}
-.lv{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
-.li{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;cursor:pointer;transition:.2s;box-shadow:var(--shadow)}
-.li:hover{transform:translateY(-2px);border-color:var(--accent)}
-.li .jb{font-size:.75rem;color:var(--accent);font-weight:700}
-.li .hh{font-size:.75rem;color:var(--muted);margin-bottom:6px}
-.li .mm{font-weight:700;font-size:.95rem;margin-bottom:4px}
-.li .ss,.li .ee{font-size:.82rem;color:var(--muted)}
-.modal{position:fixed;inset:0;background:rgba(10,20,40,.6);z-index:100;display:flex;align-items:center;justify-content:center;padding:16px}
-.modal.hidden{display:none}
-.modal-content{background:var(--card);border-radius:16px;max-width:480px;width:100%;padding:24px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.3);max-height:90vh;overflow:auto}
-.modal-close{position:absolute;top:12px;right:12px;background:transparent;border:none;font-size:1.6rem;cursor:pointer;color:var(--muted);line-height:1}
-.modal-content h2{font-size:1.3rem;margin-bottom:16px;color:var(--accent);padding-right:30px}
-.modal-content .row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:.9rem}
-.modal-content .row:last-child{border-bottom:none}
-.modal-content .l{color:var(--muted);font-weight:600}
-.modal-content .v{font-weight:600;text-align:right}
-@media print{
-  header,.filters,.quick,.view-switch,.stats,.modal{display:none!important}
-  .grid-wrap{border:none;box-shadow:none}
-  .gh{position:relative!important}
-  .sess{cursor:default}
-}
+.es{padding:60px 20px;text-align:center;color:var(--txt2)}
+.es .ic{font-size:44px;margin-bottom:14px;opacity:.5}
+@media(max-width:1200px){.gh,.gr{grid-template-columns:95px repeat(6,1fr)}.gc{padding:6px;font-size:11px}}
+@media(max-width:900px){.logo h1{font-size:17px}.fg{min-width:120px}.st{grid-template-columns:repeat(2,1fr)}.gh,.gr{grid-template-columns:75px repeat(6,1fr)}.sess{font-size:9.5px;padding:4px}.sess .m{font-size:10.5px}.sess .cn{font-size:8.5px}}
+@media(max-width:600px){.gv{overflow-x:auto}.gh,.gr{min-width:850px}.st{grid-template-columns:1fr}}
+@media print{.acts,.f,.vt,.ft,.mo,.legend-section{display:none!important}header{background:#fff!important;color:#000!important}.gv{box-shadow:none}body{background:#fff}}
+
+/* ==== Améliorations interface IGEE 2026/2027 ==== */
+.gh{position:relative;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,.12);isolation:isolate}
+.ts{scroll-margin-top:96px}
+.quick{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.quick-label{font-size:12px;font-weight:800;color:var(--txt2)}
+.qb{padding:8px 12px;border:1.5px solid var(--bd);background:var(--bg2);color:var(--txt2);border-radius:10px;cursor:pointer;font:inherit;font-size:12px;font-weight:700}
+.qb:hover{border-color:var(--pri);color:var(--pri)}
+.share-note{position:fixed;right:20px;bottom:20px;background:var(--txt);color:var(--bg2);padding:10px 14px;border-radius:10px;box-shadow:var(--sh2);z-index:2000;font-size:13px;font-weight:700}
 @media(max-width:600px){
   header{padding:12px 14px}
   .hd{gap:8px}
   .logo{gap:9px}
-  .ico{width:48px;height:48px}
-  .container{padding:12px}
-  .logo h1{font-size:1rem}
-  .logo p{font-size:.72rem}
+  .ico{width:48px;height:48px;font-size:25px}
+  h1{font-size:17px}
+  .logo p{font-size:10px}
+  .acts{gap:5px}
+  .bi{width:36px;height:36px;font-size:15px}
+  .f{padding:14px}
+  .fg{min-width:100%;}
+  .quick{margin-bottom:10px}
+  .qb{padding:7px 10px}
+  .gv{border-radius:12px}
 }
+@media print{.quick,.share-note{display:none!important}.gh{position:relative!important}}
 </style>
 </head>
 <body>
-  <!-- LÉGENDE DES COURS -->
-  <div class="legend-container">
-    <div class="legend-header" onclick="toggleLegend()">
-      <span>📖 Légende des cours — Noms complets</span>
-      <span class="legend-arrow" id="legendArrow">▼</span>
-    </div>
-    <div class="legend-content" id="legendContent">
-      <!-- Le contenu sera généré automatiquement par JavaScript -->
-    </div>
-  </div>
+
 <header>
   <div class="hd">
     <div class="logo">
-      <div class="ico"><img src="logo-igee.png" alt="IGEE"></div>
+      <div class="ico"><img src="logo-igee.png" alt="Logo IGEE — Institut de Génie Électrique et Électronique"></div>
       <div>
-        <h1>Emploi du temps — IGEE</h1>
-        <p>Institut de Génie Électrique et Électronique</p>
+        <h1>IGEE — Emploi du temps</h1>
+        <p>Institut de Génie Électrique et Électronique — 2026/2027 — S1</p>
       </div>
     </div>
-    <div class="hd-actions">
-      <button id="themeToggle">🌓 Thème</button>
-      <button id="printBtn">🖨️ Imprimer</button>
-      <button id="shareBtn">🔗 Partager</button>
+    <div class="acts">
+      <button id="themeToggle" class="bi" title="Changer le thème" aria-label="Changer le thème">☀️</button>
+      <button id="shareBtn" class="bi" title="Partager" aria-label="Partager">🔗</button>
+      <button id="printBtn" class="bi" title="Imprimer" aria-label="Imprimer">🖨️</button>
     </div>
   </div>
 </header>
 
-<div class="container">
-  <div class="stats">
-    <div class="stat"><div class="lbl">Total séances</div><div class="val" id="statTotal">0</div></div>
-    <div class="stat"><div class="lbl">Séances filtrées</div><div class="val" id="statFiltered">0</div></div>
-    <div class="stat"><div class="lbl">Matières</div><div class="val" id="statMatieres">0</div></div>
-    <div class="stat"><div class="lbl">Enseignants</div><div class="val" id="statEnseignants">0</div></div>
-  </div>
+<section class="f">
+  <div class="fg"><label>Niveau</label><select id="filterNiveau"><option value="">Tous les niveaux</option><option>L1</option><option>L2</option><option>L3</option><option>M1</option><option>M2</option></select></div>
+  <div class="fg"><label>Filière</label><select id="filterFiliere"><option value="">Toutes les filières</option><option value="COMPUTER">COMPUTER</option><option value="CONTROL">CONTROL</option><option value="IED">IED</option><option value="IEM">IEM</option><option value="POWER">POWER</option><option value="TELECOM">TELECOM</option><option value="TRONC COMMUN">TRONC COMMUN</option></select></div>
+  <div class="fg"><label>Groupe</label><select id="filterGroupe"><option value="">Tous les groupes</option><option value="G01">G01</option><option value="G02">G02</option><option value="G03">G03</option><option value="G04">G04</option><option value="G05">G05</option><option value="G06">G06</option><option value="G07">G07</option><option value="G08">G08</option><option value="G09">G09</option><option value="G10">G10</option><option value="G11">G11</option><option value="G12">G12</option><option value="G13">G13</option><option value="G14">G14</option><option value="G15">G15</option><option value="G16">G16</option></select></div>
+  <div class="fg"><label>Jour</label><select id="filterJour"><option value="">Tous les jours</option><option value="Saturday">Samedi</option><option value="Sunday">Dimanche</option><option value="Monday">Lundi</option><option value="Tuesday">Mardi</option><option value="Wednesday">Mercredi</option><option value="Thursday">Jeudi</option></select></div>
+  <div class="fg"><label>Recherche</label><input id="filterRecherche" placeholder="Cours, salle, enseignant..."></div>
+  <button id="resetBtn" class="br">↺ Réinitialiser</button>
+</section>
 
-  <div class="quick">
-    <button class="qb active" data-quick-level="">Tous</button>
-    <button class="qb" data-quick-level="L1">L1</button>
-    <button class="qb" data-quick-level="L2">L2</button>
-    <button class="qb" data-quick-level="L3">L3</button>
-    <button class="qb" data-quick-level="M1">M1</button>
-    <button class="qb" data-quick-level="M2">M2</button>
-  </div>
+<section class="quick" aria-label="Sélection rapide">
+  <span class="quick-label">Sélection rapide :</span>
+  <button class="qb" data-quick-level="L1">L1</button>
+  <button class="qb" data-quick-level="L2">L2</button>
+  <button class="qb" data-quick-level="L3">L3</button>
+  <button class="qb" data-quick-level="M1">M1</button>
+  <button class="qb" data-quick-level="M2">M2</button>
+  <button class="qb" data-quick-level="">Tous</button>
+</section>
 
-  <div class="filters">
-    <select id="filterNiveau">
-      <option value="">Tous les niveaux</option>
-      <option value="L1">L1</option>
-      <option value="L2">L2</option>
-      <option value="L3">L3</option>
-      <option value="M1">M1</option>
-      <option value="M2">M2</option>
-    </select>
-    <select id="filterFiliere"><option value="">Toutes les filières</option></select>
-    <select id="filterGroupe"><option value="">Tous les groupes</option></select>
-    <select id="filterJour">
-      <option value="">Tous les jours</option>
-      <option>Samedi</option><option>Dimanche</option><option>Lundi</option>
-      <option>Mardi</option><option>Mercredi</option><option>Jeudi</option>
-    </select>
-    <input type="text" id="filterRecherche" placeholder="🔍 Matière, salle, enseignant...">
-    <button id="resetBtn">Réinitialiser</button>
-  </div>
+<section class="st">
+  <div class="sc"><span class="sv" id="statTotal">0</span><span class="sl">Total des séances</span></div>
+  <div class="sc"><span class="sv" id="statFiltered">0</span><span class="sl">Séances affichées</span></div>
+  <div class="sc"><span class="sv" id="statMatieres">0</span><span class="sl">Cours</span></div>
+  <div class="sc"><span class="sv" id="statEnseignants">0</span><span class="sl">Enseignants</span></div>
+</section>
 
-  <div class="view-switch">
-    <button id="viewGrid" class="active">📅 Grille</button>
-    <button id="viewList">📋 Liste</button>
-  </div>
-
-  <div id="gridView">
-    <div class="grid-wrap">
-      <div class="gh">
-        <div>Créneau</div>
-        <div>Samedi</div><div>Dimanche</div><div>Lundi</div>
-        <div>Mardi</div><div>Mercredi</div><div>Jeudi</div>
+<section class="legend-section">
+  <button class="legend-toggle" id="legendToggle">
+    <span>📚 Légende des cours — Noms complets</span>
+    <span class="arrow">▼</span>
+  </button>
+  <div class="legend-content" id="legendContent">
+    <div class="legend-grid">
+      <div class="legend-level">
+        <h3>L1 — Licence 1</h3>
+        <div class="legend-item"><span class="code">EE171</span><span class="name">Maths I</span></div>
+        <div class="legend-item"><span class="code">EE121</span><span class="name">Algorithmic</span></div>
+        <div class="legend-item"><span class="code">EE173</span><span class="name">Physics I</span></div>
+        <div class="legend-item"><span class="code">EE175</span><span class="name">Chemistry I</span></div>
+        <div class="legend-item"><span class="code">EE123</span><span class="name">Free and Open-Source Software</span></div>
+        <div class="legend-item"><span class="code">EE173L</span><span class="name">Physics I Lab</span></div>
+        <div class="legend-item"><span class="code">EL101</span><span class="name">English I</span></div>
+        <div class="legend-item"><span class="code">EL103</span><span class="name">Writing Methods, Ethics and Deontology</span></div>
       </div>
-      <div id="gridBody"></div>
+      <div class="legend-level">
+        <h3>L2 — Licence 2</h3>
+        <div class="legend-item"><span class="code">EE271</span><span class="name">Maths IV</span></div>
+        <div class="legend-item"><span class="code">EE273</span><span class="name">Physics III</span></div>
+        <div class="legend-item"><span class="code">EE241</span><span class="name">Active Devices I</span></div>
+        <div class="legend-item"><span class="code">EE221</span><span class="name">Digital Systems I</span></div>
+        <div class="legend-item"><span class="code">EE201</span><span class="name">Electrical Engineering II</span></div>
+        <div class="legend-item"><span class="code">EE273L</span><span class="name">Physics III Lab</span></div>
+        <div class="legend-item"><span class="code">EE241L</span><span class="name">Active Devices I Lab</span></div>
+        <div class="legend-item"><span class="code">EE221L</span><span class="name">Digital Systems I Lab</span></div>
+        <div class="legend-item"><span class="code">EE201L</span><span class="name">Electrical Engineering II Lab</span></div>
+      </div>
+      <div class="legend-level">
+        <h3>L3 — Licence 3</h3>
+        <div class="legend-item"><span class="code">EE351</span><span class="name">Linear Systems II</span></div>
+        <div class="legend-item"><span class="code">EE361</span><span class="name">Electromagnetic Field Theory</span></div>
+        <div class="legend-item"><span class="code">EE321</span><span class="name">Computer Architecture</span></div>
+        <div class="legend-item"><span class="code">EE331</span><span class="name">Power Electronics</span></div>
+        <div class="legend-item"><span class="code">EE353</span><span class="name">Process Control and Instrumentation</span></div>
+        <div class="legend-item"><span class="code">EE331L</span><span class="name">Power Electronics Lab</span></div>
+        <div class="legend-item"><span class="code">EE353L</span><span class="name">Process Control and Instrumentation Lab</span></div>
+        <div class="legend-item"><span class="code">EE341</span><span class="name">Engineering Analysis and Design</span></div>
+      </div>
     </div>
   </div>
+</section>
 
-  <div id="listView" class="hidden">
-    <div id="listBody"></div>
+<section class="ts">
+  <div class="vt">
+    <button id="viewGrid" class="vb active">📅 Vue grille</button>
+    <button id="viewList" class="vb">📋 Vue liste</button>
   </div>
-</div>
-
-<div id="modal" class="modal hidden">
-  <div class="modal-content">
-    <button class="modal-close" id="modalClose">×</button>
-    <div id="modalBody"></div>
+  <div id="gridView" class="gv">
+    <div class="gh">
+      <div class="gc hc">Horaire</div>
+      <div class="gc hc">Samedi</div>
+      <div class="gc hc">Dimanche</div>
+      <div class="gc hc">Lundi</div>
+      <div class="gc hc">Mardi</div>
+      <div class="gc hc">Mercredi</div>
+      <div class="gc hc">Jeudi</div>
+    </div>
+    <div id="gridBody" class="gb"></div>
   </div>
-</div>
+  <div id="listView" class="lv hidden"><div id="listBody"></div></div>
+</section>
 
-<!-- ============================================================= -->
-<!-- ============ DONNÉES CSV — NIVEAU L1 ======================== -->
-<!-- ============================================================= -->
+<div id="modal" class="mo hidden"><div class="mc"><button class="mx" id="modalClose">✕</button><div id="modalBody"></div></div></div>
+
+<footer class="ft">
+  <p>© 2026/2027 — Institute of Electrical and Electronic Engineering</p>
+  <p>Last modification: 09/15/2026</p>
+</footer>
+
+<!-- ============ L1 ============ -->
 <script type="text/plain" id="csv-L1">
 Niveau,Filière,Groupe,Jour,Créneau,Matière,Type,Salle,Enseignant
 L1,TRONC COMMUN,G01,Samedi,08:00-09:30,EL103,LECT,AMPHI 3,V. VAC 05
@@ -607,1426 +635,1270 @@ L1,TRONC COMMUN,G16,Jeudi,09:40-11:10,EL101,REC,LS-B310,V. VAC 03
 L1,TRONC COMMUN,G16,Jeudi,13:00-14:30,EE171,REC,B011,W. KSOURI
 </script>
 
-<!-- ============================================================= -->
-<!-- ============ DONNÉES CSV — NIVEAU L2 ======================== -->
-<!-- ============================================================= -->
+<!-- ============ L2 ============ -->
 <script type="text/plain" id="csv-L2">
-Niveau,Groupe,Jour,Créneau,Matière,Type,Salle,Enseignant
-L2,G01,Samedi,08:00-09:30,EE241,LECT,AMPHI 1,L. SADOUKI
-L2,G01,Samedi,09:40-11:10,EE201,LECT,AMPHI 1,A. RECIOUI
-L2,G01,Samedi,11:20-12:50,EE221,LAB,A205,D. HERBADJI
-L2,G01,Samedi,13:00-14:30,EE221,LAB,A205,D. HERBADJI
-L2,G01,Dimanche,08:00-09:30,EE221,LECT,AMPHI 2,W. TOUZOUT
-L2,G01,Dimanche,09:40-11:10,EE201,LAB,A201,N. SMAILI
-L2,G01,Dimanche,14:40-16:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
-L2,G01,Lundi,08:00-09:30,EE201,LECT,AMPHI 1,A. RECIOUI
-L2,G01,Lundi,09:40-11:10,EE201,REC,B313,F. MOUHOUCHE
-L2,G01,Lundi,13:00-14:30,EE275,LECT,AMPHI 1,A. BENDJABEUR
-L2,G01,Mardi,08:00-09:30,EE221,LECT,AMPHI 4,W. TOUZOUT
-L2,G01,Mardi,09:40-11:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
-L2,G01,Mardi,13:00-14:30,EE273,LECT,AMPHI 1,S. CHALA
-L2,G01,Mardi,14:40-16:10,EE275,REC,B319,A. TERCHI
-L2,G01,Mercredi,08:00-09:30,EE241,LAB,A104/A101,M. CHERIFIVAC
-L2,G01,Mercredi,09:40-11:10,EE241,REC,B301,L. SADOUKI
-L2,G01,Mercredi,13:00-14:30,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G01,Jeudi,08:00-09:30,EE241/EE273,LAB,A104/A101,M. CHERIFIVAC
-L2,G01,Jeudi,09:40-11:10,EE241/EE273,LAB,A104/A101,M. CHERIFIVAC
-L2,G01,Jeudi,11:20-12:50,EE273,REC,C107,A. SOUKHAL
-L2,G01,Jeudi,13:00-14:30,EE271,REC,B007,S. OUAGAGUI
-L2,G02,Samedi,08:00-09:30,EE241,LECT,AMPHI 1,L. SADOUKI
-L2,G02,Samedi,09:40-11:10,EE201,LECT,AMPHI 1,A. RECIOUI
-L2,G02,Samedi,14:40-16:10,EE221,LAB,A205,D. HERBADJI
-L2,G02,Samedi,16:20-17:50,EE221,LAB,A205,D. HERBADJI
-L2,G02,Dimanche,09:40-11:10,EE201,LAB,A201,N. SMAILI
-L2,G02,Dimanche,11:20-12:50,EE201,LAB,A201,N. SMAILI
-L2,G02,Dimanche,13:00-14:30,EE275,LECT,AMPHI 1,A. BENDJABEUR
-L2,G02,Dimanche,14:40-16:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
-L2,G02,Lundi,08:00-09:30,EE221,LECT,AMPHI 2,W. TOUZOUT
-L2,G02,Lundi,13:00-14:30,EE273,LECT,AMPHI 1,S. CHALA
-L2,G02,Mardi,08:00-09:30,EE201,LECT,AMPHI 1,A. RECIOUI
-L2,G02,Mardi,09:40-11:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
-L2,G02,Mardi,13:00-14:30,EE241,REC,B001,C. FIALA
-L2,G02,Mercredi,08:00-09:30,EE221,LECT,AMPHI 4,W. TOUZOUT
-L2,G02,Mercredi,09:40-11:10,EE273,REC,B103,A. SOUKHAL
-L2,G02,Mercredi,13:00-14:30,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G02,Mercredi,14:40-16:10,EE275,REC,B103,A. TERCHI
-L2,G02,Jeudi,08:00-09:30,EE241/EE273,LAB,A104/A101,M. CHERIFIVAC
-L2,G02,Jeudi,09:40-11:10,EE241/EE273,LAB,A104/A101,M. CHERIFIVAC
-L2,G02,Jeudi,11:20-12:50,EE201,REC,B103,S. CHALAH
-L2,G02,Jeudi,13:00-14:30,EE271,REC,B007,S. OUAGAGUI
-L2,G03,Samedi,08:00-09:30,EE241,LECT,AMPHI 1,L. SADOUKI
-L2,G03,Samedi,09:40-11:10,EE201,LECT,AMPHI 1,A. RECIOUI
-L2,G03,Samedi,11:20-12:50,EE221,LAB,A209,D. HERBADJI
-L2,G03,Dimanche,08:00-09:30,EE221,LECT,AMPHI 2,W. TOUZOUT
-L2,G03,Dimanche,09:40-11:10,EE221,LAB,A209,D. HERBADJI
-L2,G03,Dimanche,11:20-12:50,EE201,LAB,A201,E. VAC
-L2,G03,Dimanche,13:00-14:30,EE275,LECT,AMPHI 1,A. BENDJABEUR
-L2,G03,Dimanche,14:40-16:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
-L2,G03,Lundi,08:00-09:30,EE201,LECT,AMPHI 1,A. RECIOUI
-L2,G03,Lundi,09:40-11:10,EE275,REC,B303,A. BENDJABEUR
-L2,G03,Lundi,11:20-12:50,EE241/EE273,LAB,A104/A101,M. CHERIFIVAC
-L2,G03,Lundi,13:00-14:30,EE273,LECT,AMPHI 1,S. CHALA
-L2,G03,Mardi,08:00-09:30,EE221,LECT,AMPHI 4,W. TOUZOUT
-L2,G03,Mardi,09:40-11:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
-L2,G03,Mardi,13:00-14:30,EE241,REC,B303,A. VAC
-L2,G03,Mercredi,09:40-11:10,EE201,LAB,A201,E. VAC
-L2,G03,Mercredi,13:00-14:30,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G03,Jeudi,09:40-11:10,EE201,REC,B103,S. CHALAH
-L2,G03,Jeudi,13:00-14:30,EE241/EE273,LAB,A104/A101,M. CHERIFIVAC
-L2,G03,Jeudi,14:40-16:10,EE271,REC,B005,N. SMAILI
-L2,G04,Samedi,08:00-09:30,EE241,LECT,AMPHI 1,L. SADOUKI
-L2,G04,Samedi,09:40-11:10,EE201,LECT,AMPHI 1,A. RECIOUI
-L2,G04,Samedi,11:20-12:50,EE201L,LAB,A201,E. VAC
-L2,G04,Dimanche,08:00-09:30,EE221L,LAB,A205,D. VAC
-L2,G04,Dimanche,09:40-11:10,EE221L,LAB,A205,D. VAC
-L2,G04,Dimanche,13:00-14:30,EE275,LECT,AMPHI 1,A. BENDJABEUR
-L2,G04,Dimanche,14:40-16:10,EE273,REC,B301,P. VAC
-L2,G04,Lundi,08:00-09:30,EE221,LECT,AMPHI 2,W. TOUZOUT
-L2,G04,Lundi,09:40-11:10,EE241,REC,B001,C. FIALA
-L2,G04,Lundi,13:00-14:30,EE273,LECT,AMPHI 1,S. CHALA
-L2,G04,Lundi,14:40-16:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
-L2,G04,Mardi,08:00-09:30,EE201,LECT,AMPHI 1,A. RECIOUI
-L2,G04,Mardi,09:40-11:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
-L2,G04,Mardi,13:00-14:30,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G04,Mardi,14:40-16:10,EE271,REC,B005,N. SMAILI
-L2,G04,Mercredi,08:00-09:30,EE221,LECT,AMPHI 4,W. TOUZOUT
-L2,G04,Mercredi,09:40-11:10,EE201L,LAB,A201,E. VAC
-L2,G04,Mercredi,13:00-14:30,EE241/EE273,LAB,A104/A101,M. CHERIFIVAC
-L2,G04,Mercredi,14:40-16:10,EE275,REC,C104,A. TERCHI
-L2,G04,Jeudi,11:20-12:50,EE241/EE273,LAB,A104/A101,M. CHERIFIVAC
-L2,G04,Jeudi,13:00-14:30,EE201,REC,B211,RECIOUI
-L2,G05,Samedi,08:00-09:30,EE241,LECT,AMPHI 1,L. SADOUKI
-L2,G05,Samedi,09:40-11:10,EE201,LECT,AMPHI 1,A. RECIOUI
-L2,G05,Samedi,11:20-12:50,EE221,LAB,A205,VAC
-L2,G05,Dimanche,08:00-09:30,EE241/EE273,LAB,A301/A109,V. VAC 10
-L2,G05,Dimanche,09:40-11:10,EE241/EE273,LAB,A301/A109,V. VAC 10
-L2,G05,Dimanche,11:20-12:50,EE221,LAB,A205,VAC
-L2,G05,Dimanche,13:00-14:30,EE275,LECT,AMPHI 1,A. BENDJABEUR
-L2,G05,Dimanche,14:40-16:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
-L2,G05,Lundi,08:00-09:30,EE221,LECT,AMPHI 2,W. TOUZOUT
-L2,G05,Lundi,13:00-14:30,EE273,LECT,AMPHI 1,S. CHALA
-L2,G05,Lundi,14:40-16:10,EE273,REC,C117,P. VAC
-L2,G05,Mardi,08:00-09:30,EE201,LECT,AMPHI 1,A. RECIOUI
-L2,G05,Mardi,09:40-11:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
-L2,G05,Mardi,13:00-14:30,EE201,REC,B011,F. MOUHOUCHE
-L2,G05,Mardi,14:40-16:10,EE201,LAB,A201,N. SMAILI
-L2,G05,Mercredi,08:00-09:30,EE221,LECT,AMPHI 4,W. TOUZOUT
-L2,G05,Mercredi,09:40-11:10,EE275,REC,B319,A. TERCHI
-L2,G05,Mercredi,13:00-14:30,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G05,Mercredi,14:40-16:10,EE201,LAB,A201,N. SMAILI
-L2,G05,Jeudi,08:00-09:30,EE241,REC,B305,M. DEHMAS
-L2,G05,Jeudi,09:40-11:10,EE271,REC,B007,M. VAC
-L2,G06,Samedi,08:00-09:30,EE241,LECT,AMPHI 1,L. SADOUKI
-L2,G06,Samedi,09:40-11:10,EE201,LECT,AMPHI 1,A. RECIOUI
-L2,G06,Dimanche,08:00-09:30,EE241/EE273,LAB,A301/A109,V. VAC 10
-L2,G06,Dimanche,09:40-11:10,EE241/EE273,LAB,A301/A109,V. VAC 10
-L2,G06,Dimanche,11:20-12:50,EE275,REC,B305,A. BENJDABEUR
-L2,G06,Dimanche,13:00-14:30,EE275,LECT,AMPHI 1,A. BENJDABEUR
-L2,G06,Dimanche,14:40-16:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
-L2,G06,Lundi,08:00-09:30,EE221,LECT,AMPHI 2,W. TOUZOUT
-L2,G06,Lundi,13:00-14:30,EE273,LECT,AMPHI 1,S. CHALA
-L2,G06,Mardi,08:00-09:30,EE201,LECT,AMPHI 1,A. RECIOUI
-L2,G06,Mardi,09:40-11:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
-L2,G06,Mardi,13:00-14:30,EE273,REC,B305,P. VAC
-L2,G06,Mardi,14:40-16:10,EE241,REC,B001,C. FIALA
-L2,G06,Mercredi,08:00-09:30,EE221,LECT,AMPHI 4,W. TOUZOUT
-L2,G06,Mercredi,09:40-11:10,EE201,REC,B211,S. CHALAH
-L2,G06,Mercredi,13:00-14:30,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G06,Mercredi,14:40-16:10,EE201,LAB,A201,N. SMAILI
-L2,G06,Jeudi,09:40-11:10,EE271,REC,B007,M. VAC
-L2,G06,Jeudi,13:00-14:30,EE201,LAB,A201,N. SMAILI
-L2,G06,Jeudi,14:40-16:10,EE221,LAB,A209,W. TOUZOUT
-L2,G06,Jeudi,16:20-17:50,EE221,LAB,A209,W. TOUZOUT
-L2,G07,Samedi,08:00-09:30,EE241,LECT,AMPHI 1,L. SADOUKI
-L2,G07,Samedi,09:40-11:10,EE201,LECT,AMPHI 1,A. RECIOUI
-L2,G07,Samedi,13:00-14:30,EE221,LAB,A209,D. VAC
-L2,G07,Samedi,14:40-16:10,EE221,LAB,A209,D. VAC
-L2,G07,Dimanche,08:00-09:30,EE201,LAB,A208,E. VAC
-L2,G07,Dimanche,09:40-11:10,EE201,LAB,A208,E. VAC
-L2,G07,Dimanche,13:00-14:30,EE275,LECT,AMPHI 1,A. BENDJABEUR
-L2,G07,Dimanche,14:40-16:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
-L2,G07,Lundi,08:00-09:30,EE221,LECT,AMPHI 2,W. TOUZOUT
-L2,G07,Lundi,11:20-12:50,EE275,REC,B303,A. BENDJABEUR
-L2,G07,Lundi,13:00-14:30,EE273,LECT,AMPHI 1,S. CHALA
-L2,G07,Mardi,08:00-09:30,EE201,LECT,AMPHI 1,A. RECIOUI
-L2,G07,Mardi,09:40-11:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
-L2,G07,Mardi,11:20-12:50,EE241/EE273,LAB,A104/A101,M. CHERIFIVAC
-L2,G07,Mardi,13:00-14:30,EE241/EE273,LAB,A104/A101,M. CHERIFIVAC
-L2,G07,Mercredi,08:00-09:30,EE221,LECT,AMPHI 4,W. TOUZOUT
-L2,G07,Mercredi,11:20-12:50,EE201,REC,B211,S. CHALAH
-L2,G07,Mercredi,13:00-14:30,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G07,Jeudi,11:20-12:50,EE271,REC,B312,M. VAC
-L2,G07,Jeudi,13:00-14:30,EE273,REC,C107,A. SOUKHAL
-L2,G07,Jeudi,14:40-16:10,EE241,REC,B319,A. VAC
-L2,G08,Samedi,08:00-09:30,EE241,LECT,AMPHI 1,L. SADOUKI
-L2,G08,Samedi,09:40-11:10,EE201,LECT,AMPHI 1,A. RECIOUI
-L2,G08,Samedi,14:40-16:10,EE201,REC,B211,RECIOUI
-L2,G08,Dimanche,08:00-09:30,EE201,LAB,A208,E. VAC
-L2,G08,Dimanche,09:40-11:10,EE201,LAB,A208,E. VAC
-L2,G08,Dimanche,13:00-14:30,EE275,LECT,AMPHI 1,A. BENDJABEUR
-L2,G08,Dimanche,14:40-16:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
-L2,G08,Lundi,08:00-09:30,EE221,LECT,AMPHI 2,W. TOUZOUT
-L2,G08,Lundi,13:00-14:30,EE273,LECT,AMPHI 1,S. CHALA
-L2,G08,Lundi,14:40-16:10,EE221L,LAB,A209,W. TOUZOUT
-L2,G08,Lundi,16:20-17:50,EE221L,LAB,A209,W. TOUZOUT
-L2,G08,Mardi,08:00-09:30,EE201,LECT,AMPHI 1,A. RECIOUI
-L2,G08,Mardi,09:40-11:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
-L2,G08,Mardi,11:20-12:50,EE241/EE273,LAB,A104/A101,M. CHERIFIVAC
-L2,G08,Mardi,13:00-14:30,EE241/EE273,LAB,A104/A101,M. CHERIFIVAC
-L2,G08,Mercredi,08:00-09:30,EE221,LECT,AMPHI 4,W. TOUZOUT
-L2,G08,Mercredi,09:40-11:10,EE273,REC,B101,P. VAC
-L2,G08,Mercredi,13:00-14:30,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G08,Mercredi,14:40-16:10,EE241,REC,B101,A. VAC
-L2,G08,Jeudi,11:20-12:50,EE271,REC,B312,M. VAC
-L2,G08,Jeudi,13:00-14:30,EE275,REC,C104,A. TERGHI
-L2,G09,Samedi,09:40-11:10,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G09,Samedi,11:20-12:50,EE201L,LAB,A201,N. SMAILI
-L2,G09,Samedi,13:00-14:30,EE241/EE273,LAB,A301/A109,V. VAC 10
-L2,G09,Samedi,14:40-16:10,EE241/EE273,LAB,A301/A109,V. VAC 10
-L2,G09,Dimanche,08:00-09:30,EE201,LECT,AMPHI 2,A. RECIOUI
-L2,G09,Dimanche,09:40-11:10,EE221,LECT,AMPHI 1,W. TOUZOUT
-L2,G09,Dimanche,11:20-12:50,EE221L,LAB,A209,H. BOUYAHIAOUI
-L2,G09,Dimanche,13:00-14:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
-L2,G09,Dimanche,14:40-16:10,EE275,LECT,AMPHI 2,A. BENDJABEUR
-L2,G09,Lundi,09:40-11:10,EE201,LECT,AMPHI 2,A. RECIOUI
-L2,G09,Lundi,13:00-14:30,EE201L,LAB,A201,N. SMAILI
-L2,G09,Lundi,14:40-16:10,EE273,LECT,AMPHI 2,S. CHALA
-L2,G09,Mardi,08:00-09:30,EE275,REC,B319,A. TERCHI
-L2,G09,Mardi,09:40-11:10,EE221,LECT,AMPHI 3,W. TOUZOUT
-L2,G09,Mardi,13:00-14:30,EE221L,LAB,A209,H. BOUYAHIAOUI
-L2,G09,Mardi,14:40-16:10,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G09,Mercredi,08:00-09:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
-L2,G09,Mercredi,09:40-11:10,EE241,REC,B305,M. DEHMAS
-L2,G09,Mercredi,13:00-14:30,EE273,REC,C117,P. VAC
-L2,G09,Jeudi,09:40-11:10,EE271,REC,B312,M. VAC
-L2,G09,Jeudi,13:00-14:30,EE201,REC,B103,S. CHALAH
-L2,G10,Samedi,08:00-09:30,EE201,LECT,AMPHI 2,A. RECIOUI
-L2,G10,Samedi,09:40-11:10,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G10,Samedi,13:00-14:30,EE241/EE273,LAB,A301/A109,V. VAC 10
-L2,G10,Samedi,14:40-16:10,EE241/EE273,LAB,A301/A109,V. VAC 10
-L2,G10,Dimanche,08:00-09:30,EE201,REC,B305,E. VAC
-L2,G10,Dimanche,13:00-14:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
-L2,G10,Dimanche,14:40-16:10,EE275,LECT,AMPHI 2,A. BENDJABEUR
-L2,G10,Lundi,09:40-11:10,EE221,LECT,AMPHI 1,W. TOUZOUT
-L2,G10,Lundi,11:20-12:50,EE201L,LAB,A201,N. SMAILI
-L2,G10,Lundi,13:00-14:30,EE201L,LAB,A201,N. SMAILI
-L2,G10,Lundi,14:40-16:10,EE273,LECT,AMPHI 2,S. CHALA
-L2,G10,Mardi,08:00-09:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
-L2,G10,Mardi,09:40-11:10,EE201,LECT,AMPHI 2,A. RECIOUI
-L2,G10,Mardi,11:20-12:50,EE273,REC,B305,P. VAC
-L2,G10,Mercredi,09:40-11:10,EE221,LECT,AMPHI 3,W. TOUZOUT
-L2,G10,Mercredi,11:20-12:50,EE221L,LAB,A209,A. MAACHE
-L2,G10,Mercredi,13:00-14:30,EE221L,LAB,A209,A. MAACHE
-L2,G10,Mercredi,14:40-16:10,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G10,Jeudi,11:20-12:50,EE275,REC,C104,A. TERCHI
-L2,G10,Jeudi,13:00-14:30,EE241,REC,B305,M. DEHMAS
-L2,G10,Jeudi,14:40-16:10,EE271,REC,B312,M. VAC
-L2,G11,Samedi,08:00-09:30,EE201,LECT,AMPHI 2,A. RECIOUI
-L2,G11,Samedi,09:40-11:10,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G11,Samedi,11:20-12:50,EE273,REC,B301,P. VAC
-L2,G11,Dimanche,08:00-09:30,EE241,REC,B001,C. FIALA
-L2,G11,Dimanche,09:40-11:10,EE201,REC,B305,E. VAC
-L2,G11,Dimanche,13:00-14:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
-L2,G11,Dimanche,14:40-16:10,EE275,LECT,AMPHI 2,A. BENDJABEUR
-L2,G11,Lundi,09:40-11:10,EE221,LECT,AMPHI 1,W. TOUZOUT
-L2,G11,Lundi,11:20-12:50,EE221L,LAB,A209,D. VAC
-L2,G11,Lundi,13:00-14:30,EE221L,LAB,A209,D. VAC
-L2,G11,Lundi,14:40-16:10,EE273,LECT,AMPHI 2,S. CHALA
-L2,G11,Mardi,08:00-09:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
-L2,G11,Mardi,09:40-11:10,EE201,LECT,AMPHI 2,A. RECIOUI
-L2,G11,Mardi,13:00-14:30,EE201L,LAB,A201,E. VAC
-L2,G11,Mardi,14:40-16:10,EE201L,LAB,A201,E. VAC
-L2,G11,Mercredi,08:00-09:30,EE271,REC,B007,M. BENZAOUI
-L2,G11,Mercredi,09:40-11:10,EE221,LECT,AMPHI 3,W. TOUZOUT
-L2,G11,Mercredi,13:00-14:30,EE275,REC,B103,A. TERCHI
-L2,G11,Mercredi,14:40-16:10,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G11,Jeudi,13:00-14:30,EE241/EE273,LAB,A301/A109,V. VAC 10
-L2,G11,Jeudi,14:40-16:10,EE241/EE273,LAB,A301/A109,V. VAC 10
-L2,G12,Samedi,08:00-09:30,EE201,LECT,AMPHI 2,A. RECIOUI
-L2,G12,Samedi,09:40-11:10,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G12,Samedi,13:00-14:30,EE275,REC,B305,A. BENDJABEUR
-L2,G12,Dimanche,08:00-09:30,EE273,REC,B303,A. SOUKHAL
-L2,G12,Dimanche,09:40-11:10,EE241,REC,B001,C. FIALA
-L2,G12,Dimanche,13:00-14:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
-L2,G12,Dimanche,14:40-16:10,EE275,LECT,AMPHI 2,A. BENDJABEUR
-L2,G12,Lundi,08:00-09:30,EE201,REC,B313,F. MOUHOUCHE
-L2,G12,Lundi,09:40-11:10,EE221,LECT,AMPHI 1,W. TOUZOUT
-L2,G12,Lundi,14:40-16:10,EE273,LECT,AMPHI 2,S. CHALA
-L2,G12,Mardi,08:00-09:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
-L2,G12,Mardi,09:40-11:10,EE201,LECT,AMPHI 2,A. RECIOUI
-L2,G12,Mardi,13:00-14:30,EE201L,LAB,A201,E. VAC
-L2,G12,Mardi,14:40-16:10,EE201L,LAB,A201,E. VAC
-L2,G12,Mercredi,08:00-09:30,EE271,REC,B007,M. BENZAOUI
-L2,G12,Mercredi,09:40-11:10,EE221,LECT,AMPHI 3,W. TOUZOUT
-L2,G12,Mercredi,14:40-16:10,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G12,Jeudi,08:00-09:30,EE221L,LAB,A209,Y. AZZOUGUI
-L2,G12,Jeudi,09:40-11:10,EE221L,LAB,A209,Y. AZZOUGUI
-L2,G12,Jeudi,13:00-14:30,EE241/EE273,LAB,A301/A109,V. VAC 10
-L2,G12,Jeudi,14:40-16:10,EE241/EE273,LAB,A301/A109,V. VAC 10
-L2,G13,Samedi,08:00-09:30,EE201,LECT,AMPHI 2,A. RECIOUI
-L2,G13,Samedi,09:40-11:10,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G13,Samedi,13:00-14:30,EE201L,LAB,A201,H. MECHRI
-L2,G13,Samedi,14:40-16:10,EE201L,LAB,A201,H. MECHRI
-L2,G13,Dimanche,08:00-09:30,EE275,REC,B301,A. BENDJABEUR
-L2,G13,Dimanche,09:40-11:10,EE273,REC,B303,A. SOUKHAL
-L2,G13,Dimanche,13:00-14:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
-L2,G13,Dimanche,14:40-16:10,EE275,LECT,AMPHI 2,A. BENDJABEUR
-L2,G13,Lundi,09:40-11:10,EE221,LECT,AMPHI 1,W. TOUZOUT
-L2,G13,Lundi,13:00-14:30,EE201,REC,B319,F. MOUHOUCHE
-L2,G13,Lundi,14:40-16:10,EE273,LECT,AMPHI 2,S. CHALA
-L2,G13,Mardi,08:00-09:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
-L2,G13,Mardi,09:40-11:10,EE201,LECT,AMPHI 2,A. RECIOUI
-L2,G13,Mardi,13:00-14:30,EE271,REC,A407,M. VAC
-L2,G13,Mercredi,09:40-11:10,EE221,LECT,AMPHI 3,W. TOUZOUT
-L2,G13,Mercredi,13:00-14:30,EE241,REC,B101,A. VAC
-L2,G13,Mercredi,14:40-16:10,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G13,Jeudi,08:00-09:30,EE241/EE273,LAB,A301/A109,V. VAC 10
-L2,G13,Jeudi,09:40-11:10,EE241/EE273,LAB,A301/A109,V. VAC 10
-L2,G13,Jeudi,13:00-14:30,EE221L,LAB,A205,A. ZITOUNI
-L2,G13,Jeudi,14:40-16:10,EE221L,LAB,A205,A. ZITOUNI
-L2,G14,Samedi,08:00-09:30,EE201,LECT,AMPHI 2,A. RECIOUI
-L2,G14,Samedi,09:40-11:10,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G14,Samedi,13:00-14:30,EE201,LAB,A201,H. MECHRI
-L2,G14,Samedi,14:40-16:10,EE201,LAB,A201,H. MECHRI
-L2,G14,Dimanche,08:00-09:30,EE241,REC,B001,C. FIALA
-L2,G14,Dimanche,09:40-11:10,EE275,REC,B301,A. BENDJABEUR
-L2,G14,Dimanche,13:00-14:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
-L2,G14,Dimanche,14:40-16:10,EE275,LECT,AMPHI 2,A. BENDJABEUR
-L2,G14,Lundi,09:40-11:10,EE221,LECT,AMPHI 1,W. TOUZOUT
-L2,G14,Lundi,13:00-14:30,EE271,REC,A407,M. VAC
-L2,G14,Lundi,14:40-16:10,EE273,LECT,AMPHI 2,S. CHALA
-L2,G14,Mardi,08:00-09:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
-L2,G14,Mardi,09:40-11:10,EE201,LECT,AMPHI 2,A. RECIOUI
-L2,G14,Mardi,13:00-14:30,EE201,REC,B211,S. CHALAH
-L2,G14,Mardi,14:40-16:10,EE273,REC,B305,P. VAC
-L2,G14,Mercredi,09:40-11:10,EE221,LECT,AMPHI 3,W. TOUZOUT
-L2,G14,Mercredi,13:00-14:30,EE221,LAB,A209,Y. AZZOUGUI
-L2,G14,Mercredi,14:40-16:10,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G14,Jeudi,08:00-09:30,EE241/EE273,LAB,A301/A109,V. VAC 10
-L2,G14,Jeudi,09:40-11:10,EE241/EE273,LAB,A301/A109,V. VAC 10
-L2,G14,Jeudi,14:40-16:10,EE221,LAB,A209,Y. AZZOUGUI
-L2,G15,Samedi,08:00-09:30,EE201,LECT,AMPHI 2,A. RECIOUI
-L2,G15,Samedi,09:40-11:10,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G15,Samedi,14:40-16:10,EE241,REC,B205,L. SADOUKI
-L2,G15,Dimanche,08:00-09:30,EE201,REC,B011,F. MOUHOUCHE
-L2,G15,Dimanche,13:00-14:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
-L2,G15,Dimanche,14:40-16:10,EE275,LECT,AMPHI 2,A. BENDJABEUR
-L2,G15,Lundi,09:40-11:10,EE221,LECT,AMPHI 1,W. TOUZOUT
-L2,G15,Lundi,11:20-12:50,EE241/EE273,LAB,A104/A101,M. CHERIFIVAC
-L2,G15,Lundi,13:00-14:30,EE241/EE273,LAB,A104/A101,M. CHERIFIVAC
-L2,G15,Lundi,14:40-16:10,EE273,LECT,AMPHI 2,S. CHALA
-L2,G15,Mardi,08:00-09:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
-L2,G15,Mardi,09:40-11:10,EE201,LECT,AMPHI 2,A. RECIOUI
-L2,G15,Mardi,13:00-14:30,EE275,REC,B319,A. TERCHI
-L2,G15,Mardi,14:40-16:10,EE221L,LAB,A205,D. VAC
-L2,G15,Mardi,16:20-17:50,EE221L,LAB,A205,D. VAC
-L2,G15,Mercredi,08:00-09:30,EE273,REC,B103,A. SOUKHAL
-L2,G15,Mercredi,09:40-11:10,EE221,LECT,AMPHI 3,W. TOUZOUT
-L2,G15,Mercredi,14:40-16:10,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G15,Jeudi,08:00-09:30,EE201L,LAB,A201,N. SMAILI
-L2,G15,Jeudi,09:40-11:10,EE201L,LAB,A201,N. SMAILI
-L2,G15,Jeudi,11:20-12:50,EE271,REC,B007,S. OUAGAGUI
-L2,G16,Samedi,08:00-09:30,EE201,LECT,AMPHI 2,A. RECIOUI
-L2,G16,Samedi,09:40-11:10,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G16,Samedi,13:00-14:30,EE241,REC,B205,L. SADOUKI
-L2,G16,Dimanche,09:40-11:10,EE275,REC,B319,A. TERCHI
-L2,G16,Dimanche,13:00-14:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
-L2,G16,Dimanche,14:40-16:10,EE275,LECT,AMPHI 2,A. BENDJABEUR
-L2,G16,Lundi,09:40-11:10,EE221,LECT,AMPHI 1,W. TOUZOUT
-L2,G16,Lundi,11:20-12:50,EE241/EE273,LAB,A104/A101,M. CHERIFIVAC
-L2,G16,Lundi,13:00-14:30,EE241/EE273,LAB,A104/A101,M. CHERIFIVAC
-L2,G16,Lundi,14:40-16:10,EE273,LECT,AMPHI 2,S. CHALA
-L2,G16,Mardi,08:00-09:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
-L2,G16,Mardi,09:40-11:10,EE201,LECT,AMPHI 2,A. RECIOUI
-L2,G16,Mardi,11:20-12:50,EE201,REC,B011,F. MOUHOUCHE
-L2,G16,Mardi,14:40-16:10,EE221L,LAB,A209,H. BOUYAHIAOUI
-L2,G16,Mardi,16:20-17:50,EE221L,LAB,A209,H. BOUYAHIAOUI
-L2,G16,Mercredi,08:00-09:30,EE273,REC,B101,P. VAC
-L2,G16,Mercredi,09:40-11:10,EE221,LECT,AMPHI 3,W. TOUZOUT
-L2,G16,Mercredi,14:40-16:10,EE241,LECT,AMPHI 2,L. SADOUKI
-L2,G16,Jeudi,08:00-09:30,EE201L,LAB,A201,N. SMAILI
-L2,G16,Jeudi,09:40-11:10,EE201L,LAB,A201,N. SMAILI
-L2,G16,Jeudi,11:20-12:50,EE271,REC,B007,S. OUAGAGUI
+Niveau,Filière,Groupe,Jour,Créneau,Matière,Type,Salle,Enseignant
+L2,TRONC COMMUN,G01,Saturday,08:00-09:30,EE241,LECT,AMPHI 1,L. SADOUKI
+L2,TRONC COMMUN,G01,Saturday,09:40-11:10,EE201,LECT,AMPHI 1,A. RECIOUI
+L2,TRONC COMMUN,G01,Saturday,11:20-12:50,EE221L,LAB,A205,D. HERBADJI
+L2,TRONC COMMUN,G01,Saturday,13:00-14:30,EE221L,LAB,A205,D. HERBADJI
+L2,TRONC COMMUN,G01,Sunday,09:40-11:10,EE201L,LAB,A201,N. SMAILI
+L2,TRONC COMMUN,G01,Sunday,11:20-12:50,EE201L,LAB,A201,N. SMAILI
+L2,TRONC COMMUN,G01,Sunday,13:00-14:30,EE275,LECT,AMPHI 1,A. BENDJABEUR
+L2,TRONC COMMUN,G01,Sunday,14:40-16:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
+L2,TRONC COMMUN,G01,Monday,08:00-09:30,EE221,LECT,AMPHI 2,W. TOUZOUT
+L2,TRONC COMMUN,G01,Monday,09:40-11:10,EE201,REC,B313,F. MOUHOUCHE
+L2,TRONC COMMUN,G01,Monday,13:00-14:30,EE273,LECT,AMPHI 1,S. CHALA
+L2,TRONC COMMUN,G01,Tuesday,08:00-09:30,EE201,LECT,AMPHI 1,A. RECIOUI
+L2,TRONC COMMUN,G01,Tuesday,09:40-11:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
+L2,TRONC COMMUN,G01,Tuesday,14:40-16:10,EE275,REC,B319,A. TERCHI
+L2,TRONC COMMUN,G01,Wednesday,08:00-09:30,EE221,LECT,AMPHI 4,W. TOUZOUT
+L2,TRONC COMMUN,G01,Wednesday,09:40-11:10,EE241,REC,B301,L. SADOUKI
+L2,TRONC COMMUN,G01,Wednesday,13:00-14:30,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G01,Thursday,08:00-09:30,EE241/EE273,LAB,A104/A101,M. CHERIFI/VAC
+L2,TRONC COMMUN,G01,Thursday,09:40-11:10,EE241/EE273,LAB,A104/A101,M. CHERIFI/VAC
+L2,TRONC COMMUN,G01,Thursday,11:20-12:50,EE273,REC,C107,A. SOUKHAL
+L2,TRONC COMMUN,G01,Thursday,13:00-14:30,EE271,REC,B007,S. OUAGAGUI
+L2,TRONC COMMUN,G02,Saturday,08:00-09:30,EE241,LECT,AMPHI 1,L. SADOUKI
+L2,TRONC COMMUN,G02,Saturday,09:40-11:10,EE201,LECT,AMPHI 1,A. RECIOUI
+L2,TRONC COMMUN,G02,Saturday,14:40-16:10,EE221L,LAB,A205,D. HERBADJI
+L2,TRONC COMMUN,G02,Saturday,16:20-17:50,EE221L,LAB,A205,D. HERBADJI
+L2,TRONC COMMUN,G02,Sunday,09:40-11:10,EE201L,LAB,A201,N. SMAILI
+L2,TRONC COMMUN,G02,Sunday,11:20-12:50,EE201L,LAB,A201,N. SMAILI
+L2,TRONC COMMUN,G02,Sunday,13:00-14:30,EE275,LECT,AMPHI 1,A. BENDJABEUR
+L2,TRONC COMMUN,G02,Sunday,14:40-16:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
+L2,TRONC COMMUN,G02,Monday,08:00-09:30,EE221,LECT,AMPHI 2,W. TOUZOUT
+L2,TRONC COMMUN,G02,Monday,13:00-14:30,EE273,LECT,AMPHI 1,S. CHALA
+L2,TRONC COMMUN,G02,Tuesday,08:00-09:30,EE201,LECT,AMPHI 1,A. RECIOUI
+L2,TRONC COMMUN,G02,Tuesday,09:40-11:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
+L2,TRONC COMMUN,G02,Tuesday,13:00-14:30,EE241,REC,B001,C. FIALA
+L2,TRONC COMMUN,G02,Wednesday,08:00-09:30,EE221,LECT,AMPHI 4,W. TOUZOUT
+L2,TRONC COMMUN,G02,Wednesday,09:40-11:10,EE273,REC,B103,A. SOUKHAL
+L2,TRONC COMMUN,G02,Wednesday,13:00-14:30,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G02,Wednesday,14:40-16:10,EE275,REC,B103,A. TERCHI
+L2,TRONC COMMUN,G02,Thursday,08:00-09:30,EE241/EE273,LAB,A104/A101,M. CHERIFI/VAC
+L2,TRONC COMMUN,G02,Thursday,09:40-11:10,EE241/EE273,LAB,A104/A101,M. CHERIFI/VAC
+L2,TRONC COMMUN,G02,Thursday,11:20-12:50,EE201,REC,B103,S. CHALAH
+L2,TRONC COMMUN,G02,Thursday,13:00-14:30,EE271,REC,B007,S. OUAGAGUI
+L2,TRONC COMMUN,G03,Saturday,08:00-09:30,EE241,LECT,AMPHI 1,L. SADOUKI
+L2,TRONC COMMUN,G03,Saturday,09:40-11:10,EE201,LECT,AMPHI 1,A. RECIOUI
+L2,TRONC COMMUN,G03,Saturday,13:00-14:30,EE273,REC,B301,P. VAC
+L2,TRONC COMMUN,G03,Sunday,09:40-11:10,EE221L,LAB,A209,D. HERBADJI
+L2,TRONC COMMUN,G03,Sunday,11:20-12:50,EE221L,LAB,A209,D. HERBADJI
+L2,TRONC COMMUN,G03,Sunday,13:00-14:30,EE275,LECT,AMPHI 1,A. BENDJABEUR
+L2,TRONC COMMUN,G03,Sunday,14:40-16:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
+L2,TRONC COMMUN,G03,Monday,08:00-09:30,EE221,LECT,AMPHI 2,W. TOUZOUT
+L2,TRONC COMMUN,G03,Monday,09:40-11:10,EE275,REC,B303,A. BENDJABEUR
+L2,TRONC COMMUN,G03,Monday,13:00-14:30,EE273,LECT,AMPHI 1,S. CHALA
+L2,TRONC COMMUN,G03,Monday,14:40-16:10,EE271,REC,B005,N. SMAILI
+L2,TRONC COMMUN,G03,Tuesday,08:00-09:30,EE201,LECT,AMPHI 1,A. RECIOUI
+L2,TRONC COMMUN,G03,Tuesday,09:40-11:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
+L2,TRONC COMMUN,G03,Tuesday,13:00-14:30,EE241,REC,B303,A. VAC
+L2,TRONC COMMUN,G03,Wednesday,08:00-09:30,EE221,LECT,AMPHI 4,W. TOUZOUT
+L2,TRONC COMMUN,G03,Wednesday,09:40-11:10,EE201L,LAB,A201,E. VAC
+L2,TRONC COMMUN,G03,Wednesday,11:20-12:50,EE201L,LAB,A201,E. VAC
+L2,TRONC COMMUN,G03,Wednesday,13:00-14:30,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G03,Thursday,09:40-11:10,EE201,REC,B103,S. CHALAH
+L2,TRONC COMMUN,G03,Thursday,11:20-12:50,EE241/EE273,LAB,A104/A101,M. CHERIFI/VAC
+L2,TRONC COMMUN,G03,Thursday,13:00-14:30,EE241/EE273,LAB,A104/A101,M. CHERIFI/VAC
+L2,TRONC COMMUN,G04,Saturday,08:00-09:30,EE241,LECT,AMPHI 1,L. SADOUKI
+L2,TRONC COMMUN,G04,Saturday,09:40-11:10,EE201,LECT,AMPHI 1,A. RECIOUI
+L2,TRONC COMMUN,G04,Saturday,13:00-14:30,EE201,REC,B211,A. RECIOUI
+L2,TRONC COMMUN,G04,Saturday,14:40-16:10,EE273,REC,B301,P. VAC
+L2,TRONC COMMUN,G04,Sunday,08:00-09:30,EE221L,LAB,A205,D. VAC
+L2,TRONC COMMUN,G04,Sunday,09:40-11:10,EE221L,LAB,A205,D. VAC
+L2,TRONC COMMUN,G04,Sunday,13:00-14:30,EE275,LECT,AMPHI 1,A. BENDJABEUR
+L2,TRONC COMMUN,G04,Sunday,14:40-16:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
+L2,TRONC COMMUN,G04,Monday,08:00-09:30,EE221,LECT,AMPHI 2,W. TOUZOUT
+L2,TRONC COMMUN,G04,Monday,09:40-11:10,EE241,REC,B001,C. FIALA
+L2,TRONC COMMUN,G04,Monday,13:00-14:30,EE273,LECT,AMPHI 1,S. CHALA
+L2,TRONC COMMUN,G04,Monday,14:40-16:10,EE271,REC,B005,N. SMAILI
+L2,TRONC COMMUN,G04,Tuesday,08:00-09:30,EE201,LECT,AMPHI 1,A. RECIOUI
+L2,TRONC COMMUN,G04,Tuesday,09:40-11:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
+L2,TRONC COMMUN,G04,Wednesday,08:00-09:30,EE221,LECT,AMPHI 4,W. TOUZOUT
+L2,TRONC COMMUN,G04,Wednesday,09:40-11:10,EE201L,LAB,A201,E. VAC
+L2,TRONC COMMUN,G04,Wednesday,11:20-12:50,EE201L,LAB,A201,E. VAC
+L2,TRONC COMMUN,G04,Wednesday,13:00-14:30,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G04,Thursday,11:20-12:50,EE241/EE273,LAB,A104/A101,M. CHERIFI/VAC
+L2,TRONC COMMUN,G04,Thursday,13:00-14:30,EE241/EE273,LAB,A104/A101,M. CHERIFI/VAC
+L2,TRONC COMMUN,G04,Thursday,14:40-16:10,EE275,REC,C104,A. TERCHI
+L2,TRONC COMMUN,G05,Saturday,08:00-09:30,EE241,LECT,AMPHI 1,L. SADOUKI
+L2,TRONC COMMUN,G05,Saturday,09:40-11:10,EE201,LECT,AMPHI 1,A. RECIOUI
+L2,TRONC COMMUN,G05,Sunday,08:00-09:30,EE241/EE273,LAB,A301/A109,V. VAC 10
+L2,TRONC COMMUN,G05,Sunday,09:40-11:10,EE241/EE273,LAB,A301/A109,V. VAC 10
+L2,TRONC COMMUN,G05,Sunday,13:00-14:30,EE275,LECT,AMPHI 1,A. BENDJABEUR
+L2,TRONC COMMUN,G05,Sunday,14:40-16:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
+L2,TRONC COMMUN,G05,Monday,08:00-09:30,EE221,LECT,AMPHI 2,W. TOUZOUT
+L2,TRONC COMMUN,G05,Monday,09:40-11:10,EE221L,LAB,A205,VAC
+L2,TRONC COMMUN,G05,Monday,11:20-12:50,EE221L,LAB,A205,VAC
+L2,TRONC COMMUN,G05,Monday,13:00-14:30,EE273,LECT,AMPHI 1,S. CHALA
+L2,TRONC COMMUN,G05,Tuesday,08:00-09:30,EE201,LECT,AMPHI 1,A. RECIOUI
+L2,TRONC COMMUN,G05,Tuesday,09:40-11:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
+L2,TRONC COMMUN,G05,Tuesday,13:00-14:30,EE201,REC,B011,F. MOUHOUCHE
+L2,TRONC COMMUN,G05,Wednesday,08:00-09:30,EE221,LECT,AMPHI 4,W. TOUZOUT
+L2,TRONC COMMUN,G05,Wednesday,09:40-11:10,EE275,REC,B319,A. TERCHI
+L2,TRONC COMMUN,G05,Wednesday,13:00-14:30,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G05,Wednesday,14:40-16:10,EE273,REC,C117,P. VAC
+L2,TRONC COMMUN,G05,Thursday,08:00-09:30,EE241,REC,B305,M. DEHMAS
+L2,TRONC COMMUN,G05,Thursday,09:40-11:10,EE271,REC,B007,M. VAC
+L2,TRONC COMMUN,G05,Thursday,13:00-14:30,EE201L,LAB,A201,N. SMAILI
+L2,TRONC COMMUN,G05,Thursday,14:40-16:10,EE201L,LAB,A201,N. SMAILI
+L2,TRONC COMMUN,G06,Saturday,08:00-09:30,EE241,LECT,AMPHI 1,L. SADOUKI
+L2,TRONC COMMUN,G06,Saturday,09:40-11:10,EE201,LECT,AMPHI 1,A. RECIOUI
+L2,TRONC COMMUN,G06,Saturday,11:20-12:50,EE275,REC,B305,A. BENDJABEUR
+L2,TRONC COMMUN,G06,Sunday,08:00-09:30,EE241/EE273,LAB,A301/A109,V. VAC 10
+L2,TRONC COMMUN,G06,Sunday,09:40-11:10,EE241/EE273,LAB,A301/A109,V. VAC 10
+L2,TRONC COMMUN,G06,Sunday,13:00-14:30,EE275,LECT,AMPHI 1,A. BENDJABEUR
+L2,TRONC COMMUN,G06,Sunday,14:40-16:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
+L2,TRONC COMMUN,G06,Monday,08:00-09:30,EE221,LECT,AMPHI 2,W. TOUZOUT
+L2,TRONC COMMUN,G06,Monday,13:00-14:30,EE273,LECT,AMPHI 1,S. CHALA
+L2,TRONC COMMUN,G06,Tuesday,08:00-09:30,EE201,LECT,AMPHI 1,A. RECIOUI
+L2,TRONC COMMUN,G06,Tuesday,09:40-11:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
+L2,TRONC COMMUN,G06,Tuesday,13:00-14:30,EE273,REC,B305,P. VAC
+L2,TRONC COMMUN,G06,Tuesday,14:40-16:10,EE241,REC,B001,C. FIALA
+L2,TRONC COMMUN,G06,Wednesday,08:00-09:30,EE221,LECT,AMPHI 4,W. TOUZOUT
+L2,TRONC COMMUN,G06,Wednesday,09:40-11:10,EE201,REC,B211,S. CHALAH
+L2,TRONC COMMUN,G06,Wednesday,13:00-14:30,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G06,Wednesday,14:40-16:10,EE221L,LAB,A209,W. TOUZOUT
+L2,TRONC COMMUN,G06,Wednesday,16:20-17:50,EE221L,LAB,A209,W. TOUZOUT
+L2,TRONC COMMUN,G06,Thursday,09:40-11:10,EE271,REC,B007,M. VAC
+L2,TRONC COMMUN,G06,Thursday,13:00-14:30,EE201L,LAB,A201,N. SMAILI
+L2,TRONC COMMUN,G06,Thursday,14:40-16:10,EE201L,LAB,A201,N. SMAILI
+L2,TRONC COMMUN,G07,Saturday,08:00-09:30,EE241,LECT,AMPHI 1,L. SADOUKI
+L2,TRONC COMMUN,G07,Saturday,09:40-11:10,EE201,LECT,AMPHI 1,A. RECIOUI
+L2,TRONC COMMUN,G07,Saturday,13:00-14:30,EE221L,LAB,A209,D. VAC
+L2,TRONC COMMUN,G07,Saturday,14:40-16:10,EE221L,LAB,A209,D. VAC
+L2,TRONC COMMUN,G07,Sunday,08:00-09:30,EE201L,LAB,A208,E. VAC
+L2,TRONC COMMUN,G07,Sunday,09:40-11:10,EE201L,LAB,A208,E. VAC
+L2,TRONC COMMUN,G07,Sunday,13:00-14:30,EE275,LECT,AMPHI 1,A. BENDJABEUR
+L2,TRONC COMMUN,G07,Sunday,14:40-16:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
+L2,TRONC COMMUN,G07,Monday,08:00-09:30,EE221,LECT,AMPHI 2,W. TOUZOUT
+L2,TRONC COMMUN,G07,Monday,11:20-12:50,EE275,REC,B303,A. BENDJABEUR
+L2,TRONC COMMUN,G07,Monday,13:00-14:30,EE273,LECT,AMPHI 1,S. CHALA
+L2,TRONC COMMUN,G07,Tuesday,08:00-09:30,EE201,LECT,AMPHI 1,A. RECIOUI
+L2,TRONC COMMUN,G07,Tuesday,09:40-11:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
+L2,TRONC COMMUN,G07,Tuesday,11:20-12:50,EE241/EE273,LAB,A104/A101,M. CHERIFI/VAC
+L2,TRONC COMMUN,G07,Tuesday,13:00-14:30,EE241/EE273,LAB,A104/A101,M. CHERIFI/VAC
+L2,TRONC COMMUN,G07,Wednesday,08:00-09:30,EE221,LECT,AMPHI 4,W. TOUZOUT
+L2,TRONC COMMUN,G07,Wednesday,11:20-12:50,EE201,REC,B211,S. CHALAH
+L2,TRONC COMMUN,G07,Wednesday,13:00-14:30,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G07,Thursday,11:20-12:50,EE271,REC,B312,M. VAC
+L2,TRONC COMMUN,G07,Thursday,13:00-14:30,EE273,REC,C107,A. SOUKHAL
+L2,TRONC COMMUN,G07,Thursday,14:40-16:10,EE241,REC,B319,A. VAC
+L2,TRONC COMMUN,G08,Saturday,08:00-09:30,EE241,LECT,AMPHI 1,L. SADOUKI
+L2,TRONC COMMUN,G08,Saturday,09:40-11:10,EE201,LECT,AMPHI 1,A. RECIOUI
+L2,TRONC COMMUN,G08,Saturday,14:40-16:10,EE201,REC,B211,A. RECIOUI
+L2,TRONC COMMUN,G08,Sunday,08:00-09:30,EE201L,LAB,A208,E. VAC
+L2,TRONC COMMUN,G08,Sunday,09:40-11:10,EE201L,LAB,A208,E. VAC
+L2,TRONC COMMUN,G08,Sunday,13:00-14:30,EE275,LECT,AMPHI 1,A. BENDJABEUR
+L2,TRONC COMMUN,G08,Sunday,14:40-16:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
+L2,TRONC COMMUN,G08,Monday,08:00-09:30,EE221,LECT,AMPHI 2,W. TOUZOUT
+L2,TRONC COMMUN,G08,Monday,13:00-14:30,EE273,LECT,AMPHI 1,S. CHALA
+L2,TRONC COMMUN,G08,Monday,14:40-16:10,EE221L,LAB,A209,W. TOUZOUT
+L2,TRONC COMMUN,G08,Monday,16:20-17:50,EE221L,LAB,A209,W. TOUZOUT
+L2,TRONC COMMUN,G08,Tuesday,08:00-09:30,EE201,LECT,AMPHI 1,A. RECIOUI
+L2,TRONC COMMUN,G08,Tuesday,09:40-11:10,EE271,LECT,AMPHI 1,S. OUAGAGUI
+L2,TRONC COMMUN,G08,Tuesday,11:20-12:50,EE241/EE273,LAB,A104/A101,M. CHERIFI/VAC
+L2,TRONC COMMUN,G08,Tuesday,13:00-14:30,EE241/EE273,LAB,A104/A101,M. CHERIFI/VAC
+L2,TRONC COMMUN,G08,Wednesday,08:00-09:30,EE221,LECT,AMPHI 4,W. TOUZOUT
+L2,TRONC COMMUN,G08,Wednesday,09:40-11:10,EE273,REC,B101,P. VAC
+L2,TRONC COMMUN,G08,Wednesday,13:00-14:30,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G08,Wednesday,14:40-16:10,EE241,REC,B101,A. VAC
+L2,TRONC COMMUN,G08,Thursday,11:20-12:50,EE271,REC,B312,M. VAC
+L2,TRONC COMMUN,G08,Thursday,13:00-14:30,EE275,REC,C104,A. TERCHI
+L2,TRONC COMMUN,G09,Saturday,08:00-09:30,EE201,LECT,AMPHI 2,A. RECIOUI
+L2,TRONC COMMUN,G09,Saturday,09:40-11:10,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G09,Saturday,13:00-14:30,EE241/EE273,LAB,A301/A109,V. VAC 10
+L2,TRONC COMMUN,G09,Saturday,14:40-16:10,EE241/EE273,LAB,A301/A109,V. VAC 10
+L2,TRONC COMMUN,G09,Sunday,08:00-09:30,EE275,REC,B319,A. TERCHI
+L2,TRONC COMMUN,G09,Sunday,13:00-14:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
+L2,TRONC COMMUN,G09,Sunday,14:40-16:10,EE275,LECT,AMPHI 2,A. BENDJABEUR
+L2,TRONC COMMUN,G09,Monday,09:40-11:10,EE221,LECT,AMPHI 1,W. TOUZOUT
+L2,TRONC COMMUN,G09,Monday,11:20-12:50,EE201L,LAB,A201,N. SMAILI
+L2,TRONC COMMUN,G09,Monday,13:00-14:30,EE201L,LAB,A201,N. SMAILI
+L2,TRONC COMMUN,G09,Monday,14:40-16:10,EE273,LECT,AMPHI 2,S. CHALA
+L2,TRONC COMMUN,G09,Tuesday,08:00-09:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
+L2,TRONC COMMUN,G09,Tuesday,09:40-11:10,EE201,LECT,AMPHI 2,A. RECIOUI
+L2,TRONC COMMUN,G09,Tuesday,11:20-12:50,EE221L,LAB,A209,H. BOUYAHIAOUI
+L2,TRONC COMMUN,G09,Tuesday,13:00-14:30,EE221L,LAB,A209,H. BOUYAHIAOUI
+L2,TRONC COMMUN,G09,Wednesday,09:40-11:10,EE221,LECT,AMPHI 3,W. TOUZOUT
+L2,TRONC COMMUN,G09,Wednesday,13:00-14:30,EE273,REC,C117,P. VAC
+L2,TRONC COMMUN,G09,Wednesday,14:40-16:10,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G09,Thursday,09:40-11:10,EE241,REC,B305,M. DEHMAS
+L2,TRONC COMMUN,G09,Thursday,13:00-14:30,EE201,REC,B103,S. CHALAH
+L2,TRONC COMMUN,G09,Thursday,14:40-16:10,EE271,REC,B312,M. VAC
+L2,TRONC COMMUN,G10,Saturday,08:00-09:30,EE201,LECT,AMPHI 2,A. RECIOUI
+L2,TRONC COMMUN,G10,Saturday,09:40-11:10,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G10,Saturday,13:00-14:30,EE241/EE273,LAB,A301/A109,V. VAC 10
+L2,TRONC COMMUN,G10,Saturday,14:40-16:10,EE241/EE273,LAB,A301/A109,V. VAC 10
+L2,TRONC COMMUN,G10,Sunday,08:00-09:30,EE201,REC,B305,E. VAC
+L2,TRONC COMMUN,G10,Sunday,13:00-14:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
+L2,TRONC COMMUN,G10,Sunday,14:40-16:10,EE275,LECT,AMPHI 2,A. BENDJABEUR
+L2,TRONC COMMUN,G10,Monday,09:40-11:10,EE221,LECT,AMPHI 1,W. TOUZOUT
+L2,TRONC COMMUN,G10,Monday,11:20-12:50,EE201L,LAB,A201,N. SMAILI
+L2,TRONC COMMUN,G10,Monday,13:00-14:30,EE201L,LAB,A201,N. SMAILI
+L2,TRONC COMMUN,G10,Monday,14:40-16:10,EE273,LECT,AMPHI 2,S. CHALA
+L2,TRONC COMMUN,G10,Tuesday,08:00-09:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
+L2,TRONC COMMUN,G10,Tuesday,09:40-11:10,EE201,LECT,AMPHI 2,A. RECIOUI
+L2,TRONC COMMUN,G10,Tuesday,11:20-12:50,EE273,REC,B305,P. VAC
+L2,TRONC COMMUN,G10,Wednesday,09:40-11:10,EE221,LECT,AMPHI 3,W. TOUZOUT
+L2,TRONC COMMUN,G10,Wednesday,11:20-12:50,EE221L,LAB,A209,A. MAACHE
+L2,TRONC COMMUN,G10,Wednesday,13:00-14:30,EE221L,LAB,A209,A. MAACHE
+L2,TRONC COMMUN,G10,Wednesday,14:40-16:10,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G10,Thursday,11:20-12:50,EE275,REC,C104,A. TERCHI
+L2,TRONC COMMUN,G10,Thursday,13:00-14:30,EE241,REC,B305,M. DEHMAS
+L2,TRONC COMMUN,G10,Thursday,14:40-16:10,EE271,REC,B312,M. VAC
+L2,TRONC COMMUN,G11,Saturday,08:00-09:30,EE201,LECT,AMPHI 2,A. RECIOUI
+L2,TRONC COMMUN,G11,Saturday,09:40-11:10,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G11,Saturday,11:20-12:50,EE273,REC,B301,P. VAC
+L2,TRONC COMMUN,G11,Sunday,08:00-09:30,EE241,REC,B001,C. FIALA
+L2,TRONC COMMUN,G11,Sunday,09:40-11:10,EE201,REC,B305,E. VAC
+L2,TRONC COMMUN,G11,Sunday,13:00-14:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
+L2,TRONC COMMUN,G11,Sunday,14:40-16:10,EE275,LECT,AMPHI 2,A. BENDJABEUR
+L2,TRONC COMMUN,G11,Monday,09:40-11:10,EE221,LECT,AMPHI 1,W. TOUZOUT
+L2,TRONC COMMUN,G11,Monday,11:20-12:50,EE221L,LAB,A209,D. VAC
+L2,TRONC COMMUN,G11,Monday,13:00-14:30,EE221L,LAB,A209,D. VAC
+L2,TRONC COMMUN,G11,Monday,14:40-16:10,EE273,LECT,AMPHI 2,S. CHALA
+L2,TRONC COMMUN,G11,Tuesday,08:00-09:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
+L2,TRONC COMMUN,G11,Tuesday,09:40-11:10,EE201,LECT,AMPHI 2,A. RECIOUI
+L2,TRONC COMMUN,G11,Tuesday,13:00-14:30,EE201L,LAB,A201,E. VAC
+L2,TRONC COMMUN,G11,Tuesday,14:40-16:10,EE201L,LAB,A201,E. VAC
+L2,TRONC COMMUN,G11,Wednesday,08:00-09:30,EE271,REC,B007,M. BENZAOUI
+L2,TRONC COMMUN,G11,Wednesday,09:40-11:10,EE221,LECT,AMPHI 3,W. TOUZOUT
+L2,TRONC COMMUN,G11,Wednesday,13:00-14:30,EE275,REC,B103,A. TERCHI
+L2,TRONC COMMUN,G11,Wednesday,14:40-16:10,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G11,Thursday,13:00-14:30,EE241/EE273,LAB,A301/A109,V. VAC 10
+L2,TRONC COMMUN,G11,Thursday,14:40-16:10,EE241/EE273,LAB,A301/A109,V. VAC 10
+L2,TRONC COMMUN,G12,Saturday,08:00-09:30,EE201,LECT,AMPHI 2,A. RECIOUI
+L2,TRONC COMMUN,G12,Saturday,09:40-11:10,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G12,Saturday,13:00-14:30,EE275,REC,B305,A. BENDJABEUR
+L2,TRONC COMMUN,G12,Sunday,08:00-09:30,EE273,REC,B303,A. SOUKHAL
+L2,TRONC COMMUN,G12,Sunday,09:40-11:10,EE241,REC,B001,C. FIALA
+L2,TRONC COMMUN,G12,Sunday,13:00-14:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
+L2,TRONC COMMUN,G12,Sunday,14:40-16:10,EE275,LECT,AMPHI 2,A. BENDJABEUR
+L2,TRONC COMMUN,G12,Monday,08:00-09:30,EE201,REC,B313,F. MOUHOUCHE
+L2,TRONC COMMUN,G12,Monday,09:40-11:10,EE221,LECT,AMPHI 1,W. TOUZOUT
+L2,TRONC COMMUN,G12,Monday,14:40-16:10,EE273,LECT,AMPHI 2,S. CHALA
+L2,TRONC COMMUN,G12,Tuesday,08:00-09:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
+L2,TRONC COMMUN,G12,Tuesday,09:40-11:10,EE201,LECT,AMPHI 2,A. RECIOUI
+L2,TRONC COMMUN,G12,Tuesday,13:00-14:30,EE201L,LAB,A201,E. VAC
+L2,TRONC COMMUN,G12,Tuesday,14:40-16:10,EE201L,LAB,A201,E. VAC
+L2,TRONC COMMUN,G12,Wednesday,08:00-09:30,EE271,REC,B007,M. BENZAOUI
+L2,TRONC COMMUN,G12,Wednesday,09:40-11:10,EE221,LECT,AMPHI 3,W. TOUZOUT
+L2,TRONC COMMUN,G12,Wednesday,14:40-16:10,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G12,Thursday,08:00-09:30,EE221L,LAB,A209,Y. AZZOUGUI
+L2,TRONC COMMUN,G12,Thursday,09:40-11:10,EE221L,LAB,A209,Y. AZZOUGUI
+L2,TRONC COMMUN,G12,Thursday,13:00-14:30,EE241/EE273,LAB,A301/A109,V. VAC 10
+L2,TRONC COMMUN,G12,Thursday,14:40-16:10,EE241/EE273,LAB,A301/A109,V. VAC 10
+L2,TRONC COMMUN,G13,Saturday,08:00-09:30,EE201,LECT,AMPHI 2,A. RECIOUI
+L2,TRONC COMMUN,G13,Saturday,09:40-11:10,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G13,Saturday,13:00-14:30,EE201L,LAB,A201,H. MECHRI
+L2,TRONC COMMUN,G13,Saturday,14:40-16:10,EE201L,LAB,A201,H. MECHRI
+L2,TRONC COMMUN,G13,Sunday,08:00-09:30,EE275,REC,B301,A. BENDJABEUR
+L2,TRONC COMMUN,G13,Sunday,09:40-11:10,EE273,REC,B303,A. SOUKHAL
+L2,TRONC COMMUN,G13,Sunday,13:00-14:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
+L2,TRONC COMMUN,G13,Sunday,14:40-16:10,EE275,LECT,AMPHI 2,A. BENDJABEUR
+L2,TRONC COMMUN,G13,Monday,09:40-11:10,EE221,LECT,AMPHI 1,W. TOUZOUT
+L2,TRONC COMMUN,G13,Monday,13:00-14:30,EE201,REC,B319,F. MOUHOUCHE
+L2,TRONC COMMUN,G13,Monday,14:40-16:10,EE273,LECT,AMPHI 2,S. CHALA
+L2,TRONC COMMUN,G13,Tuesday,08:00-09:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
+L2,TRONC COMMUN,G13,Tuesday,09:40-11:10,EE201,LECT,AMPHI 2,A. RECIOUI
+L2,TRONC COMMUN,G13,Tuesday,13:00-14:30,EE271,REC,A407,M. VAC
+L2,TRONC COMMUN,G13,Wednesday,09:40-11:10,EE221,LECT,AMPHI 3,W. TOUZOUT
+L2,TRONC COMMUN,G13,Wednesday,13:00-14:30,EE241,REC,B101,A. VAC
+L2,TRONC COMMUN,G13,Wednesday,14:40-16:10,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G13,Thursday,08:00-09:30,EE241/EE273,LAB,A301/A109,V. VAC 10
+L2,TRONC COMMUN,G13,Thursday,09:40-11:10,EE241/EE273,LAB,A301/A109,V. VAC 10
+L2,TRONC COMMUN,G13,Thursday,13:00-14:30,EE221L,LAB,A205,A. ZITOUNI
+L2,TRONC COMMUN,G13,Thursday,14:40-16:10,EE221L,LAB,A205,A. ZITOUNI
+L2,TRONC COMMUN,G14,Saturday,08:00-09:30,EE201,LECT,AMPHI 2,A. RECIOUI
+L2,TRONC COMMUN,G14,Saturday,09:40-11:10,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G14,Saturday,13:00-14:30,EE201L,LAB,A201,H. MECHRI
+L2,TRONC COMMUN,G14,Saturday,14:40-16:10,EE201L,LAB,A201,H. MECHRI
+L2,TRONC COMMUN,G14,Sunday,09:40-11:10,EE275,REC,B301,A. BENDJABEUR
+L2,TRONC COMMUN,G14,Sunday,13:00-14:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
+L2,TRONC COMMUN,G14,Sunday,14:40-16:10,EE275,LECT,AMPHI 2,A. BENDJABEUR
+L2,TRONC COMMUN,G14,Monday,08:00-09:30,EE241,REC,B001,C. FIALA
+L2,TRONC COMMUN,G14,Monday,09:40-11:10,EE221,LECT,AMPHI 1,W. TOUZOUT
+L2,TRONC COMMUN,G14,Monday,14:40-16:10,EE273,LECT,AMPHI 2,S. CHALA
+L2,TRONC COMMUN,G14,Tuesday,08:00-09:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
+L2,TRONC COMMUN,G14,Tuesday,09:40-11:10,EE201,LECT,AMPHI 2,A. RECIOUI
+L2,TRONC COMMUN,G14,Tuesday,13:00-14:30,EE271,REC,A407,M. VAC
+L2,TRONC COMMUN,G14,Tuesday,14:40-16:10,EE273,REC,B305,P. VAC
+L2,TRONC COMMUN,G14,Wednesday,09:40-11:10,EE221,LECT,AMPHI 3,W. TOUZOUT
+L2,TRONC COMMUN,G14,Wednesday,13:00-14:30,EE201,REC,B211,S. CHALAH
+L2,TRONC COMMUN,G14,Wednesday,14:40-16:10,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G14,Thursday,08:00-09:30,EE241/EE273,LAB,A301/A109,V. VAC 10
+L2,TRONC COMMUN,G14,Thursday,09:40-11:10,EE241/EE273,LAB,A301/A109,V. VAC 10
+L2,TRONC COMMUN,G14,Thursday,13:00-14:30,EE221L,LAB,A209,Y. AZZOUGUI
+L2,TRONC COMMUN,G14,Thursday,14:40-16:10,EE221L,LAB,A209,Y. AZZOUGUI
+L2,TRONC COMMUN,G15,Saturday,08:00-09:30,EE201,LECT,AMPHI 2,A. RECIOUI
+L2,TRONC COMMUN,G15,Saturday,09:40-11:10,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G15,Saturday,14:40-16:10,EE241,REC,B205,L. SADOUKI
+L2,TRONC COMMUN,G15,Sunday,08:00-09:30,EE201,REC,B011,F. MOUHOUCHE
+L2,TRONC COMMUN,G15,Sunday,13:00-14:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
+L2,TRONC COMMUN,G15,Sunday,14:40-16:10,EE275,LECT,AMPHI 2,A. BENDJABEUR
+L2,TRONC COMMUN,G15,Monday,09:40-11:10,EE221,LECT,AMPHI 1,W. TOUZOUT
+L2,TRONC COMMUN,G15,Monday,11:20-12:50,EE241/EE273,LAB,A104/A101,M. CHERIFI/VAC
+L2,TRONC COMMUN,G15,Monday,13:00-14:30,EE241/EE273,LAB,A104/A101,M. CHERIFI/VAC
+L2,TRONC COMMUN,G15,Monday,14:40-16:10,EE273,LECT,AMPHI 2,S. CHALA
+L2,TRONC COMMUN,G15,Tuesday,08:00-09:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
+L2,TRONC COMMUN,G15,Tuesday,09:40-11:10,EE201,LECT,AMPHI 2,A. RECIOUI
+L2,TRONC COMMUN,G15,Tuesday,13:00-14:30,EE275,REC,B319,A. TERCHI
+L2,TRONC COMMUN,G15,Tuesday,14:40-16:10,EE221L,LAB,A205,D. VAC
+L2,TRONC COMMUN,G15,Tuesday,16:20-17:50,EE221L,LAB,A205,D. VAC
+L2,TRONC COMMUN,G15,Wednesday,08:00-09:30,EE273,REC,B103,A. SOUKHAL
+L2,TRONC COMMUN,G15,Wednesday,09:40-11:10,EE221,LECT,AMPHI 3,W. TOUZOUT
+L2,TRONC COMMUN,G15,Wednesday,14:40-16:10,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G15,Thursday,08:00-09:30,EE201L,LAB,A201,N. SMAILI
+L2,TRONC COMMUN,G15,Thursday,09:40-11:10,EE201L,LAB,A201,N. SMAILI
+L2,TRONC COMMUN,G15,Thursday,11:20-12:50,EE271,REC,B007,S. OUAGAGUI
+L2,TRONC COMMUN,G16,Saturday,08:00-09:30,EE201,LECT,AMPHI 2,A. RECIOUI
+L2,TRONC COMMUN,G16,Saturday,09:40-11:10,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G16,Saturday,13:00-14:30,EE241,REC,B205,L. SADOUKI
+L2,TRONC COMMUN,G16,Sunday,09:40-11:10,EE275,REC,B319,A. TERCHI
+L2,TRONC COMMUN,G16,Sunday,13:00-14:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
+L2,TRONC COMMUN,G16,Sunday,14:40-16:10,EE275,LECT,AMPHI 2,A. BENDJABEUR
+L2,TRONC COMMUN,G16,Monday,09:40-11:10,EE221,LECT,AMPHI 1,W. TOUZOUT
+L2,TRONC COMMUN,G16,Monday,11:20-12:50,EE241/EE273,LAB,A104/A101,M. CHERIFI/VAC
+L2,TRONC COMMUN,G16,Monday,13:00-14:30,EE241/EE273,LAB,A104/A101,M. CHERIFI/VAC
+L2,TRONC COMMUN,G16,Monday,14:40-16:10,EE273,LECT,AMPHI 2,S. CHALA
+L2,TRONC COMMUN,G16,Tuesday,08:00-09:30,EE271,LECT,AMPHI 2,S. OUAGAGUI
+L2,TRONC COMMUN,G16,Tuesday,09:40-11:10,EE201,LECT,AMPHI 2,A. RECIOUI
+L2,TRONC COMMUN,G16,Tuesday,11:20-12:50,EE201,REC,B011,F. MOUHOUCHE
+L2,TRONC COMMUN,G16,Tuesday,14:40-16:10,EE221L,LAB,A209,H. BOUYAHIAOUI
+L2,TRONC COMMUN,G16,Tuesday,16:20-17:50,EE221L,LAB,A209,H. BOUYAHIAOUI
+L2,TRONC COMMUN,G16,Wednesday,08:00-09:30,EE273,REC,B101,P. VAC
+L2,TRONC COMMUN,G16,Wednesday,09:40-11:10,EE221,LECT,AMPHI 3,W. TOUZOUT
+L2,TRONC COMMUN,G16,Wednesday,14:40-16:10,EE241,LECT,AMPHI 2,L. SADOUKI
+L2,TRONC COMMUN,G16,Thursday,08:00-09:30,EE201L,LAB,A201,N. SMAILI
+L2,TRONC COMMUN,G16,Thursday,09:40-11:10,EE201L,LAB,A201,N. SMAILI
+L2,TRONC COMMUN,G16,Thursday,11:20-12:50,EE271,REC,B007,S. OUAGAGUI
 </script>
 
-<!-- ============================================================= -->
-<!-- ============ DONNÉES CSV — NIVEAU L3 ======================== -->
-<!-- ============================================================= -->
+<!-- ============ L3 ============ -->
 <script type="text/plain" id="csv-L3">
-Niveau,Groupe,Jour,Créneau,Matière,Type,Salle,Enseignant
-L3,G01,Samedi,08:00-09:30,EE321,LECT,AMPHI 3,A. KHOUAS
-L3,G01,Samedi,09:40-11:10,EE351,LECT,AMPHI 3,A. DAAMOUCHE
-L3,G01,Samedi,13:00-14:30,EE353,LECT,AMPHI 3,M. AKROUM
-L3,G01,Samedi,14:40-16:10,EE331,REC,C117,O. MERABET
-L3,G01,Dimanche,08:00-09:30,EE361,LECT,AMPHI 3,F. GUICHI
-L3,G01,Dimanche,09:40-11:10,EE351,REC,B003,O. HACHOUR
-L3,G01,Dimanche,13:00-14:30,EE331,LECT,AMPHI 3,N. SABEUR
-L3,G01,Dimanche,14:40-16:10,EE353,LECT,AMPHI 3,M. AKROUM
-L3,G01,Lundi,08:00-09:30,EE351,LECT,AMPHI 3,A. DAAMOUCHE
-L3,G01,Lundi,09:40-11:10,EE321,LECT,AMPHI 3,A. KHOUAS
-L3,G01,Mardi,08:00-09:30,EE341,LECT,AMPHI 3,F. GUICHI
-L3,G01,Mardi,09:40-11:10,EE331L,LAB,A003,S. BOUTORA
-L3,G01,Mardi,13:00-14:30,EE361,LECT,AMPHI 1,F. GUICHI
-L3,G01,Mardi,14:40-16:10,EE331,LECT,AMPHI 1,N. SABEUR
-L3,G01,Mercredi,09:40-11:10,EE361,REC,LS-B009,K. DJAFRI
-L3,G01,Jeudi,08:00-09:30,EE353L,LAB,A404,P. VAC
-L3,G02,Samedi,08:00-09:30,EE321,LECT,AMPHI 3,A. KHOUAS
-L3,G02,Samedi,09:40-11:10,EE351,LECT,AMPHI 3,A. DAAMOUCHE
-L3,G02,Samedi,11:20-12:50,EE351,REC,B319,N. DERRAGUI
-L3,G02,Samedi,13:00-14:30,EE353,LECT,AMPHI 3,M. AKROUM
-L3,G02,Samedi,14:40-16:10,EE353,LECT,AMPHI 3,M. AKROUM
-L3,G02,Dimanche,08:00-09:30,EE361,LECT,AMPHI 3,F. GUICHI
-L3,G02,Dimanche,09:40-11:10,EE321,LECT,AMPHI 3,A. KHOUAS
-L3,G02,Dimanche,11:20-12:50,EE331,REC,B301,N. SABEUR
-L3,G02,Dimanche,13:00-14:30,EE331,LECT,AMPHI 3,N. SABEUR
-L3,G02,Lundi,08:00-09:30,EE351,LECT,AMPHI 3,A. DAAMOUCHE
-L3,G02,Lundi,09:40-11:10,EE353L,LAB,A411,M. BENZAOUI
-L3,G02,Mardi,08:00-09:30,EE341,LECT,AMPHI 3,F. GUICHI
-L3,G02,Mardi,09:40-11:10,EE331L,LAB,A003,S. BOUTORA
-L3,G02,Mardi,13:00-14:30,EE361,LECT,AMPHI 1,F. GUICHI
-L3,G02,Mardi,14:40-16:10,EE331,LECT,AMPHI 1,N. SABEUR
-L3,G02,Jeudi,08:00-09:30,EE361,REC,B319,F. GUICHI
-L3,G03,Dimanche,08:00-09:30,EE321,LECT,AMPHI 3,A. KHOUAS
-L3,G03,Dimanche,09:40-11:10,EE351,LECT,AMPHI 3,A. DAAMOUCHE
-L3,G03,Dimanche,13:00-14:30,EE353,LECT,AMPHI 3,M. AKROUM
-L3,G03,Lundi,08:00-09:30,EE361,LECT,AMPHI 3,F. GUICHI
-L3,G03,Lundi,09:40-11:10,EE361,REC,B301,M. CHALLAL
-L3,G03,Lundi,11:20-12:50,EE351,REC,B003,O. HACHOUR
-L3,G03,Lundi,13:00-14:30,EE331,LECT,AMPHI 3,N. SABEUR
-L3,G03,Mardi,08:00-09:30,EE351,LECT,AMPHI 3,A. DAAMOUCHE
-L3,G03,Mardi,09:40-11:10,EE321,LECT,AMPHI 3,A. KHOUAS
-L3,G03,Mardi,14:40-16:10,EE353,LECT,AMPHI 3,M. AKROUM
-L3,G03,Mercredi,08:00-09:30,EE341,LECT,AMPHI 3,F. GUICHI
-L3,G03,Mercredi,11:20-12:50,EE331L,LAB,A003,S. BOUTORA
-L3,G03,Mercredi,13:00-14:30,EE361,LECT,AMPHI 1,F. GUICHI
-L3,G03,Mercredi,14:40-16:10,EE331,LECT,AMPHI 1,N. SABEUR
-L3,G03,Jeudi,08:00-09:30,EE331,REC,C104,O. MERABET
-L3,G03,Jeudi,09:40-11:10,EE353L,LAB,A404,P. VAC
-L3,G04,Dimanche,08:00-09:30,EE321,LECT,AMPHI 3,A. KHOUAS
-L3,G04,Dimanche,09:40-11:10,EE351,LECT,AMPHI 3,A. DAAMOUCHE
-L3,G04,Dimanche,13:00-14:30,EE353,LECT,AMPHI 3,M. AKROUM
-L3,G04,Dimanche,14:40-16:10,EE353L,LAB,A401,P. VAC
-L3,G04,Lundi,08:00-09:30,EE361,LECT,AMPHI 3,F. GUICHI
-L3,G04,Lundi,09:40-11:10,EE351,REC,B319,N. DERRAGUI
-L3,G04,Lundi,13:00-14:30,EE331,LECT,AMPHI 3,N. SABEUR
-L3,G04,Mardi,08:00-09:30,EE351,LECT,AMPHI 3,A. DAAMOUCHE
-L3,G04,Mardi,09:40-11:10,EE321,LECT,AMPHI 3,A. KHOUAS
-L3,G04,Mardi,11:20-12:50,EE331L,LAB,A003,S. BOUTORA
-L3,G04,Mardi,14:40-16:10,EE353,LECT,AMPHI 3,M. AKROUM
-L3,G04,Mercredi,08:00-09:30,EE341,LECT,AMPHI 3,F. GUICHI
-L3,G04,Mercredi,13:00-14:30,EE361,LECT,AMPHI 1,F. GUICHI
-L3,G04,Mercredi,14:40-16:10,EE331,LECT,AMPHI 1,N. SABEUR
-L3,G04,Jeudi,09:40-11:10,EE361,REC,B319,F. GUICHI
-L3,G04,Jeudi,13:00-14:30,EE331,REC,B211,O. MERABET
-L3,G05,Samedi,08:00-09:30,EE321,LECT,AMPHI 3,A. KHOUAS
-L3,G05,Samedi,09:40-11:10,EE351,LECT,AMPHI 3,A. DAAMOUCHE
-L3,G05,Samedi,13:00-14:30,EE353,LECT,AMPHI 3,M. AKROUM
-L3,G05,Samedi,14:40-16:10,EE353,LECT,AMPHI 3,M. AKROUM
-L3,G05,Dimanche,08:00-09:30,EE361,LECT,AMPHI 3,F. GUICHI
-L3,G05,Dimanche,09:40-11:10,EE353,LAB,A404,M. BENZAOUI
-L3,G05,Dimanche,13:00-14:30,EE331,LECT,AMPHI 3,N. SABEUR
-L3,G05,Lundi,08:00-09:30,EE351,LECT,AMPHI 3,A. DAAMOUCHE
-L3,G05,Lundi,09:40-11:10,EE321,LECT,AMPHI 3,A. KHOUAS
-L3,G05,Mardi,08:00-09:30,EE341,LECT,AMPHI 3,F. GUICHI
-L3,G05,Mardi,13:00-14:30,EE331,LAB,A003,S. BOUTORA
-L3,G05,Mardi,14:40-16:10,EE331,LECT,AMPHI 1,N. SABEUR
-L3,G05,Mercredi,13:00-14:30,EE361,LECT,AMPHI 1,F. GUICHI
-L3,G05,Jeudi,09:40-11:10,EE361,REC,B311,VAC
-L3,G05,Jeudi,11:20-12:50,EE351,REC,C117,N. DERRAGUI
-L3,G06,Samedi,08:00-09:30,EE321,LECT,AMPHI 3,A. KHOUAS
-L3,G06,Samedi,09:40-11:10,EE351,LECT,AMPHI 3,A. DAAMOUCHE
-L3,G06,Samedi,11:20-12:50,EE351,REC,C117,N. DERRAGUI
-L3,G06,Samedi,13:00-14:30,EE353,LECT,AMPHI 3,M. AKROUM
-L3,G06,Samedi,14:40-16:10,EE353,LAB,A305,M. BENZAOUI
-L3,G06,Dimanche,08:00-09:30,EE361,LECT,AMPHI 3,F. GUICHI
-L3,G06,Dimanche,09:40-11:10,EE331,LAB,A003,F. DEKHANDJI
-L3,G06,Dimanche,13:00-14:30,EE331,LECT,AMPHI 3,N. SABEUR
-L3,G06,Dimanche,14:40-16:10,EE353,LECT,AMPHI 3,M. AKROUM
-L3,G06,Lundi,08:00-09:30,EE351,LECT,AMPHI 3,A. DAAMOUCHE
-L3,G06,Lundi,09:40-11:10,EE321,LECT,AMPHI 3,A. KHOUAS
-L3,G06,Mardi,08:00-09:30,EE341,LECT,AMPHI 3,F. GUICHI
-L3,G06,Mardi,13:00-14:30,EE331,REC,B301,N. SABEUR
-L3,G06,Mardi,14:40-16:10,EE331,LECT,AMPHI 1,N. SABEUR
-L3,G06,Mercredi,13:00-14:30,EE361,LECT,AMPHI 1,F. GUICHI
-L3,G06,Jeudi,09:40-11:10,EE361,REC,B303,M. CHALLAL
-L3,G07,Samedi,08:00-09:30,EE351,LECT,AMPHI 4,A. DAAMOUCHE
-L3,G07,Samedi,09:40-11:10,EE321,LECT,AMPHI 4,A. KHOUS
-L3,G07,Samedi,13:00-14:30,EE351,REC,B003,O. HACHOUR
-L3,G07,Samedi,14:40-16:10,EE353,LECT,AMPHI 4,M. AKROUM
-L3,G07,Dimanche,08:00-09:30,EE353,LAB,A404,M. BENZAOUI
-L3,G07,Dimanche,09:40-11:10,EE361,LECT,AMPHI 4,F. GUICHI
-L3,G07,Dimanche,13:00-14:30,EE353,LECT,AMPHI 4,M. AKROUM
-L3,G07,Lundi,08:00-09:30,EE321,LECT,AMPHI 4,A. KHOUS
-L3,G07,Lundi,09:40-11:10,EE351,LECT,AMPHI 4,A. DAAMOUCHE
-L3,G07,Lundi,11:20-12:50,EE331,LAB,A003,S. BOUTORA
-L3,G07,Lundi,13:00-14:30,EE331,LECT,AMPHI 4,N. SABEUR
-L3,G07,Mardi,08:00-09:30,EE341,LECT,AMPHI 4,F. GUICHI
-L3,G07,Mardi,14:40-16:10,EE361,REC,B311,K. DJAFRI
-L3,G07,Mercredi,13:00-14:30,EE331,REC,C105,S. KHETABE
-L3,G07,Mercredi,14:40-16:10,EE361,LECT,AMPHI 4,F. GUICHI
-L3,G07,Jeudi,14:40-16:10,EE331,LECT,AMPHI 4,N. SABEUR
-L3,G08,Samedi,08:00-09:30,EE351,LECT,AMPHI 4,A. DAAMOUCHE
-L3,G08,Samedi,09:40-11:10,EE321,LECT,AMPHI 4,A. KHOUAS
-L3,G08,Samedi,11:20-12:50,EE331,REC,C105,S. KHETABE
-L3,G08,Dimanche,08:00-09:30,EE361,REC,B301,M. CHALLAL
-L3,G08,Dimanche,09:40-11:10,EE361,LECT,AMPHI 4,F. GUICHI
-L3,G08,Dimanche,13:00-14:30,EE331,LAB,A003,S. BOUTORA
-L3,G08,Dimanche,14:40-16:10,EE353,LECT,AMPHI 4,M. AKROUM
-L3,G08,Lundi,08:00-09:30,EE321,LECT,AMPHI 4,A. KHOUAS
-L3,G08,Lundi,09:40-11:10,EE351,LECT,AMPHI 4,A. DAAMOUCHE
-L3,G08,Lundi,13:00-14:30,EE331,LECT,AMPHI 4,N. SABEUR
-L3,G08,Mardi,08:00-09:30,EE341,LECT,AMPHI 4,F. GUICHI
-L3,G08,Mardi,09:40-11:10,EE351,REC,B001,O. HACHOUR
-L3,G08,Mercredi,14:40-16:10,EE361,LECT,AMPHI 4,F. GUICHI
-L3,G08,Jeudi,13:00-14:30,EE353,LAB,A405,P. VAC
-L3,G08,Jeudi,14:40-16:10,EE331,LECT,AMPHI 4,N. SABEUR
-L3,G09,Samedi,08:00-09:30,EE351,LECT,AMPHI 4,A. DAAMOUCHE
-L3,G09,Samedi,09:40-11:10,EE321,LECT,AMPHI 4,A. KHOUAS
-L3,G09,Samedi,11:20-12:50,EE353L,LAB,A408,P. VAC
-L3,G09,Dimanche,08:00-09:30,EE321,LECT,AMPHI 4,A. KHOUAS
-L3,G09,Dimanche,09:40-11:10,EE361,LECT,AMPHI 4,F. GUICHI
-L3,G09,Dimanche,13:00-14:30,EE353,LECT,AMPHI 4,M. AKROUM
-L3,G09,Dimanche,14:40-16:10,EE353,LECT,AMPHI 4,M. AKROUM
-L3,G09,Lundi,08:00-09:30,EE331L,LAB,A003,F. DEKHANDJI
-L3,G09,Lundi,09:40-11:10,EE351,LECT,AMPHI 4,A. DAAMOUCHE
-L3,G09,Lundi,11:20-12:50,EE351,REC,B001,O. HACHOUR
-L3,G09,Lundi,13:00-14:30,EE331,LECT,AMPHI 4,N. SABEUR
-L3,G09,Mardi,08:00-09:30,EE341,LECT,AMPHI 4,F. GUICHI
-L3,G09,Mardi,13:00-14:30,EE361,REC,B205,K. DJAFRI
-L3,G09,Mardi,14:40-16:10,EE331,REC,B301,N. SABEUR
-L3,G09,Mercredi,14:40-16:10,EE361,LECT,AMPHI 4,F. GUICHI
-L3,G10,Samedi,08:00-09:30,EE351,LECT,AMPHI 4,A. DAAMOUCHE
-L3,G10,Samedi,09:40-11:10,EE321,LECT,AMPHI 4,A. KHOUAS
-L3,G10,Samedi,11:20-12:50,EE351,REC,B301,O. HACHOUR
-L3,G10,Dimanche,08:00-09:30,EE321,LECT,AMPHI 4,A. KHOUAS
-L3,G10,Dimanche,09:40-11:10,EE361,LECT,AMPHI 4,F. GUICHI
-L3,G10,Dimanche,13:00-14:30,EE353,LAB,A408,P. VAC
-L3,G10,Dimanche,14:40-16:10,EE353,LECT,AMPHI 4,M. AKROUM
-L3,G10,Lundi,09:40-11:10,EE351,LECT,AMPHI 4,A. DAAMOUCHE
-L3,G10,Lundi,13:00-14:30,EE353,LECT,AMPHI 4,M. AKROUM
-L3,G10,Lundi,14:40-16:10,EE331,LECT,AMPHI 4,N. SABEUR
-L3,G10,Mardi,08:00-09:30,EE341,LECT,AMPHI 4,F. GUICHI
-L3,G10,Mardi,09:40-11:10,EE361,REC,B319,F. GUICHI
-L3,G10,Mardi,13:00-14:30,EE331,LAB,A003,S. BOUTORA
-L3,G10,Mercredi,13:00-14:30,EE361,LECT,AMPHI 4,F. GUICHI
-L3,G10,Mercredi,14:40-16:10,EE331,REC,C105,S. KHETABE
-L3,G11,Samedi,08:00-09:30,EE351,LECT,AMPHI 4,A. DAAMOUCHE
-L3,G11,Samedi,09:40-11:10,EE321,LECT,AMPHI 4,A. KHOUAS
-L3,G11,Samedi,13:00-14:30,EE353L,LAB,A401,P. VAC
-L3,G11,Samedi,14:40-16:10,EE353,LECT,AMPHI 4,M. AKROUM
-L3,G11,Dimanche,08:00-09:30,EE351,REC,B319,N. DERRAGUI
-L3,G11,Dimanche,09:40-11:10,EE361,LECT,AMPHI 4,F. GUICHI
-L3,G11,Dimanche,13:00-14:30,EE331,REC,C117,O. MERABET
-L3,G11,Dimanche,14:40-16:10,EE331,LECT,AMPHI 4,N. SABEUR
-L3,G11,Lundi,08:00-09:30,EE321,LECT,AMPHI 4,A. KHOUAS
-L3,G11,Lundi,09:40-11:10,EE351,LECT,AMPHI 4,A. DAAMOUCHE
-L3,G11,Lundi,13:00-14:30,EE353,LECT,AMPHI 4,M. AKROUM
-L3,G11,Mardi,08:00-09:30,EE361,REC,B311,VAC
-L3,G11,Mardi,09:40-11:10,EE341,LECT,AMPHI 4,F. GUICHI
-L3,G11,Mardi,13:00-14:30,EE331,LECT,AMPHI 4,N. SABEUR
-L3,G11,Mardi,14:40-16:10,EE331,LAB,A003,S. BOUTORA
-L3,G11,Mercredi,14:40-16:10,EE361,LECT,AMPHI 4,F. GUICHI
-L3,G12,Dimanche,08:00-09:30,EE351,LECT,AMPHI 4,A. DAAMOUCHE
-L3,G12,Dimanche,09:40-11:10,EE321,LECT,AMPHI 4,A. KHOUAS
-L3,G12,Dimanche,14:40-16:10,EE353,LECT,AMPHI 4,M. AKROUM
-L3,G12,Lundi,09:40-11:10,EE361,LECT,AMPHI 4,F. GUICHI
-L3,G12,Lundi,11:20-12:50,EE331L,LAB,A003,S. BOUTORA
-L3,G12,Lundi,14:40-16:10,EE331,LECT,AMPHI 4,N. SABEUR
-L3,G12,Mardi,08:00-09:30,EE321,LECT,AMPHI 4,A. KHOUAS
-L3,G12,Mardi,09:40-11:10,EE351,LECT,AMPHI 4,A. DAAMOUCHE
-L3,G12,Mardi,13:00-14:30,EE353,LECT,AMPHI 4,M. AKROUM
-L3,G12,Mercredi,08:00-09:30,EE361,REC,B303,M. CHALLAL
-L3,G12,Mercredi,09:40-11:10,EE341,LECT,AMPHI 4,F. GUICHI
-L3,G12,Mercredi,13:00-14:30,EE331,LECT,AMPHI 4,N. SABEUR
-L3,G12,Mercredi,14:40-16:10,EE361,LECT,AMPHI 4,F. GUICHI
-L3,G12,Jeudi,08:00-09:30,EE351,REC,C117,N. DERRAGUI
-L3,G12,Jeudi,09:40-11:10,EE331,REC,C104,O. MERABET
-L3,G12,Jeudi,13:00-14:30,EE353L,LAB,A405,P. VAC
+Niveau,Filière,Groupe,Jour,Créneau,Matière,Type,Salle,Enseignant
+L3,TRONC COMMUN,G01,Sunday,08:00-09:30,EE321,LECT,AMPHI 3,A. KHOUAS
+L3,TRONC COMMUN,G01,Monday,08:00-09:30,EE361,LECT,AMPHI 3,F. GUICHI
+L3,TRONC COMMUN,G01,Tuesday,08:00-09:30,EE351,LECT,AMPHI 3,A. DAAMOUCHE
+L3,TRONC COMMUN,G01,Wednesday,08:00-09:30,EE341,LECT,AMPHI 3,F. GUICHI
+L3,TRONC COMMUN,G01,Thursday,08:00-09:30,EE353L,LAB,A404,P. VAC
+L3,TRONC COMMUN,G01,Sunday,09:40-11:10,EE351,LECT,AMPHI 3,A. DAAMOUCHE
+L3,TRONC COMMUN,G01,Monday,09:40-11:10,EE351,REC,B003,O. HACHOUR
+L3,TRONC COMMUN,G01,Tuesday,09:40-11:10,EE321,LECT,AMPHI 3,A. KHOUAS
+L3,TRONC COMMUN,G01,Wednesday,09:40-11:10,EE331L,LAB,A003,S. BOUTORA
+L3,TRONC COMMUN,G01,Thursday,09:40-11:10,EE361,REC,LS-B009,K. DJAFRI
+L3,TRONC COMMUN,G01,Sunday,13:00-14:30,EE353,LECT,AMPHI 3,M. AKROUM
+L3,TRONC COMMUN,G01,Monday,13:00-14:30,EE331,LECT,AMPHI 3,N. SABEUR
+L3,TRONC COMMUN,G01,Wednesday,13:00-14:30,EE361,LECT,AMPHI 1,F. GUICHI
+L3,TRONC COMMUN,G01,Monday,14:40-16:10,EE331,REC,C117,O. MERABET
+L3,TRONC COMMUN,G01,Tuesday,14:40-16:10,EE353,LECT,AMPHI 3,M. AKROUM
+L3,TRONC COMMUN,G01,Wednesday,14:40-16:10,EE331,LECT,AMPHI 1,N. SABEUR
+L3,TRONC COMMUN,G02,Sunday,08:00-09:30,EE321,LECT,AMPHI 3,A. KHOUAS
+L3,TRONC COMMUN,G02,Monday,08:00-09:30,EE361,LECT,AMPHI 3,F. GUICHI
+L3,TRONC COMMUN,G02,Tuesday,08:00-09:30,EE351,LECT,AMPHI 3,A. DAAMOUCHE
+L3,TRONC COMMUN,G02,Wednesday,08:00-09:30,EE341,LECT,AMPHI 3,F. GUICHI
+L3,TRONC COMMUN,G02,Thursday,08:00-09:30,EE361,REC,B319,F. GUICHI
+L3,TRONC COMMUN,G02,Sunday,09:40-11:10,EE351,LECT,AMPHI 3,A. DAAMOUCHE
+L3,TRONC COMMUN,G02,Tuesday,09:40-11:10,EE321,LECT,AMPHI 3,A. KHOUAS
+L3,TRONC COMMUN,G02,Wednesday,09:40-11:10,EE353L,LAB,A411,M. BENZAOUI
+L3,TRONC COMMUN,G02,Thursday,09:40-11:10,EE331L,LAB,A003,S. BOUTORA
+L3,TRONC COMMUN,G02,Monday,11:20-12:50,EE351,REC,B319,N. DERRAGUI
+L3,TRONC COMMUN,G02,Tuesday,11:20-12:50,EE331,REC,B301,N. SABEUR
+L3,TRONC COMMUN,G02,Sunday,13:00-14:30,EE353,LECT,AMPHI 3,M. AKROUM
+L3,TRONC COMMUN,G02,Monday,13:00-14:30,EE331,LECT,AMPHI 3,N. SABEUR
+L3,TRONC COMMUN,G02,Wednesday,13:00-14:30,EE361,LECT,AMPHI 1,F. GUICHI
+L3,TRONC COMMUN,G02,Tuesday,14:40-16:10,EE353,LECT,AMPHI 3,M. AKROUM
+L3,TRONC COMMUN,G02,Wednesday,14:40-16:10,EE331,LECT,AMPHI 1,N. SABEUR
+L3,TRONC COMMUN,G03,Sunday,08:00-09:30,EE321,LECT,AMPHI 3,A. KHOUAS
+L3,TRONC COMMUN,G03,Monday,08:00-09:30,EE361,LECT,AMPHI 3,F. GUICHI
+L3,TRONC COMMUN,G03,Tuesday,08:00-09:30,EE351,LECT,AMPHI 3,A. DAAMOUCHE
+L3,TRONC COMMUN,G03,Wednesday,08:00-09:30,EE341,LECT,AMPHI 3,F. GUICHI
+L3,TRONC COMMUN,G03,Thursday,08:00-09:30,EE331,REC,C104,O. MERABET
+L3,TRONC COMMUN,G03,Sunday,09:40-11:10,EE351,LECT,AMPHI 3,A. DAAMOUCHE
+L3,TRONC COMMUN,G03,Monday,09:40-11:10,EE361,REC,B301,M. CHALLAL
+L3,TRONC COMMUN,G03,Tuesday,09:40-11:10,EE321,LECT,AMPHI 3,A. KHOUAS
+L3,TRONC COMMUN,G03,Thursday,09:40-11:10,EE353L,LAB,A404,P. VAC
+L3,TRONC COMMUN,G03,Monday,11:20-12:50,EE351,REC,B003,O. HACHOUR
+L3,TRONC COMMUN,G03,Wednesday,11:20-12:50,EE331L,LAB,A003,S. BOUTORA
+L3,TRONC COMMUN,G03,Sunday,13:00-14:30,EE353,LECT,AMPHI 3,M. AKROUM
+L3,TRONC COMMUN,G03,Monday,13:00-14:30,EE331,LECT,AMPHI 3,N. SABEUR
+L3,TRONC COMMUN,G03,Wednesday,13:00-14:30,EE361,LECT,AMPHI 1,F. GUICHI
+L3,TRONC COMMUN,G03,Tuesday,14:40-16:10,EE353,LECT,AMPHI 3,M. AKROUM
+L3,TRONC COMMUN,G03,Wednesday,14:40-16:10,EE331,LECT,AMPHI 1,N. SABEUR
+L3,TRONC COMMUN,G04,Sunday,08:00-09:30,EE321,LECT,AMPHI 3,A. KHOUAS
+L3,TRONC COMMUN,G04,Monday,08:00-09:30,EE361,LECT,AMPHI 3,F. GUICHI
+L3,TRONC COMMUN,G04,Tuesday,08:00-09:30,EE351,LECT,AMPHI 3,A. DAAMOUCHE
+L3,TRONC COMMUN,G04,Wednesday,08:00-09:30,EE341,LECT,AMPHI 3,F. GUICHI
+L3,TRONC COMMUN,G04,Sunday,09:40-11:10,EE351,LECT,AMPHI 3,A. DAAMOUCHE
+L3,TRONC COMMUN,G04,Monday,09:40-11:10,EE351,REC,B319,N. DERRAGUI
+L3,TRONC COMMUN,G04,Tuesday,09:40-11:10,EE321,LECT,AMPHI 3,A. KHOUAS
+L3,TRONC COMMUN,G04,Thursday,09:40-11:10,EE361,REC,B319,F. GUICHI
+L3,TRONC COMMUN,G04,Tuesday,11:20-12:50,EE331L,LAB,A003,S. BOUTORA
+L3,TRONC COMMUN,G04,Sunday,13:00-14:30,EE353,LECT,AMPHI 3,M. AKROUM
+L3,TRONC COMMUN,G04,Monday,13:00-14:30,EE331,LECT,AMPHI 3,N. SABEUR
+L3,TRONC COMMUN,G04,Wednesday,13:00-14:30,EE361,LECT,AMPHI 1,F. GUICHI
+L3,TRONC COMMUN,G04,Thursday,13:00-14:30,EE331,REC,B211,O. MERABET
+L3,TRONC COMMUN,G04,Sunday,14:40-16:10,EE353L,LAB,A401,P. VAC
+L3,TRONC COMMUN,G04,Tuesday,14:40-16:10,EE353,LECT,AMPHI 3,M. AKROUM
+L3,TRONC COMMUN,G04,Wednesday,14:40-16:10,EE331,LECT,AMPHI 1,N. SABEUR
+L3,TRONC COMMUN,G05,Sunday,08:00-09:30,EE321,LECT,AMPHI 3,A. KHOUAS
+L3,TRONC COMMUN,G05,Monday,08:00-09:30,EE361,LECT,AMPHI 3,F. GUICHI
+L3,TRONC COMMUN,G05,Tuesday,08:00-09:30,EE351,LECT,AMPHI 3,A. DAAMOUCHE
+L3,TRONC COMMUN,G05,Wednesday,08:00-09:30,EE341,LECT,AMPHI 3,F. GUICHI
+L3,TRONC COMMUN,G05,Sunday,09:40-11:10,EE351,LECT,AMPHI 3,A. DAAMOUCHE
+L3,TRONC COMMUN,G05,Monday,09:40-11:10,EE353L,LAB,A404,M. BENZAOUI
+L3,TRONC COMMUN,G05,Tuesday,09:40-11:10,EE321,LECT,AMPHI 3,A. KHOUAS
+L3,TRONC COMMUN,G05,Wednesday,09:40-11:10,EE361,REC,B311,VAC
+L3,TRONC COMMUN,G05,Thursday,09:40-11:10,EE351,REC,C117,N. DERRAGUI
+L3,TRONC COMMUN,G05,Sunday,13:00-14:30,EE353,LECT,AMPHI 3,M. AKROUM
+L3,TRONC COMMUN,G05,Monday,13:00-14:30,EE331,LECT,AMPHI 3,N. SABEUR
+L3,TRONC COMMUN,G05,Tuesday,13:00-14:30,EE331L,LAB,A003,S. BOUTORA
+L3,TRONC COMMUN,G05,Wednesday,13:00-14:30,EE361,LECT,AMPHI 3,F. GUICHI
+L3,TRONC COMMUN,G05,Tuesday,14:40-16:10,EE353,LECT,AMPHI 3,M. AKROUM
+L3,TRONC COMMUN,G05,Wednesday,14:40-16:10,EE331,LECT,AMPHI 1,N. SABEUR
+L3,TRONC COMMUN,G05,Thursday,14:40-16:10,EE331,REC,B211,O. MERABET
+L3,TRONC COMMUN,G06,Sunday,08:00-09:30,EE321,LECT,AMPHI 3,A. KHOUAS
+L3,TRONC COMMUN,G06,Monday,08:00-09:30,EE361,LECT,AMPHI 3,F. GUICHI
+L3,TRONC COMMUN,G06,Tuesday,08:00-09:30,EE351,LECT,AMPHI 3,A. DAAMOUCHE
+L3,TRONC COMMUN,G06,Wednesday,08:00-09:30,EE341,LECT,AMPHI 3,F. GUICHI
+L3,TRONC COMMUN,G06,Sunday,09:40-11:10,EE351,LECT,AMPHI 3,A. DAAMOUCHE
+L3,TRONC COMMUN,G06,Monday,09:40-11:10,EE331L,LAB,A003,F. DEKHANDJI
+L3,TRONC COMMUN,G06,Tuesday,09:40-11:10,EE321,LECT,AMPHI 3,A. KHOUAS
+L3,TRONC COMMUN,G06,Wednesday,09:40-11:10,EE361,REC,B303,M. CHALLAL
+L3,TRONC COMMUN,G06,Thursday,11:20-12:50,EE351,REC,C117,N. DERRAGUI
+L3,TRONC COMMUN,G06,Sunday,13:00-14:30,EE353,LECT,AMPHI 3,M. AKROUM
+L3,TRONC COMMUN,G06,Monday,13:00-14:30,EE331,LECT,AMPHI 3,N. SABEUR
+L3,TRONC COMMUN,G06,Tuesday,13:00-14:30,EE331,REC,B301,N. SABEUR
+L3,TRONC COMMUN,G06,Wednesday,13:00-14:30,EE361,LECT,AMPHI 1,F. GUICHI
+L3,TRONC COMMUN,G06,Monday,14:40-16:10,EE353L,LAB,A305,M. BENZAOUI
+L3,TRONC COMMUN,G06,Tuesday,14:40-16:10,EE353,LECT,AMPHI 3,M. AKROUM
+L3,TRONC COMMUN,G06,Wednesday,14:40-16:10,EE331,LECT,AMPHI 1,N. SABEUR
+L3,TRONC COMMUN,G07,Sunday,08:00-09:30,EE351,LECT,AMPHI 4,A. DAAMOUCHE
+L3,TRONC COMMUN,G07,Monday,08:00-09:30,EE353L,LAB,A404,M. BENZAOUI
+L3,TRONC COMMUN,G07,Tuesday,08:00-09:30,EE321,LECT,AMPHI 4,A. KHOUAS
+L3,TRONC COMMUN,G07,Sunday,09:40-11:10,EE321,LECT,AMPHI 4,A. KHOUAS
+L3,TRONC COMMUN,G07,Monday,09:40-11:10,EE341,LECT,AMPHI 4,F. GUICHI
+L3,TRONC COMMUN,G07,Tuesday,09:40-11:10,EE351,LECT,AMPHI 4,A. DAAMOUCHE
+L3,TRONC COMMUN,G07,Wednesday,09:40-11:10,EE361,LECT,AMPHI 4,F. GUICHI
+L3,TRONC COMMUN,G07,Thursday,11:20-12:50,EE331L,LAB,A003,S. BOUTORA
+L3,TRONC COMMUN,G07,Monday,13:00-14:30,EE351,REC,B003,O. HACHOUR
+L3,TRONC COMMUN,G07,Tuesday,13:00-14:30,EE353,LECT,AMPHI 4,M. AKROUM
+L3,TRONC COMMUN,G07,Wednesday,13:00-14:30,EE331,LECT,AMPHI 4,N. SABEUR
+L3,TRONC COMMUN,G07,Thursday,13:00-14:30,EE331,REC,C105,S. KHETABE
+L3,TRONC COMMUN,G07,Sunday,14:40-16:10,EE353,LECT,AMPHI 4,M. AKROUM
+L3,TRONC COMMUN,G07,Monday,14:40-16:10,EE331,LECT,AMPHI 4,N. SABEUR
+L3,TRONC COMMUN,G07,Tuesday,14:40-16:10,EE361,REC,B311,K. DJAFRI
+L3,TRONC COMMUN,G07,Wednesday,14:40-16:10,EE361,LECT,AMPHI 4,F. GUICHI
+L3,TRONC COMMUN,G08,Sunday,08:00-09:30,EE351,LECT,AMPHI 4,A. DAAMOUCHE
+L3,TRONC COMMUN,G08,Tuesday,08:00-09:30,EE321,LECT,AMPHI 4,A. KHOUAS
+L3,TRONC COMMUN,G08,Sunday,09:40-11:10,EE321,LECT,AMPHI 4,A. KHOUAS
+L3,TRONC COMMUN,G08,Monday,09:40-11:10,EE361,LECT,AMPHI 4,F. GUICHI
+L3,TRONC COMMUN,G08,Monday,08:00-09:30,EE361,REC,B301,M. CHALLAL
+L3,TRONC COMMUN,G08,Tuesday,09:40-11:10,EE351,LECT,AMPHI 4,A. DAAMOUCHE
+L3,TRONC COMMUN,G08,Wednesday,09:40-11:10,EE341,LECT,AMPHI 4,F. GUICHI
+L3,TRONC COMMUN,G08,Thursday,09:40-11:10,EE351,REC,B001,O. HACHOUR
+L3,TRONC COMMUN,G08,Thursday,11:20-12:50,EE331,REC,C105,S. KHETABE
+L3,TRONC COMMUN,G08,Monday,13:00-14:30,EE331L,LAB,A003,S. BOUTORA
+L3,TRONC COMMUN,G08,Tuesday,13:00-14:30,EE353,LECT,AMPHI 4,M. AKROUM
+L3,TRONC COMMUN,G08,Wednesday,13:00-14:30,EE331,LECT,AMPHI 4,N. SABEUR
+L3,TRONC COMMUN,G08,Sunday,14:40-16:10,EE353,LECT,AMPHI 4,M. AKROUM
+L3,TRONC COMMUN,G08,Monday,14:40-16:10,EE331,LECT,AMPHI 4,N. SABEUR
+L3,TRONC COMMUN,G08,Wednesday,14:40-16:10,EE361,LECT,AMPHI 4,F. GUICHI
+L3,TRONC COMMUN,G08,Thursday,14:40-16:10,EE353L,LAB,A405,P. VAC
+L3,TRONC COMMUN,G09,Sunday,08:00-09:30,EE351,LECT,AMPHI 4,A. DAAMOUCHE
+L3,TRONC COMMUN,G09,Tuesday,08:00-09:30,EE321,LECT,AMPHI 4,A. KHOUAS
+L3,TRONC COMMUN,G09,Wednesday,08:00-09:30,EE331L,LAB,A003,F. DEKHANDJI
+L3,TRONC COMMUN,G09,Sunday,09:40-11:10,EE321,LECT,AMPHI 4,A. KHOUAS
+L3,TRONC COMMUN,G09,Monday,09:40-11:10,EE361,LECT,AMPHI 4,F. GUICHI
+L3,TRONC COMMUN,G09,Tuesday,09:40-11:10,EE351,LECT,AMPHI 4,A. DAAMOUCHE
+L3,TRONC COMMUN,G09,Wednesday,09:40-11:10,EE341,LECT,AMPHI 4,F. GUICHI
+L3,TRONC COMMUN,G09,Monday,11:20-12:50,EE353L,LAB,A408,P. VAC
+L3,TRONC COMMUN,G09,Thursday,11:20-12:50,EE351,REC,B001,O. HACHOUR
+L3,TRONC COMMUN,G09,Tuesday,13:00-14:30,EE353,LECT,AMPHI 4,M. AKROUM
+L3,TRONC COMMUN,G09,Wednesday,13:00-14:30,EE331,LECT,AMPHI 4,N. SABEUR
+L3,TRONC COMMUN,G09,Thursday,13:00-14:30,EE361,REC,B205,K. DJAFRI
+L3,TRONC COMMUN,G09,Sunday,14:40-16:10,EE353,LECT,AMPHI 4,M. AKROUM
+L3,TRONC COMMUN,G09,Monday,14:40-16:10,EE331,LECT,AMPHI 4,N. SABEUR
+L3,TRONC COMMUN,G09,Tuesday,14:40-16:10,EE331,REC,B301,N. SABEUR
+L3,TRONC COMMUN,G09,Wednesday,14:40-16:10,EE361,LECT,AMPHI 4,F. GUICHI
+L3,TRONC COMMUN,G10,Sunday,08:00-09:30,EE351,LECT,AMPHI 4,A. DAAMOUCHE
+L3,TRONC COMMUN,G10,Tuesday,08:00-09:30,EE321,LECT,AMPHI 4,A. KHOUAS
+L3,TRONC COMMUN,G10,Sunday,09:40-11:10,EE321,LECT,AMPHI 4,A. KHOUAS
+L3,TRONC COMMUN,G10,,Monday,09:40-11:10,EE361,LECT,AMPHI 4,F. GUICHI
+L3,TRONC COMMUN,G10,Tuesday,09:40-11:10,EE351,LECT,AMPHI 4,A. DAAMOUCHE
+L3,TRONC COMMUN,G10,Thursday,11:20-12:50,EE361,REC,B319,F. GUICHI
+L3,TRONC COMMUN,G10,Wednesday,09:40-11:10,EE341,LECT,AMPHI 4,F. GUICHI
+L3,TRONC COMMUN,G10,Thursday,13:00-14:30,EE351,REC,B301,O. HACHOUR
+L3,TRONC COMMUN,G10,Monday,13:00-14:30,EE353L,LAB,A408,P. VAC
+L3,TRONC COMMUN,G10,Tuesday,13:00-14:30,EE353,LECT,AMPHI 4,M. AKROUM
+L3,TRONC COMMUN,G10,Wednesday,13:00-14:30,EE331,LECT,AMPHI 4,N. SABEUR
+L3,TRONC COMMUN,G10,Wednesday,14:40-16:10,EE361,LECT,AMPHI 4,F. GUICHI
+L3,TRONC COMMUN,G10,Thursday,14:40-16:10,EE331,REC,C105,S. KHETABE
+L3,TRONC COMMUN,G10,Sunday,14:40-16:10,EE353,LECT,AMPHI 4,M. AKROUM
+L3,TRONC COMMUN,G10,Monday,14:40-16:10,EE331,LECT,AMPHI 4,N. SABEUR
+L3,TRONC COMMUN,G10,Tuesday,14:40-16:10,EE331L,LAB,A003,S. BOUTOR
+L3,TRONC COMMUN,G11,Sunday,08:00-09:30,EE351,LECT,AMPHI 4,A. DAAMOUCHE
+L3,TRONC COMMUN,G11,Tuesday,08:00-09:30,EE321,LECT,AMPHI 4,A. KHOUAS
+L3,TRONC COMMUN,G11,Wednesday,08:00-09:30,EE361,REC,B311,VAC
+L3,TRONC COMMUN,G11,Sunday,09:40-11:10,EE321,LECT,AMPHI 4,A. KHOUAS
+L3,TRONC COMMUN,G11,Monday,08:00-09:30,EE351,REC,B319,N. DERRAGUI
+L3,TRONC COMMUN,G11,Monday,09:40-11:10,EE361,LECT,AMPHI 4,F. GUICHI
+L3,TRONC COMMUN,G11,Tuesday,09:40-11:10,EE351,LECT,AMPHI 4,A. DAAMOUCHE
+L3,TRONC COMMUN,G11,Wednesday,09:40-11:10,EE341,LECT,AMPHI 4,F. GUICHI
+L3,TRONC COMMUN,G11,Sunday,13:00-14:30,EE353L,LAB,A401,P. VAC
+L3,TRONC COMMUN,G11,Monday,13:00-14:30,EE331,REC,C117,O. MERABET
+L3,TRONC COMMUN,G11,Tuesday,13:00-14:30,EE353,LECT,AMPHI 4,M. AKROUM
+L3,TRONC COMMUN,G11,Wednesday,13:00-14:30,EE331,LECT,AMPHI 4,N. SABEUR
+L3,TRONC COMMUN,G11,Thursday,13:00-14:30,EE331L,LAB,A003,S. BOUTORA
+L3,TRONC COMMUN,G11,Sunday,14:40-16:10,EE353,LECT,AMPHI 4,M. AKROUM
+L3,TRONC COMMUN,G11,Monday,14:40-16:10,EE331,LECT,AMPHI 4,N. SABEUR
+L3,TRONC COMMUN,G11,Wednesday,14:40-16:10,EE361,LECT,AMPHI 4,F. GUICHI
+L3,TRONC COMMUN,G12,Sunday,08:00-09:30,EE351,LECT,AMPHI 4,A. DAAMOUCHE
+L3,TRONC COMMUN,G12,Tuesday,08:00-09:30,EE321,LECT,AMPHI 4,A. KHOUAS
+L3,TRONC COMMUN,G12,Wednesday,08:00-09:30,EE361,REC,B303,M. CHALLAL
+L3,TRONC COMMUN,G12,Thursday,08:00-09:30,EE351,REC,C117,N. DERRAGUI
+L3,TRONC COMMUN,G12,Sunday,09:40-11:10,EE321,LECT,AMPHI 4,A. KHOUAS
+L3,TRONC COMMUN,G12,Monday,09:40-11:10,EE361,LECT,AMPHI 4,F. GUICHI
+L3,TRONC COMMUN,G12,Tuesday,09:40-11:10,EE351,LECT,AMPHI 4,A. DAAMOUCHE
+L3,TRONC COMMUN,G12,Wednesday,09:40-11:10,EE341,LECT,AMPHI 4,F. GUICHI
+L3,TRONC COMMUN,G12,Thursday,09:40-11:10,EE331,REC,C104,O. MERABET
+L3,TRONC COMMUN,G12,Monday,11:20-12:50,EE331L,LAB,A003,S. BOUTORA
+L3,TRONC COMMUN,G12,Tuesday,13:00-14:30,EE353,LECT,AMPHI 4,M. AKROUM
+L3,TRONC COMMUN,G12,Wednesday,13:00-14:30,EE331,LECT,AMPHI 4,N. SABEUR
+L3,TRONC COMMUN,G12,Thursday,13:00-14:30,EE353L,LAB,A405,P. VAC
+L3,TRONC COMMUN,G12,Sunday,14:40-16:10,EE353,LECT,AMPHI 4,M. AKROUM
+L3,TRONC COMMUN,G12,Monday,14:40-16:10,EE331,LECT,AMPHI 4,N. SABEUR
+L3,TRONC COMMUN,G12,Wednesday,14:40-16:10,EE361,LECT,AMPHI 4,F. GUICHI
 </script>
 
-<!-- ============================================================= -->
-<!-- ============ DONNÉES CSV — NIVEAU M1 ======================== -->
-<!-- ============================================================= -->
+<!-- ============ M1 ============ -->
 <script type="text/plain" id="csv-M1">
 Niveau,Filière,Groupe,Jour,Créneau,Matière,Type,Salle,Enseignant
-M1,COMPUTER,G01,Dimanche,08:00-09:30,EE621,LECT,C107,D. HERBADJI
-M1,COMPUTER,G01,Dimanche,09:40-11:10,EE459L,LAB,A305,R. NAMANE
-M1,COMPUTER,G01,Dimanche,11:20-12:50,EE459L,LAB,A305,R. NAMANE
-M1,COMPUTER,G01,Lundi,09:40-11:10,EE421,LECT,B007,A. BENZEKRI
-M1,COMPUTER,G01,Lundi,11:20-12:50,EE473,LECT,AMPHI 3,D. FARES
-M1,COMPUTER,G01,Mardi,08:00-09:30,EE459,LECT,B312,R. NAMANE
-M1,COMPUTER,G01,Mardi,09:40-11:10,EE423,LECT,B312,Y. TABET
-M1,COMPUTER,G01,Mardi,11:20-12:50,EE423,LECT,B312,Y. TABET
-M1,COMPUTER,G01,Mercredi,08:00-09:30,EE473/EE423,LAB,A404/A405,D. FARES / TABET
-M1,COMPUTER,G01,Mercredi,09:40-11:10,EE473/EE423,LAB,A404/A405,D. FARES / TABET
-M1,COMPUTER,G01,Mercredi,13:00-14:30,EE421,LECT,B005,A. BENZEKRI
-M1,COMPUTER,G01,Mercredi,14:40-16:10,EE473,LECT,AMPHI 3,D. FARES
-M1,COMPUTER,G01,Jeudi,08:00-09:30,EE459,LECT,B007,R. NAMANE
-M1,COMPUTER,G01,Jeudi,09:40-11:10,EE421L,LAB,A205,A. BENZEKRI
-M1,COMPUTER,G01,Jeudi,11:20-12:50,EE421L,LAB,A205,A. BENZEKRI
-M1,COMPUTER,G02,Dimanche,08:00-09:30,EE621,LECT,C107,D. HERBADJI
-M1,COMPUTER,G02,Dimanche,13:00-14:30,EE459L,LAB,A305,R. NAMANE
-M1,COMPUTER,G02,Dimanche,14:40-16:10,EE459L,LAB,A305,R. NAMANE
-M1,COMPUTER,G02,Lundi,09:40-11:10,EE421,LECT,B007,A. BENZEKRI
-M1,COMPUTER,G02,Lundi,11:20-12:50,EE473,LECT,AMPHI 3,D. FARES
-M1,COMPUTER,G02,Lundi,13:00-14:30,EE421L,LAB,A205,A. BENZEKRI
-M1,COMPUTER,G02,Lundi,14:40-16:10,EE421L,LAB,A205,A. BENZEKRI
-M1,COMPUTER,G02,Mardi,08:00-09:30,EE459,LECT,B312,R. NAMANE
-M1,COMPUTER,G02,Mardi,09:40-11:10,EE423,LECT,B312,Y. TABET
-M1,COMPUTER,G02,Mardi,11:20-12:50,EE423,LECT,B312,Y. TABET
-M1,COMPUTER,G02,Mercredi,08:00-09:30,EE473/EE423,LAB,A404/A405,D. FARES / TABET
-M1,COMPUTER,G02,Mercredi,09:40-11:10,EE473/EE423,LAB,A404/A405,D. FARES / TABET
-M1,COMPUTER,G02,Mercredi,13:00-14:30,EE421,LECT,B005,A. BENZEKRI
-M1,COMPUTER,G02,Mercredi,14:40-16:10,EE473,LECT,AMPHI 3,D. FARES
-M1,COMPUTER,G02,Jeudi,08:00-09:30,EE459,LECT,B007,R. NAMANE
-M1,COMPUTER,G03,Dimanche,08:00-09:30,EE621,LECT,C107,D. HERBADJI
-M1,COMPUTER,G03,Lundi,09:40-11:10,EE421,LECT,B007,A. BENZEKRI
-M1,COMPUTER,G03,Lundi,11:20-12:50,EE473,LECT,AMPHI 3,D. FARES
-M1,COMPUTER,G03,Lundi,13:00-14:30,EE473/EE423,LAB,A404/A405,D. FARES / TABET
-M1,COMPUTER,G03,Lundi,14:40-16:10,EE473/EE423,LAB,A404/A405,D. FARES / TABET
-M1,COMPUTER,G03,Mardi,08:00-09:30,EE459,LECT,B312,R. NAMANE
-M1,COMPUTER,G03,Mardi,09:40-11:10,EE423,LECT,B312,Y. TABET
-M1,COMPUTER,G03,Mardi,11:20-12:50,EE423,LECT,B312,Y. TABET
-M1,COMPUTER,G03,Mercredi,09:40-11:10,EE421L,LAB,A205,A. BENZEKRI
-M1,COMPUTER,G03,Mercredi,11:20-12:50,EE421L,LAB,A205,A. BENZEKRI
-M1,COMPUTER,G03,Mercredi,13:00-14:30,EE421,LECT,B005,A. BENZEKRI
-M1,COMPUTER,G03,Mercredi,14:40-16:10,EE473,LECT,AMPHI 3,D. FARES
-M1,COMPUTER,G03,Jeudi,08:00-09:30,EE459,LECT,B007,R. NAMANE
-M1,COMPUTER,G03,Jeudi,09:40-11:10,EE459L,LAB,A305,R. NAMANE
-M1,COMPUTER,G03,Jeudi,11:20-12:50,EE459L,LAB,A305,R. NAMANE
-M1,COMPUTER,G04,Dimanche,08:00-09:30,EE621,LECT,C107,D. HERBADJI
-M1,COMPUTER,G04,Dimanche,13:00-14:30,EE421L,LAB,A205,A. BENZEKRI
-M1,COMPUTER,G04,Dimanche,14:40-16:10,EE421L,LAB,A205,A. BENZEKRI
-M1,COMPUTER,G04,Lundi,09:40-11:10,EE421,LECT,B007,A. BENZEKRI
-M1,COMPUTER,G04,Lundi,11:20-12:50,EE473,LECT,AMPHI 3,D. FARES
-M1,COMPUTER,G04,Lundi,13:00-14:30,EE473/EE423,LAB,A404/A405,D. FARES / TABET
-M1,COMPUTER,G04,Lundi,14:40-16:10,EE473/EE423,LAB,A404/A405,D. FARES / TABET
-M1,COMPUTER,G04,Mardi,08:00-09:30,EE459,LECT,B312,R. NAMANE
-M1,COMPUTER,G04,Mardi,09:40-11:10,EE423,LECT,B312,Y. TABET
-M1,COMPUTER,G04,Mardi,11:20-12:50,EE423,LECT,B312,Y. TABET
-M1,COMPUTER,G04,Mercredi,08:00-09:30,EE459L,LAB,A305,R. NAMANE
-M1,COMPUTER,G04,Mercredi,09:40-11:10,EE459L,LAB,A305,R. NAMANE
-M1,COMPUTER,G04,Mercredi,13:00-14:30,EE421,LECT,B005,A. BENZEKRI
-M1,COMPUTER,G04,Mercredi,14:40-16:10,EE473,LECT,AMPHI 3,D. FARES
-M1,COMPUTER,G04,Jeudi,08:00-09:30,EE459,LECT,B007,R. NAMANE
-M1,CONTROL,G01,Dimanche,08:00-09:30,EE479,LECT,B007,K. HARICHE
-M1,CONTROL,G01,Dimanche,09:40-11:10,EE455,LECT,A407,H. BELMADANI
-M1,CONTROL,G01,Lundi,08:00-09:30,EE455L,LAB,A408,H. LOUBAR
-M1,CONTROL,G01,Lundi,09:40-11:10,EE419,LECT,AMPHI 3,D. BELAIDI
-M1,CONTROL,G01,Lundi,13:00-14:30,EE429,LECT,B007,M. BENZAOUI
-M1,CONTROL,G01,Lundi,14:40-16:10,EE471,LECT,AMPHI 3,D. FARES
-M1,CONTROL,G01,Mardi,08:00-09:30,EE479,LECT,B007,K. HARICHE
-M1,CONTROL,G01,Mardi,09:40-11:10,EE479,REC,C105,N. CHERIFI
-M1,CONTROL,G01,Mardi,13:00-14:30,EE455,LECT,B005,H. BELMADANI
-M1,CONTROL,G01,Mardi,14:40-16:10,EE471,LECT,AMPHI 3,D. FARES
-M1,CONTROL,G01,Mercredi,08:00-09:30,EE419L,LAB,A401,D. BELAIDI
-M1,CONTROL,G01,Mercredi,09:40-11:10,EE457,LAB,A308,R. HADOUCHE
-M1,CONTROL,G01,Mercredi,13:00-14:30,EE419,LECT,AMPHI 3,D. BELAIDI
-M1,CONTROL,G01,Mercredi,14:40-16:10,EE471L,LAB,A313,K. SAOUDI
-M1,CONTROL,G01,Jeudi,09:40-11:10,EE429,LAB,A411,M. BENZAOUI
-M1,CONTROL,G02,Dimanche,08:00-09:30,EE479,LECT,B007,K. HARICHE
-M1,CONTROL,G02,Dimanche,09:40-11:10,EE455,LECT,A407,H. BELMADANI
-M1,CONTROL,G02,Dimanche,11:20-12:50,EE457,LAB,A308,R. HADOUCHE
-M1,CONTROL,G02,Dimanche,13:00-14:30,EE457,LECT,B007,R. HADOUCHE
-M1,CONTROL,G02,Lundi,09:40-11:10,EE419,LECT,AMPHI 3,D. BELAIDI
-M1,CONTROL,G02,Lundi,11:20-12:50,EE471,LECT,AMPHI 3,D. FARES
-M1,CONTROL,G02,Lundi,13:00-14:30,EE429,LECT,B007,M. BENZAOUI
-M1,CONTROL,G02,Lundi,14:40-16:10,EE455L,LAB,A408,H. LOUBAR
-M1,CONTROL,G02,Mardi,08:00-09:30,EE479,LECT,B007,K. HARICHE
-M1,CONTROL,G02,Mardi,09:40-11:10,EE479,REC,C105,N. CHERIFI
-M1,CONTROL,G02,Mardi,13:00-14:30,EE455,LECT,B005,H. BELMADANI
-M1,CONTROL,G02,Mercredi,11:20-12:50,EE419L,LAB,A401,D. BELAIDI
-M1,CONTROL,G02,Mercredi,13:00-14:30,EE419,LECT,AMPHI 3,D. BELAIDI
-M1,CONTROL,G02,Mercredi,14:40-16:10,EE471,LECT,AMPHI 3,D. FARES
-M1,CONTROL,G02,Jeudi,08:00-09:30,EE471L,LAB,A313,K. SAOUDI
-M1,CONTROL,G02,Jeudi,14:40-16:10,EE429,LAB,A411,M. BENZAOUI
-M1,CONTROL,G03,Dimanche,08:00-09:30,EE479,LECT,B007,K. HARICHE
-M1,CONTROL,G03,Dimanche,09:40-11:10,EE455,LECT,A407,H. BELMADANI
-M1,CONTROL,G03,Dimanche,11:20-12:50,EE471,LECT,AMPHI 3,D. FARES
-M1,CONTROL,G03,Dimanche,13:00-14:30,EE457,LECT,B007,R. HADOUCHE
-M1,CONTROL,G03,Lundi,09:40-11:10,EE419,LECT,AMPHI 3,D. BELAIDI
-M1,CONTROL,G03,Lundi,11:20-12:50,EE479,REC,C105,N. CHERIFI
-M1,CONTROL,G03,Lundi,13:00-14:30,EE429,LECT,B007,M. BENZAOUI
-M1,CONTROL,G03,Lundi,14:40-16:10,EE471,LECT,AMPHI 3,D. FARES
-M1,CONTROL,G03,Mardi,08:00-09:30,EE479,LECT,B007,K. HARICHE
-M1,CONTROL,G03,Mardi,09:40-11:10,EE455L,LAB,A408,H. LOUBAR
-M1,CONTROL,G03,Mardi,11:20-12:50,EE457,LAB,A308,R. HADOUCHE
-M1,CONTROL,G03,Mardi,13:00-14:30,EE455,LECT,B005,H. BELMADANI
-M1,CONTROL,G03,Mercredi,11:20-12:50,EE419L,LAB,A401,D. BELAIDI
-M1,CONTROL,G03,Mercredi,13:00-14:30,EE419,LECT,AMPHI 3,D. BELAIDI
-M1,CONTROL,G03,Jeudi,09:40-11:10,EE471L,LAB,A313,K. SAOUDI
-M1,CONTROL,G03,Jeudi,13:00-14:30,EE429,LAB,A411,M. BENZAOUI
-M1,CONTROL,G04,Dimanche,08:00-09:30,EE479,LECT,B007,K. HARICHE
-M1,CONTROL,G04,Dimanche,09:40-11:10,EE455,LECT,A407,H. BELMADANI
-M1,CONTROL,G04,Dimanche,13:00-14:30,EE457,LECT,B007,R. HADOUCHE
-M1,CONTROL,G04,Lundi,09:40-11:10,EE419,LECT,AMPHI 3,D. BELAIDI
-M1,CONTROL,G04,Lundi,11:20-12:50,EE471,LECT,AMPHI 3,D. FARES
-M1,CONTROL,G04,Lundi,13:00-14:30,EE429,LECT,B007,M. BENZAOUI
-M1,CONTROL,G04,Mardi,08:00-09:30,EE479,LECT,B007,K. HARICHE
-M1,CONTROL,G04,Mardi,09:40-11:10,EE479,REC,C105,N. CHERIFI
-M1,CONTROL,G04,Mardi,13:00-14:30,EE455,LECT,B005,H. BELMADANI
-M1,CONTROL,G04,Mercredi,08:00-09:30,EE457,LAB,A308,R. HADOUCHE
-M1,CONTROL,G04,Mercredi,11:20-12:50,EE455L,LAB,A408,H. LOUBAR
-M1,CONTROL,G04,Mercredi,13:00-14:30,EE419,LECT,AMPHI 3,D. BELAIDI
-M1,CONTROL,G04,Mercredi,14:40-16:10,EE471,LECT,AMPHI 3,D. FARES
-M1,CONTROL,G04,Jeudi,08:00-09:30,EE429,LAB,A411,M. BENZAOUI
-M1,CONTROL,G04,Jeudi,09:40-11:10,EE419L,LAB,A401,D. BELAIDI
-M1,CONTROL,G04,Jeudi,13:00-14:30,EE471L,LAB,A313,K. SAOUDI
-M1,IED,G01,Dimanche,08:00-09:30,EE441,LECT,C117,H. HORKOUS
-M1,IED,G01,Dimanche,09:40-11:10,EE441,REC,C117,H. HORKOUS
-M1,IED,G01,Dimanche,13:00-14:30,EE441,LAB,A005,H. HORKOUS
-M1,IED,G01,Dimanche,14:40-16:10,EE427,LAB,A003,A. CHENOUF
-M1,IED,G01,Lundi,08:00-09:30,EE427,LECT,C104,A. CHENOUF
-M1,IED,G01,Lundi,09:40-11:10,EE427,LECT,C104,A. CHENOUF
-M1,IED,G01,Lundi,13:00-14:30,EE427,REC,C105,A. CHENOUF
-M1,IED,G01,Mardi,08:00-09:30,EE423,LECT,B313,T. ZEMOURI
-M1,IED,G01,Mardi,09:40-11:10,EE423,REC,B313,T. ZEMOURI
-M1,IED,G01,Mardi,13:00-14:30,EE621,LECT,C104,Y. HADDAD
-M1,IED,G01,Mardi,14:40-16:10,EE423,LAB,Sale.,T. ZEMOURI
-M1,IED,G01,Mercredi,08:00-09:30,EE475,LECT,B205,F. HADJ LARBI
-M1,IED,G01,Mercredi,09:40-11:10,EE475,REC,B205,F. HADJ LARBI
-M1,IED,G01,Mercredi,13:00-14:30,EE475,LAB,Sale.,F. HADJ LARBI
-M1,IEM,G01,Dimanche,08:00-09:30,EE421,LECT,B311,M. MAHDI
-M1,IEM,G01,Dimanche,09:40-11:10,EE421,LECT,B311,M. MAHDI
-M1,IEM,G01,Dimanche,13:00-14:30,EE421,REC,B319,M. MAHDI
-M1,IEM,G01,Dimanche,14:40-16:10,EE421,LAB,Sale fictif,M. MAHDI
-M1,IEM,G01,Lundi,08:00-09:30,EE459,LECT,B311,F. HADJ LARBI
-M1,IEM,G01,Lundi,09:40-11:10,EE459,REC,B311,F. HADJ LARBI
-M1,IEM,G01,Lundi,13:00-14:30,ee459,LAB,Sale fictif,F. HADJ LARBI
-M1,IEM,G01,Lundi,14:40-16:10,EE423,LAB,A005,A. BENABDELMOUMEN
-M1,IEM,G01,Mardi,08:00-09:30,EE621,LECT,B211,M. MAHDI
-M1,IEM,G01,Mardi,09:40-11:10,EE423,LECT,C104,A. BENABDELMOUMEN
-M1,IEM,G01,Mardi,13:00-14:30,EE423,REC,C105,A. BENABDELMOUMEN
-M1,IEM,G01,Mercredi,08:00-09:30,EE473,LECT,B305,Y. HADDAD
-M1,IEM,G01,Mercredi,09:40-11:10,EE473,REC,B305,Y. HADDAD
-M1,IEM,G01,Mercredi,13:00-14:30,EE473,LAB,A003,Y. BAKHA
-M1,POWER,G01,Dimanche,08:00-09:30,EE451,LECT,A407,H. BELMADANI
-M1,POWER,G01,Dimanche,11:20-12:50,EE477L,LAB,A408,O. MERABET
-M1,POWER,G01,Dimanche,13:00-14:30,EE419L,LAB,A313,D. VAC
-M1,POWER,G01,Lundi,08:00-09:30,EE431,LECT,B005,F. DEKHANDJI
-M1,POWER,G01,Lundi,09:40-11:10,EE419,LECT,AMPHI 3,D. BELAIDI
-M1,POWER,G01,Lundi,13:00-14:30,EE477,LECT,B005,A. KOUADRI
-M1,POWER,G01,Mardi,09:40-11:10,EE451,LECT,A407,H. BELMADANI
-M1,POWER,G01,Mardi,14:40-16:10,EE431L,LAB,A002,S. TOUIL
-M1,POWER,G01,Mardi,16:20-17:50,EE431L,LAB,A002,S. TOUIL
-M1,POWER,G01,Mercredi,09:40-11:10,EE431,LECT,B005,F. DEKHANDJI
-M1,POWER,G01,Mercredi,11:20-12:50,EE477,LECT,B005,A. KOUADRI
-M1,POWER,G01,Mercredi,13:00-14:30,EE419,LECT,AMPHI 3,D. BELAIDI
-M1,POWER,G01,Jeudi,08:00-09:30,EE451,REC,B312,H. BELMADANI
-M1,POWER,G01,Jeudi,09:40-11:10,EE431,REC,B005,F. DEKHANDJI
-M1,POWER,G01,Jeudi,13:00-14:30,EE433,LECT,AMPHI 3,S. CHALA
-M1,POWER,G01,Jeudi,14:40-16:10,EE433,LECT,AMPHI 3,S. CHALA
-M1,POWER,G02,Dimanche,08:00-09:30,EE451,LECT,A407,H. BELMADANI
-M1,POWER,G02,Dimanche,11:20-12:50,EE419L,LAB,A313,D. VAC
-M1,POWER,G02,Dimanche,13:00-14:30,EE477L,LAB,A408,O. MERABET
-M1,POWER,G02,Lundi,08:00-09:30,EE431,LECT,B005,F. DEKHANDJI
-M1,POWER,G02,Lundi,09:40-11:10,EE419,LECT,AMPHI 3,D. BELAIDI
-M1,POWER,G02,Lundi,13:00-14:30,EE477,LECT,B005,A. KOUADRI
-M1,POWER,G02,Mardi,09:40-11:10,EE451,LECT,A407,H. BELMADANI
-M1,POWER,G02,Mardi,11:20-12:50,EE431L,LAB,A002,S. TOUIL
-M1,POWER,G02,Mardi,13:00-14:30,EE431L,LAB,A002,S. TOUIL
-M1,POWER,G02,Mercredi,09:40-11:10,EE431,LECT,B005,F. DEKHANDJI
-M1,POWER,G02,Mercredi,11:20-12:50,EE477,LECT,B005,A. KOUADRI
-M1,POWER,G02,Mercredi,13:00-14:30,EE419,LECT,AMPHI 3,D. BELAIDI
-M1,POWER,G02,Jeudi,08:00-09:30,EE451,REC,B312,H. BELMADANI
-M1,POWER,G02,Jeudi,09:40-11:10,EE431,REC,B005,F. DEKHANDJI
-M1,POWER,G02,Jeudi,13:00-14:30,EE433,LECT,AMPHI 3,S. CHALA
-M1,POWER,G02,Jeudi,14:40-16:10,EE433,LECT,AMPHI 3,S. CHALA
-M1,POWER,G03,Dimanche,08:00-09:30,EE451,LECT,A407,H. BELMADANI
-M1,POWER,G03,Dimanche,09:40-11:10,EE477L,LAB,A408,O. MERABET
-M1,POWER,G03,Dimanche,11:20-12:50,EE477,LECT,B005,A. KOUADRI
-M1,POWER,G03,Lundi,08:00-09:30,EE431,LECT,B005,F. DEKHANDJI
-M1,POWER,G03,Lundi,09:40-11:10,EE419,LECT,AMPHI 3,D. BELAIDI
-M1,POWER,G03,Lundi,13:00-14:30,EE431L,LAB,A002,S. TOUIL
-M1,POWER,G03,Lundi,14:40-16:10,EE431L,LAB,A002,S. TOUIL
-M1,POWER,G03,Mardi,09:40-11:10,EE451,LECT,A407,H. BELMADANI
-M1,POWER,G03,Mardi,13:00-14:30,EE477,LECT,B005,A. KOUADRI
-M1,POWER,G03,Mercredi,09:40-11:10,EE431,LECT,B005,F. DEKHANDJI
-M1,POWER,G03,Mercredi,11:20-12:50,EE431,REC,B005,F. DEKHANDJI
-M1,POWER,G03,Mercredi,13:00-14:30,EE419,LECT,AMPHI 3,D. BELAIDI
-M1,POWER,G03,Jeudi,08:00-09:30,EE419L,LAB,A313,D. VAC
-M1,POWER,G03,Jeudi,09:40-11:10,EE451,REC,B312,H. BELMADANI
-M1,POWER,G03,Jeudi,13:00-14:30,EE433,LECT,AMPHI 3,S. CHALA
-M1,POWER,G03,Jeudi,14:40-16:10,EE433,LECT,AMPHI 3,S. CHALA
-M1,POWER,G04,Dimanche,08:00-09:30,EE451,LECT,A407,H. BELMADANI
-M1,POWER,G04,Dimanche,09:40-11:10,EE431L,LAB,A002,S. TOUIL
-M1,POWER,G04,Dimanche,11:20-12:50,EE431L,LAB,A002,S. TOUIL
-M1,POWER,G04,Lundi,08:00-09:30,EE431,LECT,B005,F. DEKHANDJI
-M1,POWER,G04,Lundi,09:40-11:10,EE419,LECT,AMPHI 3,D. BELAIDI
-M1,POWER,G04,Lundi,13:00-14:30,EE477,LECT,B005,A. KOUADRI
-M1,POWER,G04,Mardi,09:40-11:10,EE451,LECT,A407,H. BELMADANI
-M1,POWER,G04,Mardi,11:20-12:50,EE419L,LAB,A313,D. VAC
-M1,POWER,G04,Mardi,13:00-14:30,EE419,LECT,AMPHI 3,D. BELAIDI
-M1,POWER,G04,Mercredi,09:40-11:10,EE431,LECT,B005,F. DEKHANDJI
-M1,POWER,G04,Mercredi,11:20-12:50,EE477,LECT,B005,A. KOUADRI
-M1,POWER,G04,Mercredi,11:20-12:50,EE431,REC,B005,F. DEKHANDJI
-M1,POWER,G04,Jeudi,08:00-09:30,EE451,REC,B312,H. BELMADANI
-M1,POWER,G04,Jeudi,13:00-14:30,EE433,LECT,AMPHI 3,S. CHALA
-M1,POWER,G04,Jeudi,14:40-16:10,EE433,LECT,AMPHI 3,S. CHALA
-M1,TELECOM,G01,Samedi,08:00-09:30,EE461,LECT,B312,M. CHALLAL
-M1,TELECOM,G01,Samedi,09:40-11:10,EE413,LECT,B005,F. MOUHOUCHE
-M1,TELECOM,G01,Samedi,13:00-14:30,EE461,REC,B305,M. CHALLAL
-M1,TELECOM,G01,Samedi,14:40-16:10,EE413,LAB,A309,F. MOUHOUCHE
-M1,TELECOM,G01,Dimanche,08:00-09:30,EE411,LECT,C107,A. AZRAR
-M1,TELECOM,G01,Dimanche,09:40-11:10,EE463,LECT,B312,M. DEHMAS
-M1,TELECOM,G01,Dimanche,13:00-14:30,EE411,LAB,B201-LAB,A. AZRAR
-M1,TELECOM,G01,Dimanche,14:40-16:10,EE463,REC,B305,M. DEHMAS
-M1,TELECOM,G01,Lundi,08:00-09:30,EE413,LECT,A407,F. MOUHOUCHE
-M1,TELECOM,G01,Lundi,09:40-11:10,EE461,LECT,B007,M. CHALLAL
-M1,TELECOM,G01,Lundi,13:00-14:30,EE415,LECT,AMPHI 3,K. DJAFRI
-M1,TELECOM,G01,Mardi,08:00-09:30,EE411,LECT,C107,A. AZRAR
-M1,TELECOM,G01,Mardi,09:40-11:10,EE417,LECT,A407,S. MEKHMOUKH
-M1,TELECOM,G01,Mardi,13:00-14:30,EE417,LAB,A405,S. MEKHMOUKH
-M1,TELECOM,G01,Mercredi,08:00-09:30,EE415,LECT,AMPHI 3,K. DJAFRI
-M1,TELECOM,G01,Mercredi,09:40-11:10,EE425,LECT,AMPHI 4,F. FERTAS
-M1,TELECOM,G02,Samedi,08:00-09:30,EE461,LECT,B312,M. CHALLAL
-M1,TELECOM,G02,Samedi,09:40-11:10,EE413,LECT,B005,F. MOUHOUCHE
-M1,TELECOM,G02,Samedi,13:00-14:30,EE461,REC,B305,M. CHALLAL
-M1,TELECOM,G02,Samedi,14:40-16:10,EE463,REC,B305,M. DEHMAS
-M1,TELECOM,G02,Dimanche,08:00-09:30,EE411,LECT,C107,A. AZRAR
-M1,TELECOM,G02,Dimanche,09:40-11:10,EE463,LECT,B312,M. DEHMAS
-M1,TELECOM,G02,Dimanche,13:00-14:30,EE413L,LAB,A309,F. MOUHOUCHE
-M1,TELECOM,G02,Dimanche,14:40-16:10,EE417L,LAB,A405,S. MEKHMOUKH
-M1,TELECOM,G02,Lundi,08:00-09:30,EE413,LECT,A407,F. MOUHOUCHE
-M1,TELECOM,G02,Lundi,09:40-11:10,EE461,LECT,B007,M. CHALLAL
-M1,TELECOM,G02,Lundi,13:00-14:30,EE415,LECT,AMPHI 3,K. DJAFRI
-M1,TELECOM,G02,Mardi,08:00-09:30,EE411,LECT,C107,A. AZRAR
-M1,TELECOM,G02,Mardi,09:40-11:10,EE417,LECT,A407,S. MEKHMOUKH
-M1,TELECOM,G02,Mardi,13:00-14:30,EE411,LAB,B201-LAB,A. AZRAR
-M1,TELECOM,G02,Mercredi,08:00-09:30,EE415,LECT,AMPHI 3,K. DJAFRI
-M1,TELECOM,G02,Mercredi,09:40-11:10,EE425,LECT,AMPHI 4,F. FERTAS
-M1,TELECOM,G03,Samedi,08:00-09:30,EE461,LECT,B312,M. CHALLAL
-M1,TELECOM,G03,Samedi,09:40-11:10,EE413,LECT,B005,F. MOUHOUCHE
-M1,TELECOM,G03,Samedi,13:00-14:30,EE413L,LAB,A309,F. MOUHOUCHE
-M1,TELECOM,G03,Samedi,14:40-16:10,EE461,REC,B305,M. CHALLAL
-M1,TELECOM,G03,Dimanche,08:00-09:30,EE411,LECT,C107,A. AZRAR
-M1,TELECOM,G03,Dimanche,09:40-11:10,EE463,LECT,B312,M. DEHMAS
-M1,TELECOM,G03,Dimanche,13:00-14:30,EE463,REC,B305,M. DEHMAS
-M1,TELECOM,G03,Dimanche,14:40-16:10,EE411,LAB,B201-LAB,A. AZRAR
-M1,TELECOM,G03,Lundi,08:00-09:30,EE413,LECT,A407,F. MOUHOUCHE
-M1,TELECOM,G03,Lundi,09:40-11:10,EE461,LECT,B007,M. CHALLAL
-M1,TELECOM,G03,Lundi,13:00-14:30,EE415,LECT,AMPHI 3,K. DJAFRI
-M1,TELECOM,G03,Mardi,08:00-09:30,EE411,LECT,C107,A. AZRAR
-M1,TELECOM,G03,Mardi,09:40-11:10,EE417,LECT,A407,S. MEKHMOUKH
-M1,TELECOM,G03,Mardi,13:00-14:30,EE417L,LAB,A404,S. MEKHMOUKH
-M1,TELECOM,G03,Mercredi,08:00-09:30,EE415,LECT,AMPHI 3,K. DJAFRI
-M1,TELECOM,G03,Mercredi,09:40-11:10,EE425,LECT,AMPHI 4,F. FERTAS
-M1,TELECOM,G04,Samedi,08:00-09:30,EE461,LECT,B312,M. CHALLAL
-M1,TELECOM,G04,Samedi,09:40-11:10,EE413,LECT,B005,F. MOUHOUCHE
-M1,TELECOM,G04,Samedi,11:20-12:50,EE417L,LAB,A404,S. MEKHMOUKH
-M1,TELECOM,G04,Samedi,13:00-14:30,EE463,REC,B305,M. DEHMAS
-M1,TELECOM,G04,Samedi,14:40-16:10,EE461,REC,B305,M. CHALLAL
-M1,TELECOM,G04,Dimanche,08:00-09:30,EE411,LECT,C107,A. AZRAR
-M1,TELECOM,G04,Dimanche,09:40-11:10,EE463,LECT,B312,M. DEHMAS
-M1,TELECOM,G04,Dimanche,14:40-16:10,EE413L,LAB,A309,F. MOUHOUCHE
-M1,TELECOM,G04,Lundi,08:00-09:30,EE413,LECT,A407,F. MOUHOUCHE
-M1,TELECOM,G04,Lundi,09:40-11:10,EE461,LECT,B007,M. CHALLAL
-M1,TELECOM,G04,Lundi,13:00-14:30,EE415,LECT,AMPHI 3,K. DJAFRI
-M1,TELECOM,G04,Mardi,08:00-09:30,EE411,LECT,C107,A. AZRAR
-M1,TELECOM,G04,Mardi,09:40-11:10,EE417,LECT,A407,S. MEKHMOUKH
-M1,TELECOM,G04,Mardi,13:00-14:30,EE411,LAB,B201-LAB,A. AZRAR
-M1,TELECOM,G04,Mercredi,08:00-09:30,EE415,LECT,AMPHI 3,K. DJAFRI
-M1,TELECOM,G04,Mercredi,09:40-11:10,EE425,LECT,AMPHI 4,F. FERTAS
+M1,COMPUTER,G01,Sunday,08:00-09:30,EE621,LECT,C107,D. HERBADJI
+M1,COMPUTER,G01,Tuesday,08:00-09:30,EE459,LECT,B312,R. NAMANE
+M1,COMPUTER,G01,Wednesday,08:00-09:30,EE473/EE423,LAB,A404/A405,D. FARES / TABET
+M1,COMPUTER,G01,Thursday,08:00-09:30,EE459,LECT,B007,R. NAMANE
+M1,COMPUTER,G01,Sunday,09:40-11:10,EE459L,LAB,A305,R. NAMANE
+M1,COMPUTER,G01,Monday,09:40-11:10,EE421,LECT,B007,A. BENZEKRI
+M1,COMPUTER,G01,Tuesday,09:40-11:10,EE423,LECT,B312,Y. TABET
+M1,COMPUTER,G01,Wednesday,09:40-11:10,EE473/EE423,LAB,A404/A405,D. FARES / TABET
+M1,COMPUTER,G01,Thursday,09:40-11:10,EE421L,LAB,A205,A. BENZEKRI
+M1,COMPUTER,G01,Sunday,11:20-12:50,EE459L,LAB,A305,R. NAMANE
+M1,COMPUTER,G01,Monday,11:20-12:50,EE473,LECT,AMPHI 3,D. FARES
+M1,COMPUTER,G01,Tuesday,11:20-12:50,EE423,LECT,B312,Y. TABET
+M1,COMPUTER,G01,Thursday,11:20-12:50,EE421L,LAB,A205,A. BENZEKRI
+M1,COMPUTER,G01,Wednesday,13:00-14:30,EE421,LECT,B005,A. BENZEKRI
+M1,COMPUTER,G01,Wednesday,14:40-16:10,EE473,LECT,AMPHI 3,D. FARES
+M1,COMPUTER,G02,Sunday,08:00-09:30,EE621,LECT,C107,D. HERBADJI
+M1,COMPUTER,G02,Tuesday,08:00-09:30,EE459,LECT,B312,R. NAMANE
+M1,COMPUTER,G02,Wednesday,08:00-09:30,EE473/EE423,LAB,A404/A405,D. FARES / TABET
+M1,COMPUTER,G02,Thursday,08:00-09:30,EE459,LECT,B007,R. NAMANE
+M1,COMPUTER,G02,Monday,09:40-11:10,EE421,LECT,B007,A. BENZEKRI
+M1,COMPUTER,G02,Tuesday,09:40-11:10,EE423,LECT,B312,Y. TABET
+M1,COMPUTER,G02,Wednesday,09:40-11:10,EE473/EE423,LAB,A404/A405,D. FARES / TABET
+M1,COMPUTER,G02,Monday,11:20-12:50,EE473,LECT,AMPHI 3,D. FARES
+M1,COMPUTER,G02,Tuesday,11:20-12:50,EE423,LECT,B312,Y. TABET
+M1,COMPUTER,G02,Sunday,13:00-14:30,EE459L,LAB,A305,R. NAMANE
+M1,COMPUTER,G02,Monday,13:00-14:30,EE421L,LAB,A205,A. BENZEKRI
+M1,COMPUTER,G02,Wednesday,13:00-14:30,EE421,LECT,B005,A. BENZEKRI
+M1,COMPUTER,G02,Sunday,14:40-16:10,EE459L,LAB,A305,R. NAMANE
+M1,COMPUTER,G02,Monday,14:40-16:10,EE421L,LAB,A205,A. BENZEKRI
+M1,COMPUTER,G02,Wednesday,14:40-16:10,EE473,LECT,AMPHI 3,D. FARES
+M1,COMPUTER,G03,Sunday,08:00-09:30,EE621,LECT,C107,D. HERBADJI
+M1,COMPUTER,G03,Tuesday,08:00-09:30,EE459,LECT,B312,R. NAMANE
+M1,COMPUTER,G03,Thursday,08:00-09:30,EE459,LECT,B007,R. NAMANE
+M1,COMPUTER,G03,Monday,09:40-11:10,EE421,LECT,B007,A. BENZEKRI
+M1,COMPUTER,G03,Tuesday,09:40-11:10,EE423,LECT,B312,Y. TABET
+M1,COMPUTER,G03,Wednesday,09:40-11:10,EE421L,LAB,A205,A. BENZEKRI
+M1,COMPUTER,G03,Thursday,09:40-11:10,EE459L,LAB,A305,R. NAMANE
+M1,COMPUTER,G03,Monday,11:20-12:50,EE473,LECT,AMPHI 3,D. FARES
+M1,COMPUTER,G03,Tuesday,11:20-12:50,EE423,LECT,B312,Y. TABET
+M1,COMPUTER,G03,Wednesday,11:20-12:50,EE421L,LAB,A205,A. BENZEKRI
+M1,COMPUTER,G03,Thursday,11:20-12:50,EE459L,LAB,A305,R. NAMANE
+M1,COMPUTER,G03,Monday,13:00-14:30,EE473/EE423,LAB,A404/A405,D. FARES / TABET
+M1,COMPUTER,G03,Wednesday,13:00-14:30,EE421,LECT,B005,A. BENZEKRI
+M1,COMPUTER,G03,Monday,14:40-16:10,EE473/EE423,LAB,A404/A405,D. FARES / TABET
+M1,COMPUTER,G03,Wednesday,14:40-16:10,EE473,LECT,AMPHI 3,D. FARES
+M1,COMPUTER,G04,Sunday,08:00-09:30,EE621,LECT,C107,D. HERBADJI
+M1,COMPUTER,G04,Tuesday,08:00-09:30,EE459,LECT,B312,R. NAMANE
+M1,COMPUTER,G04,Wednesday,08:00-09:30,EE459L,LAB,A305,R. NAMANE
+M1,COMPUTER,G04,Thursday,08:00-09:30,EE459,LECT,B007,R. NAMANE
+M1,COMPUTER,G04,Monday,09:40-11:10,EE421,LECT,B007,A. BENZEKRI
+M1,COMPUTER,G04,Tuesday,09:40-11:10,EE423,LECT,B312,Y. TABET
+M1,COMPUTER,G04,Wednesday,09:40-11:10,EE459L,LAB,A305,R. NAMANE
+M1,COMPUTER,G04,Monday,11:20-12:50,EE473,LECT,AMPHI 3,D. FARES
+M1,COMPUTER,G04,Tuesday,11:20-12:50,EE423,LECT,B312,Y. TABET
+M1,COMPUTER,G04,Sunday,13:00-14:30,EE421L,LAB,A205,A. BENZEKRI
+M1,COMPUTER,G04,Monday,13:00-14:30,EE473/EE423,LAB,A404/A405,D. FARES / TABET
+M1,COMPUTER,G04,Wednesday,13:00-14:30,EE421,LECT,B005,A. BENZEKRI
+M1,COMPUTER,G04,Sunday,14:40-16:10,EE421L,LAB,A205,A. BENZEKRI
+M1,COMPUTER,G04,Monday,14:40-16:10,EE473/EE423,LAB,A404/A405,D. FARES / TABET
+M1,COMPUTER,G04,Wednesday,14:40-16:10,EE473,LECT,AMPHI 3,D. FARES
+M1,CONTROL,G01,Sunday,08:00-09:30,EE479,LECT,B007,K. HARICHE
+M1,CONTROL,G01,Monday,08:00-09:30,EE455L,LAB,A408,H. LOUBAR
+M1,CONTROL,G01,Tuesday,08:00-09:30,EE479,LECT,B007,K. HARICHE
+M1,CONTROL,G01,Thursday,08:00-09:30,EE419L,LAB,A401,D. BELAIDI
+M1,CONTROL,G01,Sunday,09:40-11:10,EE455,LECT,A407,H. BELMADANI
+M1,CONTROL,G01,Monday,09:40-11:10,EE419,LECT,AMPHI 3,D. BELAIDI
+M1,CONTROL,G01,Tuesday,09:40-11:10,EE479,REC,C105,N. CHERIFI
+M1,CONTROL,G01,Wednesday,09:40-11:10,EE457,LAB,A308,R. HADOUCHE
+M1,CONTROL,G01,Thursday,09:40-11:10,EE429,LAB,A411,M. BENZAOUI
+M1,CONTROL,G01,Monday,11:20-12:50,EE471,LECT,AMPHI 3,D. FARES
+M1,CONTROL,G01,Sunday,13:00-14:30,EE457,LECT,B007,R. HADOUCHE
+M1,CONTROL,G01,Monday,13:00-14:30,EE429,LECT,B007,M. BENZAOUI
+M1,CONTROL,G01,Tuesday,13:00-14:30,EE455,LECT,B005,H. BELMADANI
+M1,CONTROL,G01,Wednesday,13:00-14:30,EE419,LECT,AMPHI 3,D. BELAIDI
+M1,CONTROL,G01,Wednesday,14:40-16:10,EE471,LECT,AMPHI 3,D. FARES
+M1,CONTROL,G01,Thursday,14:40-16:10,EE471L,LAB,A313,K. SAOUDI
+M1,CONTROL,G02,Sunday,08:00-09:30,EE479,LECT,B007,K. HARICHE
+M1,CONTROL,G02,Tuesday,08:00-09:30,EE479,LECT,B007,K. HARICHE
+M1,CONTROL,G02,Thursday,08:00-09:30,EE471L,LAB,A313,K. SAOUDI
+M1,CONTROL,G02,Sunday,09:40-11:10,EE455,LECT,A407,H. BELMADANI
+M1,CONTROL,G02,Monday,09:40-11:10,EE419,LECT,AMPHI 3,D. BELAIDI
+M1,CONTROL,G02,Tuesday,09:40-11:10,EE479,REC,C105,N. CHERIFI
+M1,CONTROL,G02,Sunday,11:20-12:50,EE457,LAB,A308,R. HADOUCHE
+M1,CONTROL,G02,Monday,11:20-12:50,EE471,LECT,AMPHI 3,D. FARES
+M1,CONTROL,G02,Sunday,13:00-14:30,EE457,LECT,B007,R. HADOUCHE
+M1,CONTROL,G02,Monday,13:00-14:30,EE429,LECT,B007,M. BENZAOUI
+M1,CONTROL,G02,Tuesday,13:00-14:30,EE455,LECT,B005,H. BELMADANI
+M1,CONTROL,G02,Wednesday,11:20-12:50,EE419L,LAB,A401,D. BELAIDI
+M1,CONTROL,G02,Wednesday,13:00-14:30,EE419,LECT,AMPHI 3,D. BELAIDI
+M1,CONTROL,G02,Monday,14:40-16:10,EE455L,LAB,A408,H. LOUBAR
+M1,CONTROL,G02,Wednesday,14:40-16:10,EE471,LECT,AMPHI 3,D. FARES
+M1,CONTROL,G02,Thursday,14:40-16:10,EE429,LAB,A411,M. BENZAOUI
+M1,CONTROL,G03,Sunday,08:00-09:30,EE479,LECT,B007,K. HARICHE
+M1,CONTROL,G03,Tuesday,08:00-09:30,EE479,LECT,B007,K. HARICHE
+M1,CONTROL,G03,Sunday,09:40-11:10,EE455,LECT,A407,H. BELMADANI
+M1,CONTROL,G03,Monday,09:40-11:10,EE419,LECT,AMPHI 3,D. BELAIDI
+M1,CONTROL,G03,Thursday,09:40-11:10,EE471L,LAB,A313,K. SAOUDI
+M1,CONTROL,G03,Monday,11:20-12:50,EE471,LECT,AMPHI 3,D. FARES
+M1,CONTROL,G03,Wednesday,11:20-12:50,EE457,LAB,A308,R. HADOUCHE
+M1,CONTROL,G03,Tuesday,11:20-12:50,EE479,REC,C105,N. CHERIFI
+M1,CONTROL,G03,Thursday,11:20-12:50,EE419L,LAB,A401,D. BELAIDI
+M1,CONTROL,G03,Sunday,13:00-14:30,EE457,LECT,B007,R. HADOUCHE
+M1,CONTROL,G03,Monday,13:00-14:30,EE429,LECT,B007,M. BENZAOUI
+M1,CONTROL,G03,Tuesday,13:00-14:30,EE455,LECT,B005,H. BELMADANI
+M1,CONTROL,G03,Wednesday,13:00-14:30,EE419,LECT,AMPHI 3,D. BELAIDI
+M1,CONTROL,G03,Wednesday,09:40-11:10,EE455L,LAB,A408,H. LOUBAR
+M1,CONTROL,G03,Thursday,13:00-14:30,EE429,LAB,A411,M. BENZAOUI
+M1,CONTROL,G03,Wednesday,14:40-16:10,EE471,LECT,AMPHI 3,D. FARES
+M1,CONTROL,G04,Sunday,08:00-09:30,EE479,LECT,B007,K. HARICHE
+M1,CONTROL,G04,Tuesday,08:00-09:30,EE479,LECT,B007,K. HARICHE
+M1,CONTROL,G04,Wednesday,08:00-09:30,EE457,LAB,A308,R. HADOUCHE
+M1,CONTROL,G04,Thursday,08:00-09:30,EE429,LAB,A411,M. BENZAOUI
+M1,CONTROL,G04,Sunday,09:40-11:10,EE455,LECT,A407,H. BELMADANI
+M1,CONTROL,G04,Monday,09:40-11:10,EE419,LECT,AMPHI 3,D. BELAIDI
+M1,CONTROL,G04,Tuesday,11:20-12:50,EE479,REC,C105,N. CHERIFI
+M1,CONTROL,G04,Thursday,09:40-11:10,EE419L,LAB,A401,D. BELAIDI
+M1,CONTROL,G04,Monday,11:20-12:50,EE471,LECT,AMPHI 3,D. FARES
+M1,CONTROL,G04,Wednesday,11:20-12:50,EE455L,LAB,A408,H. LOUBAR
+M1,CONTROL,G04,Sunday,13:00-14:30,EE457,LECT,B007,R. HADOUCHE
+M1,CONTROL,G04,Monday,13:00-14:30,EE429,LECT,B007,M. BENZAOUI
+M1,CONTROL,G04,Tuesday,13:00-14:30,EE455,LECT,B005,H. BELMADANI
+M1,CONTROL,G04,Wednesday,13:00-14:30,EE419,LECT,AMPHI 3,D. BELAIDI
+M1,CONTROL,G04,Thursday,13:00-14:30,EE471L,LAB,A313,K. SAOUDI
+M1,CONTROL,G04,Wednesday,14:40-16:10,EE471,LECT,AMPHI 3,D. FARES
+M1,IED,G01,Sunday,08:00-09:30,EE441,LECT,C117,H. HORKOUS
+M1,IED,G01,Monday,08:00-09:30,EE427,LECT,C104,A. CHENOUF
+M1,IED,G01,Tuesday,08:00-09:30,EE423,LECT,B313,T. ZEMOURI
+M1,IED,G01,Wednesday,08:00-09:30,EE475,LECT,B205,F. HADJ LARBI
+M1,IED,G01,Sunday,09:40-11:10,EE441,REC,C117,H. HORKOUS
+M1,IED,G01,Monday,09:40-11:10,EE427,LECT,C104,A. CHENOUF
+M1,IED,G01,Tuesday,09:40-11:10,EE423,REC,B313,T. ZEMOURI
+M1,IED,G01,Wednesday,09:40-11:10,EE475,REC,B205,F. HADJ LARBI
+M1,IED,G01,Sunday,13:00-14:30,EE441,LAB,A005,H. HORKOUS
+M1,IED,G01,Monday,13:00-14:30,EE427,REC,C105,A. CHENOUF
+M1,IED,G01,Tuesday,13:00-14:30,EE621,LECT,C104,Y. HADDAD
+M1,IED,G01,Wednesday,13:00-14:30,EE475,LAB,Sale.,F. HADJ LARBI
+M1,IED,G01,Monday,14:40-16:10,EE427,LAB,A003,A. CHENOUF
+M1,IED,G01,Tuesday,14:40-16:10,EE423,LAB,Sale.,T. ZEMOURI
+M1,IEM,G01,Sunday,08:00-09:30,EE421,LECT,B311,M. MAHDI
+M1,IEM,G01,Monday,08:00-09:30,EE459,LECT,B311,F. HADJ LARBI
+M1,IEM,G01,Tuesday,08:00-09:30,EE621,LECT,B211,M. MAHDI
+M1,IEM,G01,Wednesday,08:00-09:30,EE473,LECT,B305,Y. HADDAD
+M1,IEM,G01,Sunday,09:40-11:10,EE421,LECT,B311,M. MAHDI
+M1,IEM,G01,Monday,09:40-11:10,EE459,REC,B311,F. HADJ LARBI
+M1,IEM,G01,Tuesday,09:40-11:10,EE423,LECT,C104,A. BENABDELMOUMEN
+M1,IEM,G01,Wednesday,09:40-11:10,EE473,REC,B305,Y. HADDAD
+M1,IEM,G01,Sunday,13:00-14:30,EE421,REC,B319,M. MAHDI
+M1,IEM,G01,Monday,13:00-14:30,EE459,LAB,Sale fictif,F. HADJ LARBI
+M1,IEM,G01,Tuesday,13:00-14:30,EE423,REC,C105,A. BENABDELMOUMEN
+M1,IEM,G01,Wednesday,13:00-14:30,EE473,LAB,A003,Y. BAKHA
+M1,IEM,G01,Sunday,14:40-16:10,EE421,LAB,Sale fictif,M. MAHDI
+M1,IEM,G01,Tuesday,14:40-16:10,EE423,LAB,A005,A. BENABDELMOUMEN
+M1,POWER,G01,Sunday,08:00-09:30,EE451,LECT,A407,H. BELMADANI
+M1,POWER,G01,Monday,08:00-09:30,EE431,LECT,B005,F. DEKHANDJI
+M1,POWER,G01,Thursday,08:00-09:30,EE451,REC,B312,H. BELMADANI
+M1,POWER,G01,Monday,09:40-11:10,EE419,LECT,AMPHI 3,D. BELAIDI
+M1,POWER,G01,Tuesday,09:40-11:10,EE451,LECT,A407,H. BELMADANI
+M1,POWER,G01,Wednesday,09:40-11:10,EE431,LECT,B005,F. DEKHANDJI
+M1,POWER,G01,Thursday,09:40-11:10,EE431,REC,B005,F. DEKHANDJI
+M1,POWER,G01,Sunday,11:20-12:50,EE477L,LAB,A408,O. MERABET
+M1,POWER,G01,Wednesday,11:20-12:50,EE477,LECT,B005,A. KOUADRI
+M1,POWER,G01,Sunday,13:00-14:30,EE419L,LAB,A313,D. VAC
+M1,POWER,G01,Monday,13:00-14:30,EE477,LECT,B005,A. KOUADRI
+M1,POWER,G01,Wednesday,13:00-14:30,EE419,LECT,AMPHI 3,D. BELAIDI
+M1,POWER,G01,Thursday,13:00-14:30,EE433,LECT,AMPHI 3,S. CHALA
+M1,POWER,G01,Tuesday,14:40-16:10,EE431L,LAB,A002,S. TOUIL
+M1,POWER,G01,Thursday,14:40-16:10,EE433,LECT,AMPHI 3,S. CHALA
+M1,POWER,G01,Tuesday,16:20-17:50,EE431L,LAB,A002,S. TOUIL
+M1,POWER,G02,Sunday,08:00-09:30,EE451,LECT,A407,H. BELMADANI
+M1,POWER,G02,Monday,08:00-09:30,EE431,LECT,B005,F. DEKHANDJI
+M1,POWER,G02,Thursday,08:00-09:30,EE451,REC,B312,H. BELMADANI
+M1,POWER,G02,Monday,09:40-11:10,EE419,LECT,AMPHI 3,D. BELAIDI
+M1,POWER,G02,Tuesday,09:40-11:10,EE451,LECT,A407,H. BELMADANI
+M1,POWER,G02,Wednesday,09:40-11:10,EE431,LECT,B005,F. DEKHANDJI
+M1,POWER,G02,Thursday,09:40-11:10,EE431,REC,B005,F. DEKHANDJI
+M1,POWER,G02,Sunday,11:20-12:50,EE419L,LAB,A313,D. VAC
+M1,POWER,G02,Tuesday,11:20-12:50,EE431L,LAB,A002,S. TOUIL
+M1,POWER,G02,Wednesday,11:20-12:50,EE477,LECT,B005,A. KOUADRI
+M1,POWER,G02,Sunday,13:00-14:30,EE477L,LAB,A408,O. MERABET
+M1,POWER,G02,Monday,13:00-14:30,EE477,LECT,B005,A. KOUADRI
+M1,POWER,G02,Tuesday,13:00-14:30,EE431L,LAB,A002,S. TOUIL
+M1,POWER,G02,Wednesday,13:00-14:30,EE419,LECT,AMPHI 3,D. BELAIDI
+M1,POWER,G02,Thursday,13:00-14:30,EE433,LECT,AMPHI 3,S. CHALA
+M1,POWER,G02,Thursday,14:40-16:10,EE433,LECT,AMPHI 3,S. CHALA
+M1,POWER,G03,Sunday,08:00-09:30,EE451,LECT,A407,H. BELMADANI
+M1,POWER,G03,Monday,08:00-09:30,EE431,LECT,B005,F. DEKHANDJI
+M1,POWER,G03,Tuesday,08:00-09:30,EE419L,LAB,A313,D. VAC
+M1,POWER,G03,Sunday,09:40-11:10,EE477L,LAB,A408,O. MERABET
+M1,POWER,G03,Monday,09:40-11:10,EE419,LECT,AMPHI 3,D. BELAIDI
+M1,POWER,G03,Tuesday,09:40-11:10,EE451,LECT,A407,H. BELMADANI
+M1,POWER,G03,Wednesday,09:40-11:10,EE431,LECT,B005,F. DEKHANDJI
+M1,POWER,G03,Thursday,09:40-11:10,EE451,REC,B312,H. BELMADANI
+M1,POWER,G03,Wednesday,11:20-12:50,EE477,LECT,B005,A. KOUADRI
+M1,POWER,G03,Thursday,11:20-12:50,EE431,REC,B005,F. DEKHANDJI
+M1,POWER,G03,Sunday,13:00-14:30,EE431L,LAB,A002,S. TOUIL
+M1,POWER,G03,Sunday,14:40-16:10,EE431L,LAB,A002,S. TOUIL
+M1,POWER,G03,Monday,13:00-14:30,EE477,LECT,B005,A. KOUADRI
+M1,POWER,G03,Wednesday,13:00-14:30,EE419,LECT,AMPHI 3,D. BELAIDI
+M1,POWER,G03,Thursday,13:00-14:30,EE433,LECT,AMPHI 3,S. CHALA
+M1,POWER,G03,Thursday,14:40-16:10,EE433,LECT,AMPHI 3,S. CHALA
+M1,POWER,G04,Sunday,08:00-09:30,EE451,LECT,A407,H. BELMADANI
+M1,POWER,G04,Sunday,09:40-11:10,EE431L,LAB,A002,S. TOUIL
+M1,POWER,G04,Monday,08:00-09:30,EE431,LECT,B005,F. DEKHANDJI
+M1,POWER,G04,Monday,09:40-11:10,EE419,LECT,AMPHI 3,D. BELAIDI
+M1,POWER,G04,Tuesday,09:40-11:10,EE451,LECT,A407,H. BELMADANI
+M1,POWER,G04,Wednesday,09:40-11:10,EE431,LECT,B005,F. DEKHANDJI
+M1,POWER,G04,Thursday,09:40-11:10,EE451,REC,B312,H. BELMADANI
+M1,POWER,G04,Sunday,11:20-12:50,EE431L,LAB,A002,S. TOUIL
+M1,POWER,G04,Tuesday,11:20-12:50,EE419L,LAB,A313,D. VAC
+M1,POWER,G04,Wednesday,11:20-12:50,EE477,LECT,B005,A. KOUADRI
+M1,POWER,G04,Thursday,11:20-12:50,EE431,REC,B005,F. DEKHANDJI
+M1,POWER,G04,Monday,13:00-14:30,EE477,LECT,B005,A. KOUADRI
+M1,POWER,G04,Wednesday,13:00-14:30,EE419,LECT,AMPHI 3,D. BELAIDI
+M1,POWER,G04,Thursday,13:00-14:30,EE433,LECT,AMPHI 3,S. CHALA
+M1,POWER,G04,Sunday,14:40-16:10,EE477L,LAB,A408,O. MERABET
+M1,POWER,G04,Thursday,14:40-16:10,EE433,LECT,AMPHI 3,S. CHALA
+M1,TELECOM,G01,Sunday,08:00-09:30,EE461,LECT,B312,M. CHALLAL
+M1,TELECOM,G01,Monday,08:00-09:30,EE411,LECT,C107,A. AZRAR
+M1,TELECOM,G01,Tuesday,08:00-09:30,EE413,LECT,A407,F. MOUHOUCHE
+M1,TELECOM,G01,Wednesday,08:00-09:30,EE411,LECT,C107,A. AZRAR
+M1,TELECOM,G01,Thursday,08:00-09:30,EE415,LECT,AMPHI 3,K. DJAFRI
+M1,TELECOM,G01,Sunday,09:40-11:10,EE413,LECT,B005,F. MOUHOUCHE
+M1,TELECOM,G01,Monday,09:40-11:10,EE463,LECT,B312,M. DEHMAS
+M1,TELECOM,G01,Tuesday,09:40-11:10,EE461,LECT,B007,M. CHALLAL
+M1,TELECOM,G01,Wednesday,09:40-11:10,EE417,LECT,A407,S. MEKHMOUKH
+M1,TELECOM,G01,Thursday,09:40-11:10,EE425,LECT,AMPHI 4,F. FERTAS
+M1,TELECOM,G01,Sunday,13:00-14:30,EE461,REC,B305,M. CHALLAL
+M1,TELECOM,G01,Monday,13:00-14:30,EE411,LAB,B201-LAB,A. AZRAR
+M1,TELECOM,G01,Tuesday,13:00-14:30,EE415,LECT,AMPHI 3,K. DJAFRI
+M1,TELECOM,G01,Wednesday,13:00-14:30,EE417L,LAB,A405,S. MEKHMOUKH
+M1,TELECOM,G01,Sunday,14:40-16:10,EE413L,LAB,A309,F. MOUHOUCHE
+M1,TELECOM,G01,Monday,14:40-16:10,EE463,REC,B305,M. DEHMAS
+M1,TELECOM,G02,Sunday,08:00-09:30,EE461,LECT,B312,M. CHALLAL
+M1,TELECOM,G02,Monday,08:00-09:30,EE411,LECT,C107,A. AZRAR
+M1,TELECOM,G02,Tuesday,08:00-09:30,EE413,LECT,A407,F. MOUHOUCHE
+M1,TELECOM,G02,Wednesday,08:00-09:30,EE411,LECT,C107,A. AZRAR
+M1,TELECOM,G02,Thursday,08:00-09:30,EE415,LECT,AMPHI 3,K. DJAFRI
+M1,TELECOM,G02,Sunday,09:40-11:10,EE413,LECT,B005,F. MOUHOUCHE
+M1,TELECOM,G02,Monday,09:40-11:10,EE463,LECT,B312,M. DEHMAS
+M1,TELECOM,G02,Tuesday,09:40-11:10,EE461,LECT,B007,M. CHALLAL
+M1,TELECOM,G02,Wednesday,09:40-11:10,EE417,LECT,A407,S. MEKHMOUKH
+M1,TELECOM,G02,Thursday,09:40-11:10,EE425,LECT,AMPHI 4,F. FERTAS
+M1,TELECOM,G02,Sunday,13:00-14:30,EE461,REC,B305,M. CHALLAL
+M1,TELECOM,G02,Monday,13:00-14:30,EE413L,LAB,A309,F. MOUHOUCHE
+M1,TELECOM,G02,Tuesday,13:00-14:30,EE415,LECT,AMPHI 3,K. DJAFRI
+M1,TELECOM,G02,Wednesday,13:00-14:30,EE411,LAB,B201-LAB,A. AZRAR
+M1,TELECOM,G02,Monday,14:40-16:10,EE463,REC,B305,M. DEHMAS
+M1,TELECOM,G02,Wednesday,14:40-16:10,EE417L,LAB,A405,S. MEKHMOUKH
+M1,TELECOM,G03,Sunday,08:00-09:30,EE461,LECT,B312,M. CHALLAL
+M1,TELECOM,G03,Monday,08:00-09:30,EE411,LECT,C107,A. AZRAR
+M1,TELECOM,G03,Tuesday,08:00-09:30,EE413,LECT,A407,F. MOUHOUCHE
+M1,TELECOM,G03,Wednesday,08:00-09:30,EE411,LECT,C107,A. AZRAR
+M1,TELECOM,G03,Thursday,08:00-09:30,EE415,LECT,AMPHI 3,K. DJAFRI
+M1,TELECOM,G03,Sunday,09:40-11:10,EE413,LECT,B005,F. MOUHOUCHE
+M1,TELECOM,G03,Monday,09:40-11:10,EE463,LECT,B312,M. DEHMAS
+M1,TELECOM,G03,Tuesday,09:40-11:10,EE461,LECT,B007,M. CHALLAL
+M1,TELECOM,G03,Wednesday,09:40-11:10,EE417,LECT,A407,S. MEKHMOUKH
+M1,TELECOM,G03,Thursday,09:40-11:10,EE425,LECT,AMPHI 4,F. FERTAS
+M1,TELECOM,G03,Sunday,13:00-14:30,EE413L,LAB,A309,F. MOUHOUCHE
+M1,TELECOM,G03,Monday,13:00-14:30,EE463,REC,B305,M. DEHMAS
+M1,TELECOM,G03,Tuesday,13:00-14:30,EE415,LECT,AMPHI 3,K. DJAFRI
+M1,TELECOM,G03,Thursday,13:00-14:30,EE417L,LAB,A404,S. MEKHMOUKH
+M1,TELECOM,G03,Sunday,14:40-16:10,EE461,REC,B305,M. CHALLAL
+M1,TELECOM,G03,Monday,14:40-16:10,EE411,LAB,B201-LAB,A. AZRAR
+M1,TELECOM,G04,Sunday,08:00-09:30,EE461,LECT,B312,M. CHALLAL
+M1,TELECOM,G04,Monday,08:00-09:30,EE411,LECT,C107,A. AZRAR
+M1,TELECOM,G04,Tuesday,08:00-09:30,EE413,LECT,A407,F. MOUHOUCHE
+M1,TELECOM,G04,Wednesday,08:00-09:30,EE411,LECT,C107,A. AZRAR
+M1,TELECOM,G04,Thursday,08:00-09:30,EE415,LECT,AMPHI 3,K. DJAFRI
+M1,TELECOM,G04,Sunday,09:40-11:10,EE413,LECT,B005,F. MOUHOUCHE
+M1,TELECOM,G04,Monday,09:40-11:10,EE463,LECT,B312,M. DEHMAS
+M1,TELECOM,G04,Tuesday,09:40-11:10,EE461,LECT,B007,M. CHALLAL
+M1,TELECOM,G04,Wednesday,09:40-11:10,EE417,LECT,A407,S. MEKHMOUKH
+M1,TELECOM,G04,Thursday,09:40-11:10,EE425,LECT,AMPHI 4,F. FERTAS
+M1,TELECOM,G04,Thursday,11:20-12:50,EE417L,LAB,A404,S. MEKHMOUKH
+M1,TELECOM,G04,Monday,13:00-14:30,EE463,REC,B305,M. DEHMAS
+M1,TELECOM,G04,Tuesday,13:00-14:30,EE415,LECT,AMPHI 3,K. DJAFRI
+M1,TELECOM,G04,Sunday,14:40-16:10,EE461,REC,B305,M. CHALLAL
+M1,TELECOM,G04,Tuesday,14:40-16:10,EE413L,LAB,A309,F. MOUHOUCHE
+M1,TELECOM,G04,Wednesday,14:40-16:10,EE411,LAB,B201-LAB,A. AZRAR
 </script>
 
-<!-- ============================================================= -->
-<!-- ============ DONNÉES CSV — NIVEAU M2 ======================== -->
-<!-- ============================================================= -->
+<!-- ============ M2 ============ -->
 <script type="text/plain" id="csv-M2">
 Niveau,Filière,Groupe,Jour,Créneau,Matière,Type,Salle,Enseignant
-M2,COMPUTER,G01,Dimanche,08:00-09:30,EE521,LECT,C104,A. MAACHE
-M2,COMPUTER,G01,Dimanche,09:40-11:10,EE521L,LAB,A401,A. MAACHE
-M2,COMPUTER,G01,Dimanche,11:20-12:50,EE521L,LAB,A401,A. MAACHE
-M2,COMPUTER,G01,Dimanche,13:00-14:30,EE527,LECT,B312,A. KHOUAS
-M2,COMPUTER,G01,Lundi,08:00-09:30,EE523,LECT,B007,H. BELAIDI
-M2,COMPUTER,G01,Lundi,09:40-11:10,EE527L,LAB,A401,A. KHOUAS
-M2,COMPUTER,G01,Lundi,13:00-14:30,EE523L,LAB,A305,R. HADOUCHE
-M2,COMPUTER,G01,Mardi,08:00-09:30,EE521,LECT,C104,A. MAACHE
-M2,COMPUTER,G01,Mardi,13:00-14:30,EE527,LECT,B312,A. KHOUAS
-M2,COMPUTER,G01,Mercredi,08:00-09:30,EE581,LECT,C104,N. DERROUCHE
-M2,COMPUTER,G01,Mercredi,09:40-11:10,EE523,LECT,B007,H. BELAIDI
-M2,COMPUTER,G01,Mercredi,13:00-14:30,EE525,LECT,A407,Y. BENMOUSSA
-M2,COMPUTER,G01,Jeudi,08:00-09:30,EE525,LECT,A407,Y. BENMOUSSA
-M2,COMPUTER,G01,Jeudi,09:40-11:10,EL501,LECT,C105,I. DJIDJIK
-M2,COMPUTER,G01,Jeudi,13:00-14:30,EE525L,LAB,A305,Y. BENMOUSSA
-M2,COMPUTER,G02,Dimanche,08:00-09:30,EE521,LECT,C104,A. MAACHE
-M2,COMPUTER,G02,Dimanche,13:00-14:30,EE527,LECT,B312,A. KHOUAS
-M2,COMPUTER,G02,Lundi,08:00-09:30,EE523,LECT,B007,H. BELAIDI
-M2,COMPUTER,G02,Lundi,09:40-11:10,EE521L,LAB,A401,A. MAACHE
-M2,COMPUTER,G02,Lundi,11:20-12:50,EE521L,LAB,A401,A. MAACHE
-M2,COMPUTER,G02,Lundi,13:00-14:30,EE527L,LAB,A401,A. KHOUAS
-M2,COMPUTER,G02,Lundi,14:40-16:10,EE527L,LAB,A401,A. KHOUAS
-M2,COMPUTER,G02,Mardi,08:00-09:30,EE521,LECT,C104,A. MAACHE
-M2,COMPUTER,G02,Mardi,13:00-14:30,EE527,LECT,B312,A. KHOUAS
-M2,COMPUTER,G02,Mercredi,08:00-09:30,EE581,LECT,C104,N. DERROUCHE
-M2,COMPUTER,G02,Mercredi,09:40-11:10,EE523,LECT,B007,H. BELAIDI
-M2,COMPUTER,G02,Mercredi,13:00-14:30,EE525,LECT,A407,Y. BENMOUSSA
-M2,COMPUTER,G02,Jeudi,08:00-09:30,EE525,LECT,A407,Y. BENMOUSSA
-M2,COMPUTER,G02,Jeudi,09:40-11:10,EL501,LECT,C105,I. DJIDJIK
-M2,COMPUTER,G02,Jeudi,13:00-14:30,EE525L,LAB,A408,Y. BENMOUSSA
-M2,CONTROL,G01,Dimanche,08:00-09:30,EE553,LECT,C105,R. GUERNANE
-M2,CONTROL,G01,Dimanche,09:40-11:10,EE551,LECT,B312,A. OUADI
-M2,CONTROL,G01,Dimanche,13:00-14:30,EE551L,LAB,A308,A. OUADI
-M2,CONTROL,G01,Dimanche,14:40-16:10,EE551L,LAB,A308,A. OUADI
-M2,CONTROL,G01,Lundi,08:00-09:30,EE557,LECT,B007,H. BELAIDI
-M2,CONTROL,G01,Lundi,09:40-11:10,EE559,LECT,A407,A. KOUADRI
-M2,CONTROL,G01,Lundi,13:00-14:30,EE555,LECT,B312,H. LOUBAR
-M2,CONTROL,G01,Lundi,14:40-16:10,EE557L,LAB,A411,K. SAOUDI
-M2,CONTROL,G01,Mardi,08:00-09:30,EE553,LECT,B005,R. GUERNANE
-M2,CONTROL,G01,Mardi,09:40-11:10,EE551,LECT,C107,A. OUADI
-M2,CONTROL,G01,Mardi,13:00-14:30,EE553L,LAB,A304,R. GUERNANE
-M2,CONTROL,G01,Mardi,14:40-16:10,EE559,LECT,B007,A. KOUADRI
-M2,CONTROL,G01,Mercredi,08:00-09:30,EE555,LECT,B312,H. LOUBAR
-M2,CONTROL,G01,Mercredi,09:40-11:10,EE557,LECT,B007,H. BELAIDI
-M2,CONTROL,G01,Mercredi,13:00-14:30,EE581,LECT,C105,N. DERROUCHE
-M2,CONTROL,G01,Jeudi,08:00-09:30,EL501,LECT,C105,I. DJIDJIK
-M2,CONTROL,G02,Dimanche,08:00-09:30,EE553,LECT,C105,R. GUERNANE
-M2,CONTROL,G02,Dimanche,09:40-11:10,EE551,LECT,B312,A. OUADI
-M2,CONTROL,G02,Lundi,08:00-09:30,EE557,LECT,B007,H. BELAIDI
-M2,CONTROL,G02,Lundi,09:40-11:10,EE559,LECT,A407,A. KOUADRI
-M2,CONTROL,G02,Lundi,13:00-14:30,EE555,LECT,B312,H. LOUBAR
-M2,CONTROL,G02,Lundi,14:40-16:10,EE553L,LAB,A304,R. GUERNANE
-M2,CONTROL,G02,Mardi,08:00-09:30,EE553,LECT,B005,R. GUERNANE
-M2,CONTROL,G02,Mardi,09:40-11:10,EE551,LECT,C107,A. OUADI
-M2,CONTROL,G02,Mardi,11:20-12:50,EE551,LAB,A308,A. OUADI
-M2,CONTROL,G02,Mardi,13:00-14:30,EE557L,LAB,A411,K. SAOUDI
-M2,CONTROL,G02,Mardi,14:40-16:10,EE559,LECT,B007,A. KOUADRI
-M2,CONTROL,G02,Mercredi,08:00-09:30,EE555,LECT,B312,H. LOUBAR
-M2,CONTROL,G02,Mercredi,09:40-11:10,EE557,LECT,B007,H. BELAIDI
-M2,CONTROL,G02,Mercredi,09:40-11:10,EE551,LAB,A308,A. OUADI
-M2,CONTROL,G02,Mercredi,13:00-14:30,EE581,LECT,C105,N. DERROUCHE
-M2,CONTROL,G02,Jeudi,08:00-09:30,EL501,LECT,C105,I. DJIDJIK
-M2,CONTROL,G03,Dimanche,08:00-09:30,EE553,LECT,C105,R. GUERNAINE
-M2,CONTROL,G03,Dimanche,09:40-11:10,EE551,LECT,B312,A. OUADI
-M2,CONTROL,G03,Lundi,08:00-09:30,EE557,LECT,B007,H. BELAIDI
-M2,CONTROL,G03,Lundi,09:40-11:10,EE559,LECT,A407,A. KOUADRI
-M2,CONTROL,G03,Lundi,13:00-14:30,EE555,LECT,B312,H. LOUBAR
-M2,CONTROL,G03,Lundi,14:40-16:10,EE553,LAB,A304,R. GUERNAINE
-M2,CONTROL,G03,Mardi,08:00-09:30,EE553,LECT,B005,R. GUERNAINE
-M2,CONTROL,G03,Mardi,09:40-11:10,EE551,LECT,C107,A. OUADI
-M2,CONTROL,G03,Mardi,13:00-14:30,EE551,LAB,A308,A. OUADI
-M2,CONTROL,G03,Mardi,14:40-16:10,EE559,LECT,B007,A. KOUADRI
-M2,CONTROL,G03,Mercredi,08:00-09:30,EE555,LECT,B312,H. LOUBAR
-M2,CONTROL,G03,Mercredi,09:40-11:10,EE557,LECT,B007,H. BELAIDI
-M2,CONTROL,G03,Mercredi,13:00-14:30,EE557,LAB,A411,K. SAOUDI
-M2,CONTROL,G03,Mercredi,13:00-14:30,EE581,LECT,C105,N. DERROUCHE
-M2,CONTROL,G03,Mercredi,14:40-16:10,EE551,LAB,A308,A. OUADI
-M2,CONTROL,G03,Jeudi,08:00-09:30,EL501,LECT,C105,I. DJIDJIK
-M2,CONTROL,G04,Dimanche,08:00-09:30,EE553,LECT,C105,R. GUERNAINE
-M2,CONTROL,G04,Dimanche,09:40-11:10,EE551,LECT,B312,A. OUADI
-M2,CONTROL,G04,Lundi,08:00-09:30,EE557,LECT,B007,H. BELAIDI
-M2,CONTROL,G04,Lundi,09:40-11:10,EE559,LECT,A407,A. KOUADRI
-M2,CONTROL,G04,Lundi,13:00-14:30,EE555,LECT,B312,H. LOUBAR
-M2,CONTROL,G04,Lundi,14:40-16:10,EE557L,LAB,A411,K. SAOUDI
-M2,CONTROL,G04,Mardi,08:00-09:30,EE553,LECT,B005,R. GUERNAINE
-M2,CONTROL,G04,Mardi,09:40-11:10,EE551,LECT,C107,A. OUADI
-M2,CONTROL,G04,Mardi,13:00-14:30,EE553L,LAB,A304,R. GUERNAINE
-M2,CONTROL,G04,Mardi,14:40-16:10,EE559,LECT,B007,A. KOUADRI
-M2,CONTROL,G04,Mercredi,08:00-09:30,EE555,LECT,B312,H. LOUBAR
-M2,CONTROL,G04,Mercredi,09:40-11:10,EE557,LECT,B007,H. BELAIDI
-M2,CONTROL,G04,Mercredi,13:00-14:30,EE581,LECT,C105,N. DERROUCHE
-M2,CONTROL,G04,Mercredi,14:40-16:10,EE551L,LAB,A308,A. OUADI
-M2,CONTROL,G04,Jeudi,08:00-09:30,EL501,LECT,C105,I. DJIDJIK
-M2,CONTROL,G04,Jeudi,14:40-16:10,EE551L,LAB,A308,A. OUADI
-M2,IED,G01,Lundi,08:00-09:30,EE521,LECT,B205,M. DJOUAMA
-M2,IED,G01,Lundi,09:40-11:10,EE521,LECT,B205,M. DJOUAMA
-M2,IED,G01,Lundi,13:00-14:30,EE521,REC,B205,M. DJOUAMA
-M2,IED,G01,Lundi,14:40-16:10,EE521,LAB,Sale fictif,M. DJOUAMA
-M2,IED,G01,Mardi,09:40-11:10,EE527,LECT,B205,N. TAHIR
-M2,IED,G01,Mardi,13:00-14:30,EE527,REC,B205,N. TAHIR
-M2,IED,G01,Mardi,14:40-16:10,EE527,LAB,A005,N. TAHIR
-M2,IED,G01,Mercredi,09:40-11:10,EE523,LECT,B205,S. TRAICHE
-M2,IED,G01,Mercredi,13:00-14:30,EE523,REC,B205,S. TRAICHE
-M2,IED,G01,Mercredi,14:40-16:10,EE523,LAB,Sale fictif,S. TRAICHE
-M2,IED,G01,Mercredi,13:00-14:30,EL501,LECT,C104,I. DJIDJIK
-M2,IED,G01,Jeudi,08:00-09:30,EE525,LECT,B205,S. TRAICHE
-M2,IED,G01,Jeudi,09:40-11:10,EE525,REC,B205,S. TRAICHE
-M2,IED,G01,Jeudi,13:00-14:30,EE525,LAB,A002,S. TRAICHE
-M2,IED,G01,Mercredi,09:40-11:10,EE581,LECT,C104,N. DERROUCHE
-M2,IEM,G01,Dimanche,08:00-09:30,EE521,LECT,B211,B. DJEZZAR
-M2,IEM,G01,Dimanche,09:40-11:10,EE521,LECT,B211,B. DJEZZAR
-M2,IEM,G01,Dimanche,13:00-14:30,EE521,REC,B211,B. DJEZZAR
-M2,IEM,G01,Dimanche,14:40-16:10,EE521,LAB,A003,B. DJEZZAR
-M2,IEM,G01,Lundi,08:00-09:30,EE527,LECT,B211,D. MAAFRI
-M2,IEM,G01,Lundi,09:40-11:10,EE523,LECT,B211,S. OUSSALAH
-M2,IEM,G01,Lundi,13:00-14:30,EE523,REC,B211,S. OUSSALAH
-M2,IEM,G01,Lundi,14:40-16:10,EE523,LAB,A005,S. OUSSALAH
-M2,IEM,G01,Mardi,09:40-11:10,EE525,LECT,B211,R. BOUAADJMINE
-M2,IEM,G01,Mardi,13:00-14:30,EE525,REC,B211,R. BOUAADJMINE
-M2,IEM,G01,Mardi,14:40-16:10,EE525,LAB,A006,R. BOUAADJMINE
-M2,IEM,G01,Mercredi,09:40-11:10,EE581,LECT,C104,N. DERROUCHE
-M2,IEM,G01,Mercredi,13:00-14:30,EL501,LECT,C104,I. DJIDJIK
-M2,IEM,G01,Mercredi,13:00-14:30,EE527,LAB,A105,D. MAAFRI
-M2,IEM,G01,Jeudi,09:40-11:10,EE527,REC,B211,D. MAAFRI
-M2,POWER,G01,Dimanche,08:00-09:30,EE539,LECT,B005,A. KHELDOUNE
-M2,POWER,G01,Dimanche,09:40-11:10,EE529,LECT,C107,B. METIDJI
-M2,POWER,G01,Dimanche,11:20-12:50,EE535,REC,B007,M. BOUCHAHDANE
-M2,POWER,G01,Dimanche,13:00-14:30,EE529L,LAB,A011,B. METIDJI
-M2,POWER,G01,Dimanche,14:40-16:10,EE529L,LAB,A011,B. METIDJI
-M2,POWER,G01,Lundi,08:00-09:30,EE535,LECT,B312,M. BOUCHAHDANE
-M2,POWER,G01,Lundi,09:40-11:10,EE537,LECT,B005,H. BENTERZI
-M2,POWER,G01,Lundi,13:00-14:30,EE537L,LAB,A006,H. BENTERZI
-M2,POWER,G01,Lundi,14:40-16:10,EE537L,LAB,A006,H. BENTERZI
-M2,POWER,G01,Mardi,08:00-09:30,EE529,LECT,C107,B. METIDJI
-M2,POWER,G01,Mardi,09:40-11:10,EE539,LECT,B005,A. KHELDOUNE
-M2,POWER,G01,Mardi,13:00-14:30,EE535L,LAB,A313,M. BOUCHAHDANE
-M2,POWER,G01,Mercredi,08:00-09:30,EE535,LECT,A407,M. BOUCHAHDANE
-M2,POWER,G01,Mercredi,09:40-11:10,EL501,LECT,C105,I. DJIDJIK
-M2,POWER,G01,Mercredi,09:40-11:10,EE581,LECT,C107,N. DERROUCHE
-M2,POWER,G01,Mercredi,14:40-16:10,EE539L,LAB,A404,A. KHELDOUNE
-M2,POWER,G01,Jeudi,08:00-09:30,EE537,LECT,B005,H. BENTERZI
-M2,POWER,G02,Dimanche,08:00-09:30,EE539,LECT,B005,A. KHELDOUNE
-M2,POWER,G02,Dimanche,09:40-11:10,EE529,LECT,C107,B. METIDJI
-M2,POWER,G02,Dimanche,13:00-14:30,EE537L,LAB,A006,H. BENTERZI
-M2,POWER,G02,Dimanche,14:40-16:10,EE537L,LAB,A006,H. BENTERZI
-M2,POWER,G02,Lundi,08:00-09:30,EE535,LECT,B312,M. BOUCHAHDANE
-M2,POWER,G02,Lundi,09:40-11:10,EE537,LECT,B005,H. BENTERZI
-M2,POWER,G02,Lundi,13:00-14:30,EE529L,LAB,A011,B. METIDJI
-M2,POWER,G02,Lundi,14:40-16:10,EE529L,LAB,A011,B. METIDJI
-M2,POWER,G02,Mardi,08:00-09:30,EE529,LECT,C107,B. METIDJI
-M2,POWER,G02,Mardi,09:40-11:10,EE539,LECT,B005,A. KHELDOUNE
-M2,POWER,G02,Mardi,13:00-14:30,EE539L,LAB,A404,A. KHELDOUNE
-M2,POWER,G02,Mercredi,08:00-09:30,EE535,LECT,A407,M. BOUCHAHDANE
-M2,POWER,G02,Mercredi,09:40-11:10,EL501,LECT,C105,I. DJIDJIK
-M2,POWER,G02,Mercredi,11:20-12:50,EE535,REC,B007,M. BOUCHAHDANE
-M2,POWER,G02,Mercredi,14:40-16:10,EE535L,LAB,A313,M. BOUCHAHDANE
-M2,POWER,G02,Jeudi,08:00-09:30,EE537,LECT,B005,H. BENTERZI
-M2,POWER,G02,Jeudi,09:40-11:10,EE581,LECT,C107,N. DERROUCHE
-M2,POWER,G03,Dimanche,08:00-09:30,EE539,LECT,B005,A. KHELDOUNE
-M2,POWER,G03,Dimanche,09:40-11:10,EE529,LECT,C107,B. METIDJI
-M2,POWER,G03,Lundi,08:00-09:30,EE535,LECT,B312,M. BOUCHAHDANE
-M2,POWER,G03,Lundi,09:40-11:10,EE537,LECT,B005,H. BENTERZI
-M2,POWER,G03,Lundi,13:00-14:30,EE539L,LAB,A404,A. KHELDOUNE
-M2,POWER,G03,Lundi,14:40-16:10,EE535,REC,B007,M. BOUCHAHDANE
-M2,POWER,G03,Mardi,08:00-09:30,EE529,LECT,C107,B. METIDJI
-M2,POWER,G03,Mardi,09:40-11:10,EE539,LECT,B005,A. KHELDOUNE
-M2,POWER,G03,Mardi,13:00-14:30,EE535,LAB,A313,M. BOUCHAHDANE
-M2,POWER,G03,Mardi,14:40-16:10,EE529L,LAB,A011,B. METIDJI
-M2,POWER,G03,Mercredi,08:00-09:30,EE535,LECT,A407,M. BOUCHAHDANE
-M2,POWER,G03,Mercredi,09:40-11:10,EL501,LECT,C105,I. DJIDJIK
-M2,POWER,G03,Mercredi,14:40-16:10,EE529L,LAB,A011,B. METIDJI
-M2,POWER,G03,Jeudi,08:00-09:30,EE537,LECT,B005,H. BENTERZI
-M2,POWER,G03,Jeudi,09:40-11:10,EE581,LECT,C107,N. DERROUCHE
-M2,POWER,G03,Jeudi,13:00-14:30,EE537,LAB,A006,H. BENTERZI
-M2,POWER,G03,Jeudi,14:40-16:10,EE537,LAB,A006,H. BENTERZI
-M2,POWER,G04,Dimanche,08:00-09:30,EE539,LECT,B005,A. KHELDOUNE
-M2,POWER,G04,Dimanche,09:40-11:10,EE529,LECT,C107,B. METIDJI
-M2,POWER,G04,Dimanche,14:40-16:10,EE539L,LAB,A404,A. KHELDOUNE
-M2,POWER,G04,Lundi,08:00-09:30,EE535,LECT,B312,M. BOUCHAHDANE
-M2,POWER,G04,Lundi,09:40-11:10,EE537,LECT,B005,H. BENTERZI
-M2,POWER,G04,Lundi,11:20-12:50,EE535L,LAB,A313,M. BOUCHAHDANE
-M2,POWER,G04,Lundi,14:40-16:10,EE535,REC,B007,M. BOUCHAHDANE
-M2,POWER,G04,Mardi,08:00-09:30,EE529,LECT,C107,B. METIDJI
-M2,POWER,G04,Mardi,09:40-11:10,EE539,LECT,B005,A. KHELDOUNE
-M2,POWER,G04,Mardi,13:00-14:30,EE529L,LAB,A011,B. METIDJI
-M2,POWER,G04,Mardi,14:40-16:10,EE529L,LAB,A011,B. METIDJI
-M2,POWER,G04,Mercredi,08:00-09:30,EE535,LECT,A407,M. BOUCHAHDANE
-M2,POWER,G04,Mercredi,09:40-11:10,EL501,LECT,C105,I. DJIDJIK
-M2,POWER,G04,Mercredi,13:00-14:30,EE537L,LAB,A006,H. BENTERZI
-M2,POWER,G04,Mercredi,14:40-16:10,EE537L,LAB,A006,H. BENTERZI
-M2,POWER,G04,Jeudi,08:00-09:30,EE537,LECT,B005,H. BENTERZI
-M2,POWER,G04,Jeudi,09:40-11:10,EE581,LECT,C107,N. DERROUCHE
-M2,TELECOM,G01,Dimanche,08:00-09:30,EE511,LECT,AMPHI 2,N. SMAILI
-M2,TELECOM,G01,Dimanche,09:40-11:10,EE517,LECT,B007,I. HAMOUDI
-M2,TELECOM,G01,Dimanche,11:20-12:50,EE513,LAB,A405,D. CHERIFI
-M2,TELECOM,G01,Dimanche,14:40-16:10,EE513,LECT,A407,D. CHERIFI
-M2,TELECOM,G01,Lundi,08:00-09:30,EE511,LECT,C117,N. SMAILI
-M2,TELECOM,G01,Lundi,09:40-11:10,EE541,LECT,C107,A. AZRAR
-M2,TELECOM,G01,Lundi,13:00-14:30,EE541,LAB,A411,M. CHALLAL
-M2,TELECOM,G01,Mardi,08:00-09:30,EE515,LECT,C117,A. ZITOUNI
-M2,TELECOM,G01,Mardi,09:40-11:10,EE517,LECT,C117,I. HAMOUDI
-M2,TELECOM,G01,Mardi,14:40-16:10,EE541,LAB,A411,M. CHALLAL
-M2,TELECOM,G01,Mercredi,08:00-09:30,EL501,LECT,C105,I. DJIDJIK
-M2,TELECOM,G01,Mercredi,09:40-11:10,EE541,LECT,C107,A. AZRAR
-M2,TELECOM,G01,Mercredi,13:00-14:30,EE515L,LAB,A401,A. ZITOUNI
-M2,TELECOM,G01,Mercredi,14:40-16:10,EE515L,LAB,A401,A. ZITOUNI
-M2,TELECOM,G01,Jeudi,08:00-09:30,EE581,LECT,C107,N. DERROUCHE
-M2,TELECOM,G01,Jeudi,09:40-11:10,EE515,LECT,A407,A. ZITOUNI
-M2,TELECOM,G02,Dimanche,08:00-09:30,EE511,LECT,AMPHI 2,N. SMAILI
-M2,TELECOM,G02,Dimanche,09:40-11:10,EE517,LECT,B007,I. HAMOUDI
-M2,TELECOM,G02,Dimanche,13:00-14:30,EE513,LAB,A405,D. CHERIFI
-M2,TELECOM,G02,Dimanche,14:40-16:10,EE513,LECT,A407,D. CHERIFI
-M2,TELECOM,G02,Lundi,08:00-09:30,EE511,LECT,C117,N. SMAILI
-M2,TELECOM,G02,Lundi,09:40-11:10,EE541,LECT,C107,A. AZRAR
-M2,TELECOM,G02,Lundi,13:00-14:30,EE515L,LAB,A401,A. ZITOUNI
-M2,TELECOM,G02,Lundi,14:40-16:10,EE515L,LAB,A401,A. ZITOUNI
-M2,TELECOM,G02,Mardi,08:00-09:30,EE515,LECT,C117,A. ZITOUNI
-M2,TELECOM,G02,Mardi,09:40-11:10,EE517,LECT,C117,I. HAMOUDI
-M2,TELECOM,G02,Mardi,13:00-14:30,EE541L,LAB,A411,M. CHALLAL
-M2,TELECOM,G02,Mardi,14:40-16:10,EE541L,LAB,A411,M. CHALLAL
-M2,TELECOM,G02,Mercredi,08:00-09:30,EL501,LECT,C105,I. DJIDJIK
-M2,TELECOM,G02,Mercredi,09:40-11:10,EE541,LECT,C107,A. AZRAR
-M2,TELECOM,G02,Mercredi,13:00-14:30,EE517L,LAB,A309,I. HAMOUDI
-M2,TELECOM,G02,Jeudi,08:00-09:30,EE581,LECT,C107,N. DERROUCHE
-M2,TELECOM,G02,Jeudi,09:40-11:10,EE515,LECT,A407,A. ZITOUNI
+M2,COMPUTER,G01,Sunday,08:00-09:30,EE521,LECT,C104,A. MAACHE
+M2,COMPUTER,G01,Monday,08:00-09:30,EE523,LECT,B007,H. BELAIDI
+M2,COMPUTER,G01,Tuesday,08:00-09:30,EE521,LECT,C104,A. MAACHE
+M2,COMPUTER,G01,Wednesday,08:00-09:30,EE581,LECT,C104,N. DERROUCHE
+M2,COMPUTER,G01,Thursday,08:00-09:30,EE525,LECT,A407,Y. BENMOUSSA
+M2,COMPUTER,G01,Sunday,09:40-11:10,EE521L,LAB,A401,A. MAACHE
+M2,COMPUTER,G01,Monday,09:40-11:10,EE527L,LAB,A401,A. KHOUAS
+M2,COMPUTER,G01,Wednesday,09:40-11:10,EE523,LECT,B007,H. BELAIDI
+M2,COMPUTER,G01,Thursday,09:40-11:10,EL501,LECT,C105,I. DJIDJIK
+M2,COMPUTER,G01,Sunday,11:20-12:50,EE521L,LAB,A401,A. MAACHE
+M2,COMPUTER,G01,Monday,11:20-12:50,EE527L,LAB,A401,A. KHOUAS
+M2,COMPUTER,G01,Sunday,13:00-14:30,EE527,LECT,B312,A. KHOUAS
+M2,COMPUTER,G01,Monday,13:00-14:30,EE523L,LAB,A305,R. HADOUCHE
+M2,COMPUTER,G01,Tuesday,13:00-14:30,EE527,LECT,B312,A. KHOUAS
+M2,COMPUTER,G01,Wednesday,13:00-14:30,EE525,LECT,A407,Y. BENMOUSSA
+M2,COMPUTER,G01,Thursday,13:00-14:30,EE525L,LAB,A305,Y. BENMOUSSA
+M2,COMPUTER,G02,Sunday,08:00-09:30,EE521,LECT,C104,A. MAACHE
+M2,COMPUTER,G02,Monday,08:00-09:30,EE523,LECT,B007,H. BELAIDI
+M2,COMPUTER,G02,Tuesday,08:00-09:30,EE521,LECT,C104,A. MAACHE
+M2,COMPUTER,G02,Wednesday,08:00-09:30,EE581,LECT,C104,N. DERROUCHE
+M2,COMPUTER,G02,Thursday,08:00-09:30,EE525,LECT,A407,Y. BENMOUSSA
+M2,COMPUTER,G02,Monday,09:40-11:10,EE523L,LAB,A305,R. HADOUCHE
+M2,COMPUTER,G02,Tuesday,09:40-11:10,EE521L,LAB,A401,A. MAACHE
+M2,COMPUTER,G02,Wednesday,09:40-11:10,EE523,LECT,B007,H. BELAIDI
+M2,COMPUTER,G02,Thursday,09:40-11:10,EL501,LECT,C105,I. DJIDJIK
+M2,COMPUTER,G02,Tuesday,11:20-12:50,EE521L,LAB,A401,A. MAACHE
+M2,COMPUTER,G02,Thursday,11:20-12:50,EE525L,LAB,A408,Y. BENMOUSSA
+M2,COMPUTER,G02,Sunday,13:00-14:30,EE527,LECT,B312,A. KHOUAS
+M2,COMPUTER,G02,Monday,13:00-14:30,EE527L,LAB,A401,A. KHOUAS
+M2,COMPUTER,G02,Tuesday,13:00-14:30,EE527,LECT,B312,A. KHOUAS
+M2,COMPUTER,G02,Wednesday,13:00-14:30,EE525,LECT,A407,Y. BENMOUSSA
+M2,COMPUTER,G02,Monday,14:40-16:10,EE527L,LAB,A401,A. KHOUAS
+M2,CONTROL,G01,Sunday,08:00-09:30,EE553,LECT,C105,R. GUERNANE
+M2,CONTROL,G01,Monday,08:00-09:30,EE557,LECT,B007,H. BELAIDI
+M2,CONTROL,G01,Tuesday,08:00-09:30,EE553,LECT,B005,R. GUERNANE
+M2,CONTROL,G01,Wednesday,08:00-09:30,EE555,LECT,B312,H. LOUBAR
+M2,CONTROL,G01,Thursday,08:00-09:30,EL501,LECT,C105,I. DJIDJIK
+M2,CONTROL,G01,Sunday,09:40-11:10,EE551,LECT,B312,A. OUADI
+M2,CONTROL,G01,Monday,09:40-11:10,EE559,LECT,A407,A. KOUADRI
+M2,CONTROL,G01,Tuesday,09:40-11:10,EE551,LECT,C107,A. OUADI
+M2,CONTROL,G01,Wednesday,09:40-11:10,EE557,LECT,B007,H. BELAIDI
+M2,CONTROL,G01,Sunday,13:00-14:30,EE551L,LAB,A308,A. OUADI
+M2,CONTROL,G01,Monday,13:00-14:30,EE555,LECT,B312,H. LOUBAR
+M2,CONTROL,G01,Tuesday,13:00-14:30,EE553L,LAB,A304,R. GUERNANE
+M2,CONTROL,G01,Wednesday,13:00-14:30,EE581,LECT,C105,N. DERROUCHE
+M2,CONTROL,G01,Sunday,14:40-16:10,EE551L,LAB,A308,A. OUADI
+M2,CONTROL,G01,Tuesday,14:40-16:10,EE557L,LAB,A411,K. SAOUDI
+M2,CONTROL,G01,Wednesday,14:40-16:10,EE559,LECT,B007,A. KOUADRI
+M2,CONTROL,G02,Sunday,08:00-09:30,EE553,LECT,C105,R. GUERNANE
+M2,CONTROL,G02,Monday,08:00-09:30,EE557,LECT,B007,H. BELAIDI
+M2,CONTROL,G02,Tuesday,08:00-09:30,EE553,LECT,B005,R. GUERNANE
+M2,CONTROL,G02,Wednesday,08:00-09:30,EE555,LECT,B312,H. LOUBAR
+M2,CONTROL,G02,Thursday,08:00-09:30,EL501,LECT,C105,I. DJIDJIK
+M2,CONTROL,G02,Sunday,09:40-11:10,EE551,LECT,B312,A. OUADI
+M2,CONTROL,G02,Monday,09:40-11:10,EE559,LECT,A407,A. KOUADRI
+M2,CONTROL,G02,Tuesday,09:40-11:10,EE551,LECT,C107,A. OUADI
+M2,CONTROL,G02,Wednesday,09:40-11:10,EE557,LECT,B007,H. BELAIDI
+M2,CONTROL,G02,Thursday,09:40-11:10,EE551L,LAB,A308,A. OUADI
+M2,CONTROL,G02,Thursday,11:20-12:50,EE551L,LAB,A308,A. OUADI
+M2,CONTROL,G02,Monday,13:00-14:30,EE555,LECT,B312,H. LOUBAR
+M2,CONTROL,G02,Tuesday,13:00-14:30,EE557L,LAB,A411,K. SAOUDI
+M2,CONTROL,G02,Wednesday,13:00-14:30,EE581,LECT,C105,N. DERROUCHE
+M2,CONTROL,G02,Tuesday,14:40-16:10,EE553L,LAB,A304,R. GUERNANE
+M2,CONTROL,G02,Wednesday,14:40-16:10,EE559,LECT,B007,A. KOUADRI
+M2,CONTROL,G03,Sunday,08:00-09:30,EE553,LECT,C105,R. GUERNAINE
+M2,CONTROL,G03,Monday,08:00-09:30,EE557,LECT,B007,H. BELAIDI
+M2,CONTROL,G03,Tuesday,08:00-09:30,EE553,LECT,B005,R. GUERNAINE
+M2,CONTROL,G03,Wednesday,08:00-09:30,EE555,LECT,B312,H. LOUBAR
+M2,CONTROL,G03,Thursday,08:00-09:30,EL501,LECT,C105,I. DJIDJIK
+M2,CONTROL,G03,Sunday,09:40-11:10,EE551,LECT,B312,A. OUADI
+M2,CONTROL,G03,Monday,09:40-11:10,EE559,LECT,A407,A. KOUADRI
+M2,CONTROL,G03,Tuesday,09:40-11:10,EE551,LECT,C107,A. OUADI
+M2,CONTROL,G03,Wednesday,09:40-11:10,EE557,LECT,B007,H. BELAIDI
+M2,CONTROL,G03,Tuesday,13:00-14:30,EE551L,LAB,A308,A. OUADI
+M2,CONTROL,G03,Sunday,14:40-16:10,EE553L,LAB,A304,R. GUERNAINE
+M2,CONTROL,G03,Wednesday,13:00-14:30,EE581,LECT,C105,N. DERROUCHE
+M2,CONTROL,G03,Monday,13:00-14:30,EE555,LECT,B312,H. LOUBAR
+M2,CONTROL,G03,Tuesday,14:40-16:10,EE551L,LAB,A308,A. OUADI
+M2,CONTROL,G03,Sunday,13:00-14:30,EE557,LAB,A411,K. SAOUDI
+M2,CONTROL,G03,Wednesday,14:40-16:10,EE559,LECT,B007,A. KOUADRI
+M2,CONTROL,G04,Sunday,08:00-09:30,EE553,LECT,C105,R. GUERNAINE
+M2,CONTROL,G04,Monday,08:00-09:30,EE557,LECT,B007,H. BELAIDI
+M2,CONTROL,G04,Tuesday,08:00-09:30,EE553,LECT,B005,R. GUERNAINE
+M2,CONTROL,G04,Wednesday,08:00-09:30,EE555,LECT,B312,H. LOUBAR
+M2,CONTROL,G04,Thursday,08:00-09:30,EL501,LECT,C105,I. DJIDJIK
+M2,CONTROL,G04,Sunday,09:40-11:10,EE551,LECT,B312,A. OUADI
+M2,CONTROL,G04,Monday,09:40-11:10,EE559,LECT,A407,A. KOUADRI
+M2,CONTROL,G04,Tuesday,09:40-11:10,EE551,LECT,C107,A. OUADI
+M2,CONTROL,G04,Wednesday,09:40-11:10,EE557,LECT,B007,H. BELAIDI
+M2,CONTROL,G04,Monday,13:00-14:30,EE555,LECT,B312,H. LOUBAR
+M2,CONTROL,G04,Sunday,13:00-14:30,EE553L,LAB,A304,R. GUERNAINE
+M2,CONTROL,G04,Wednesday,13:00-14:30,EE581,LECT,C105,N. DERROUCHE
+M2,CONTROL,G04,Sunday,14:40-16:10,EE557L,LAB,A411,K. SAOUDI
+M2,CONTROL,G04,Thursday,13:00-14:30,EE551L,LAB,A308,A. OUADI
+M2,CONTROL,G04,Wednesday,14:40-16:10,EE559,LECT,B007,A. KOUADRI
+M2,CONTROL,G04,Thursday,14:40-16:10,EE551L,LAB,A308,A. OUADI
+M2,IED,G01,Monday,08:00-09:30,EE521,LECT,B205,M. DJOUAMA
+M2,IED,G01,Thursday,08:00-09:30,EE525,LECT,B205,S. TRAICHE
+M2,IED,G01,Sunday,09:40-11:10,EE527,LECT,B205,N. TAHIR
+M2,IED,G01,Monday,09:40-11:10,EE521,LECT,B205,M. DJOUAMA
+M2,IED,G01,Tuesday,09:40-11:10,EE523,LECT,B205,S. TRAICHE
+M2,IED,G01,Wednesday,09:40-11:10,EE581,LECT,C104,N. DERROUCHE
+M2,IED,G01,Thursday,09:40-11:10,EE525,REC,B205,S. TRAICHE
+M2,IED,G01,Monday,13:00-14:30,EE521,REC,B205,M. DJOUAMA
+M2,IED,G01,Tuesday,13:00-14:30,EE523,REC,B205,S. TRAICHE
+M2,IED,G01,Wednesday,13:00-14:30,EL501,LECT,C104,I. DJIDJIK
+M2,IED,G01,Thursday,13:00-14:30,EE525,LAB,A002,S. TRAICHE
+M2,IED,G01,Sunday,13:00-14:30,EE527,REC,B205,N. TAHIR
+M2,IED,G01,Monday,14:40-16:10,EE521,LAB,Sale fictif,M. DJOUAMA
+M2,IED,G01,Tuesday,14:40-16:10,EE523,LAB,Sale fictif,S. TRAICHE
+M2,IED,G01,Sunday,14:40-16:10,EE527,LAB,A005,N. TAHIR
+M2,IEM,G01,Sunday,08:00-09:30,EE521,LECT,B211,B. DJEZZAR
+M2,IEM,G01,Thursday,08:00-09:30,EE527,LECT,B211,D. MAAFRI
+M2,IEM,G01,Sunday,09:40-11:10,EE521,LECT,B211,B. DJEZZAR
+M2,IEM,G01,Monday,09:40-11:10,EE523,LECT,B211,S. OUSSALAH
+M2,IEM,G01,Tuesday,09:40-11:10,EE525,LECT,B211,R. BOUAADJMINE
+M2,IEM,G01,Wednesday,09:40-11:10,EE581,LECT,C104,N. DERROUCHE
+M2,IEM,G01,Thursday,09:40-11:10,EE527,REC,B211,D. MAAFRI
+M2,IEM,G01,Sunday,13:00-14:30,EE521,REC,B211,B. DJEZZAR
+M2,IEM,G01,Monday,13:00-14:30,EE523,REC,B211,S. OUSSALAH
+M2,IEM,G01,Tuesday,13:00-14:30,EE525,REC,B211,R. BOUAADJMINE
+M2,IEM,G01,Wednesday,13:00-14:30,EL501,LECT,C104,I. DJIDJIK
+M2,IEM,G01,Thursday,13:00-14:30,EE527,LAB,A105,D. MAAFRI
+M2,IEM,G01,Sunday,14:40-16:10,EE521,LAB,A003,B. DJEZZAR
+M2,IEM,G01,Monday,14:40-16:10,EE523,LAB,A005,S. OUSSALAH
+M2,IEM,G01,Tuesday,14:40-16:10,EE525,LAB,A006,R. BOUAADJMINE
+M2,POWER,G01,Sunday,08:00-09:30,EE539,LECT,B005,A. KHELDOUNE
+M2,POWER,G01,Monday,08:00-09:30,EE535,LECT,B312,M. BOUCHAHDANE
+M2,POWER,G01,Tuesday,08:00-09:30,EE529,LECT,C107,B. METIDJI
+M2,POWER,G01,Wednesday,08:00-09:30,EE535,LECT,A407,M. BOUCHAHDANE
+M2,POWER,G01,Thursday,08:00-09:30,EE537,LECT,B005,H. BENTERZI
+M2,POWER,G01,Sunday,09:40-11:10,EE529,LECT,C107,B. METIDJI
+M2,POWER,G01,Monday,09:40-11:10,EE537,LECT,B005,H. BENTERZI
+M2,POWER,G01,Tuesday,09:40-11:10,EE539,LECT,B005,A. KHELDOUNE
+M2,POWER,G01,Wednesday,09:40-11:10,EL501,LECT,C105,I. DJIDJIK
+M2,POWER,G01,Thursday,09:40-11:10,EE581,LECT,C107,N. DERROUCHE
+M2,POWER,G01,Wednesday,11:20-12:50,EE535,REC,B007,M. BOUCHAHDANE
+M2,POWER,G01,Sunday,13:00-14:30,EE529L,LAB,A011,B. METIDJI
+M2,POWER,G01,Monday,13:00-14:30,EE537L,LAB,A006,H. BENTERZI
+M2,POWER,G01,Wednesday,13:00-14:30,EE535L,LAB,A313,M. BOUCHAHDANE
+M2,POWER,G01,Sunday,14:40-16:10,EE529L,LAB,A011,B. METIDJI
+M2,POWER,G01,Monday,14:40-16:10,EE537L,LAB,A006,H. BENTERZI
+M2,POWER,G01,Tuesday,14:40-16:10,EE539L,LAB,A404,A. KHELDOUNE
+M2,POWER,G02,Sunday,08:00-09:30,EE539,LECT,B005,A. KHELDOUNE
+M2,POWER,G02,Monday,08:00-09:30,EE535,LECT,B312,M. BOUCHAHDANE
+M2,POWER,G02,Tuesday,08:00-09:30,EE529,LECT,C107,B. METIDJI
+M2,POWER,G02,Wednesday,08:00-09:30,EE535,LECT,A407,M. BOUCHAHDANE
+M2,POWER,G02,Thursday,08:00-09:30,EE537,LECT,B005,H. BENTERZI
+M2,POWER,G02,Sunday,09:40-11:10,EE529,LECT,C107,B. METIDJI
+M2,POWER,G02,Monday,09:40-11:10,EE537,LECT,B005,H. BENTERZI
+M2,POWER,G02,Tuesday,09:40-11:10,EE539,LECT,B005,A. KHELDOUNE
+M2,POWER,G02,Wednesday,09:40-11:10,EL501,LECT,C105,I. DJIDJIK
+M2,POWER,G02,Thursday,09:40-11:10,EE581,LECT,C107,N. DERROUCHE
+M2,POWER,G02,Wednesday,11:20-12:50,EE535,REC,B007,M. BOUCHAHDANE
+M2,POWER,G02,Sunday,13:00-14:30,EE537L,LAB,A006,H. BENTERZI
+M2,POWER,G02,Monday,13:00-14:30,EE529L,LAB,A011,B. METIDJI
+M2,POWER,G02,Tuesday,13:00-14:30,EE539L,LAB,A404,A. KHELDOUNE
+M2,POWER,G02,Wednesday,14:40-16:10,EE535L,LAB,A313,M. BOUCHAHDANE
+M2,POWER,G02,Sunday,14:40-16:10,EE537L,LAB,A006,H. BENTERZI
+M2,POWER,G02,Monday,14:40-16:10,EE529L,LAB,A011,B. METIDJI
+M2,POWER,G03,Sunday,08:00-09:30,EE539,LECT,B005,A. KHELDOUNE
+M2,POWER,G03,Monday,08:00-09:30,EE535,LECT,B312,M. BOUCHAHDANE
+M2,POWER,G03,Tuesday,08:00-09:30,EE529,LECT,C107,B. METIDJI
+M2,POWER,G03,Wednesday,08:00-09:30,EE535,LECT,A407,M. BOUCHAHDANE
+M2,POWER,G03,Thursday,08:00-09:30,EE537,LECT,B005,H. BENTERZI
+M2,POWER,G03,Sunday,09:40-11:10,EE529,LECT,C107,B. METIDJI
+M2,POWER,G03,Monday,09:40-11:10,EE537,LECT,B005,H. BENTERZI
+M2,POWER,G03,Tuesday,09:40-11:10,EE539,LECT,B005,A. KHELDOUNE
+M2,POWER,G03,Wednesday,09:40-11:10,EL501,LECT,C105,I. DJIDJIK
+M2,POWER,G03,Thursday,09:40-11:10,EE581,LECT,C107,N. DERROUCHE
+M2,POWER,G03,Sunday,13:00-14:30,EE539L,LAB,A404,A. KHELDOUNE
+M2,POWER,G03,Monday,13:00-14:30,EE535L,LAB,A313,M. BOUCHAHDANE
+M2,POWER,G03,Wednesday,13:00-14:30,EE529L,LAB,A011,B. METIDJI
+M2,POWER,G03,Thursday,13:00-14:30,EE537L,LAB,A006,H. BENTERZI
+M2,POWER,G03,Monday,14:40-16:10,EE535,REC,B007,M. BOUCHAHDANE
+M2,POWER,G03,Wednesday,14:40-16:10,EE529L,LAB,A011,B. METIDJI
+M2,POWER,G03,Thursday,14:40-16:10,EE537L,LAB,A006,H. BENTERZI
+M2,POWER,G04,Sunday,08:00-09:30,EE539,LECT,B005,A. KHELDOUNE
+M2,POWER,G04,Monday,08:00-09:30,EE535,LECT,B312,M. BOUCHAHDANE
+M2,POWER,G04,Tuesday,08:00-09:30,EE529,LECT,C107,B. METIDJI
+M2,POWER,G04,Wednesday,08:00-09:30,EE535,LECT,A407,M. BOUCHAHDANE
+M2,POWER,G04,Thursday,08:00-09:30,EE537,LECT,B005,H. BENTERZI
+M2,POWER,G04,Sunday,09:40-11:10,EE529,LECT,C107,B. METIDJI
+M2,POWER,G04,Monday,09:40-11:10,EE537,LECT,B005,H. BENTERZI
+M2,POWER,G04,Tuesday,09:40-11:10,EE539,LECT,B005,A. KHELDOUNE
+M2,POWER,G04,Wednesday,09:40-11:10,EL501,LECT,C105,I. DJIDJIK
+M2,POWER,G04,Thursday,09:40-11:10,EE581,LECT,C107,N. DERROUCHE
+M2,POWER,G04,Monday,11:20-12:50,EE535L,LAB,A313,M. BOUCHAHDANE
+M2,POWER,G04,Sunday,14:40-16:10,EE539L,LAB,A404,A. KHELDOUNE
+M2,POWER,G04,Monday,14:40-16:10,EE535,REC,B007,M. BOUCHAHDANE
+M2,POWER,G04,Tuesday,13:00-14:30,EE529L,LAB,A011,B. METIDJI
+M2,POWER,G04,Wednesday,13:00-14:30,EE537L,LAB,A006,H. BENTERZI
+M2,POWER,G04,Tuesday,14:40-16:10,EE529L,LAB,A011,B. METIDJI
+M2,POWER,G04,Wednesday,14:40-16:10,EE537L,LAB,A006,H. BENTERZI
+M2,TELECOM,G01,Sunday,08:00-09:30,EE511,LECT,AMPHI 2,N. SMAILI
+M2,TELECOM,G01,Monday,08:00-09:30,EE511,LECT,C117,N. SMAILI
+M2,TELECOM,G01,Tuesday,08:00-09:30,EE515,LECT,C117,A. ZITOUNI
+M2,TELECOM,G01,Wednesday,08:00-09:30,EL501,LECT,C105,I. DJIDJIK
+M2,TELECOM,G01,Thursday,08:00-09:30,EE581,LECT,C107,N. DERROUCHE
+M2,TELECOM,G01,Sunday,09:40-11:10,EE517,LECT,B007,I. HAMOUDI
+M2,TELECOM,G01,Monday,09:40-11:10,EE541,LECT,C107,A. AZRAR
+M2,TELECOM,G01,Tuesday,09:40-11:10,EE517,LECT,C117,I. HAMOUDI
+M2,TELECOM,G01,Wednesday,09:40-11:10,EE541,LECT,C107,A. AZRAR
+M2,TELECOM,G01,Thursday,09:40-11:10,EE515,LECT,A407,A. ZITOUNI
+M2,TELECOM,G01,Sunday,11:20-12:50,EE513,LAB,A405,D. CHERIFI
+M2,TELECOM,G01,Thursday,11:20-12:50,EE517L,LAB,A309,I. HAMOUDI
+M2,TELECOM,G01,Monday,13:00-14:30,EE541L,LAB,A411,M. CHALLAL
+M2,TELECOM,G01,Wednesday,13:00-14:30,EE515L,LAB,A401,A. ZITOUNI
+M2,TELECOM,G01,Sunday,14:40-16:10,EE513,LECT,A407,D. CHERIFI
+M2,TELECOM,G01,Monday,14:40-16:10,EE541L,LAB,A411,M. CHALLAL
+M2,TELECOM,G01,Wednesday,14:40-16:10,EE515L,LAB,A401,A. ZITOUNI
+M2,TELECOM,G02,Sunday,08:00-09:30,EE511,LECT,AMPHI 2,N. SMAILI
+M2,TELECOM,G02,Monday,08:00-09:30,EE511,LECT,C117,N. SMAILI
+M2,TELECOM,G02,Tuesday,08:00-09:30,EE515,LECT,C117,A. ZITOUNI
+M2,TELECOM,G02,Wednesday,08:00-09:30,EL501,LECT,C105,I. DJIDJIK
+M2,TELECOM,G02,Thursday,08:00-09:30,EE581,LECT,C107,N. DERROUCHE
+M2,TELECOM,G02,Sunday,09:40-11:10,EE517,LECT,B007,I. HAMOUDI
+M2,TELECOM,G02,Monday,09:40-11:10,EE541,LECT,C107,A. AZRAR
+M2,TELECOM,G02,Tuesday,09:40-11:10,EE517,LECT,C117,I. HAMOUDI
+M2,TELECOM,G02,Wednesday,09:40-11:10,EE541,LECT,C107,A. AZRAR
+M2,TELECOM,G02,Thursday,09:40-11:10,EE515,LECT,A407,A. ZITOUNI
+M2,TELECOM,G02,Monday,13:00-14:30,EE513,LAB,A405,D. CHERIFI
+M2,TELECOM,G02,Tuesday,13:00-14:30,EE515L,LAB,A401,A. ZITOUNI
+M2,TELECOM,G02,Wednesday,13:00-14:30,EE541L,LAB,A411,M. CHALLAL
+M2,TELECOM,G02,Thursday,13:00-14:30,EE517L,LAB,A309,I. HAMOUDI
+M2,TELECOM,G02,Monday,14:40-16:10,EE513,LECT,A407,D. CHERIFI
+M2,TELECOM,G02,Tuesday,14:40-16:10,EE515L,LAB,A401,A. ZITOUNI
+M2,TELECOM,G02,Wednesday,14:40-16:10,EE541L,LAB,A411,M. CHALLAL
 </script>
 
-<!-- ============================================================= -->
-<!-- ============ JAVASCRIPT ===================================== -->
-<!-- ============================================================= -->
+<!-- ============ JAVASCRIPT ============ -->
 <script>
-const NIVEAUX = ['L1','L2','L3','M1','M2'];
-const JOURS = ['Samedi','Dimanche','Lundi','Mardi','Mercredi','Jeudi'];
-const CRENEAUX = ['08:00-09:30','09:40-11:10','11:20-12:50','13:00-14:30','14:40-16:10','16:20-17:50'];
+const DAYS=['Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday'];
+const DAY_FR={Saturday:'Samedi',Sunday:'Dimanche',Monday:'Lundi',Tuesday:'Mardi',Wednesday:'Mercredi',Thursday:'Jeudi'};
+const SLOTS=['08:00-09:30','09:40-11:10','11:20-12:50','13:00-14:30','14:40-16:10','16:20-17:50'];
+const DAY_MAP={'Samedi':'Saturday','Dimanche':'Sunday','Lundi':'Monday','Mardi':'Tuesday','Mercredi':'Wednesday','Jeudi':'Thursday','Saturday':'Saturday','Sunday':'Sunday','Monday':'Monday','Tuesday':'Tuesday','Wednesday':'Wednesday','Thursday':'Thursday'};
 
-let toutesLesSessions = [];
-const filtres = { niveau:'', filiere:'', groupe:'', jour:'', recherche:'' };
-
-function parserCSV(texte, niveauDefaut){
-  const lignes = texte.trim().split('\n').filter(l => l.trim());
-  if (lignes.length < 2) return [];
-  const header = lignes[0].split(',').map(s => s.trim());
-  const hasFiliere = header.includes('Filière');
-  const sessions = [];
-  for (let i = 1; i < lignes.length; i++){
-    const p = lignes[i].split(',');
-    if (hasFiliere){
-      if (p.length < 9) continue;
-      sessions.push({
-        niveau:(p[0]||niveauDefaut).trim(), filiere:p[1].trim(), groupe:p[2].trim(),
-        jour:p[3].trim(), creneau:p[4].trim(), matiere:p[5].trim(),
-        type:p[6].trim(), salle:p[7].trim(), enseignant:p[8].trim()
-      });
-    } else {
-      if (p.length < 8) continue;
-      sessions.push({
-        niveau:(p[0]||niveauDefaut).trim(), filiere:'', groupe:p[1].trim(),
-        jour:p[2].trim(), creneau:p[3].trim(), matiere:p[4].trim(),
-        type:p[5].trim(), salle:p[6].trim(), enseignant:p[7].trim()
-      });
-    }
-  }
-  return sessions;
-}
-
-function chargerDonnees(){
-  toutesLesSessions = [];
-  NIVEAUX.forEach(niv => {
-    const el = document.getElementById('csv-' + niv);
-    if (el) toutesLesSessions = toutesLesSessions.concat(parserCSV(el.textContent, niv));
-  });
-  const vus = new Set();
-  toutesLesSessions = toutesLesSessions.filter(s => {
-    const k = [s.niveau,s.filiere,s.groupe,s.jour,s.creneau,s.matiere,s.type,s.salle,s.enseignant].join('|');
-    if (vus.has(k)) return false;
-    vus.add(k); return true;
-  });
-  console.log('✅ Séances chargées :', toutesLesSessions.length);
-}
-
-function sessionsFiltrees(){
-  return toutesLesSessions.filter(s => {
-    if (filtres.niveau && s.niveau !== filtres.niveau) return false;
-    if (filtres.filiere && s.filiere !== filtres.filiere) return false;
-    if (filtres.groupe && s.groupe !== filtres.groupe) return false;
-    if (filtres.jour && s.jour !== filtres.jour) return false;
-    if (filtres.recherche){
-      const q = filtres.recherche.toLowerCase();
-      const t = (s.matiere+' '+s.salle+' '+s.enseignant+' '+s.groupe).toLowerCase();
-      if (!t.includes(q)) return false;
-    }
-    return true;
-  });
-}
-
-function remplirSelects(){
-  const setF = new Set(), setG = new Set();
-  toutesLesSessions.forEach(s => {
-    if (s.filiere) setF.add(s.filiere);
-    if (s.groupe) setG.add(s.groupe);
-  });
-  const selF = document.getElementById('filterFiliere');
-  const selG = document.getElementById('filterGroupe');
-  selF.innerHTML = '<option value="">Toutes les filières</option>';
-  selG.innerHTML = '<option value="">Tous les groupes</option>';
-  [...setF].sort().forEach(f => selF.insertAdjacentHTML('beforeend', `<option>${f}</option>`));
-  [...setG].sort().forEach(g => selG.insertAdjacentHTML('beforeend', `<option>${g}</option>`));
-}
-
-function rendreGrille(){
-  const sessions = sessionsFiltrees();
-  const body = document.getElementById('gridBody');
-  body.innerHTML = '';
-  CRENEAUX.forEach(creneau => {
-    const ligne = document.createElement('div');
-    ligne.className = 'gr';
-    const heure = document.createElement('div');
-    heure.className = 'gc tc';
-    heure.textContent = creneau;
-    ligne.appendChild(heure);
-    JOURS.forEach(jour => {
-      const cell = document.createElement('div');
-      cell.className = 'gc';
-      const liste = sessions.filter(s => s.jour === jour && s.creneau === creneau);
-      if (liste.length === 0){
-        const span = document.createElement('span');
-        span.style.opacity = '0.2';
-        span.textContent = '—';
-        cell.appendChild(span);
-      } else {
-        liste.forEach(s => {
-          const div = document.createElement('div');
-          div.className = 'sess t-' + s.type;
-          div.innerHTML = `
-            <span class="tb">${s.type}</span>
-            <span class="m">${s.matiere}</span>
-            <span class="s">📍 ${s.salle}</span>
-            <span class="e">👤 ${s.enseignant}</span>
-            ${s.groupe ? `<span class="s">👥 ${s.niveau} - ${s.groupe}</span>` : ''}
-          `;
-          div.addEventListener('click', () => ouvrirModal(s));
-          cell.appendChild(div);
-        });
-      }
-      ligne.appendChild(cell);
-    });
-    body.appendChild(ligne);
-  });
-  majStats(sessions);
-}
-
-function rendreListe(){
-  const sessions = sessionsFiltrees();
-  const body = document.getElementById('listBody');
-  body.innerHTML = '';
-  if (sessions.length === 0){
-    body.innerHTML = '<p style="color:var(--muted);padding:20px">Aucune séance trouvée.</p>';
-    majStats([]); return;
-  }
-  const cont = document.createElement('div');
-  cont.className = 'lv';
-  sessions
-    .sort((a,b) => JOURS.indexOf(a.jour)-JOURS.indexOf(b.jour) || a.creneau.localeCompare(b.creneau))
-    .forEach(s => {
-      const item = document.createElement('div');
-      item.className = 'li';
-      item.innerHTML = `
-        <div class="jb">${s.niveau} • ${s.jour} ${s.filiere ? '• '+s.filiere : ''} ${s.groupe ? '• '+s.groupe : ''}</div>
-        <div class="hh">🕐 ${s.creneau} • ${s.type}</div>
-        <div class="mm">${s.matiere}</div>
-        <div class="ss">📍 ${s.salle}</div>
-        <div class="ee">👤 ${s.enseignant}</div>
-      `;
-      item.addEventListener('click', () => ouvrirModal(s));
-      cont.appendChild(item);
-    });
-  body.appendChild(cont);
-  majStats(sessions);
-}
-
-function majStats(sessions){
-  document.getElementById('statTotal').textContent = toutesLesSessions.length;
-  document.getElementById('statFiltered').textContent = sessions.length;
-  document.getElementById('statMatieres').textContent = new Set(sessions.map(s=>s.matiere)).size;
-  document.getElementById('statEnseignants').textContent = new Set(sessions.map(s=>s.enseignant)).size;
-}
-
-function ouvrirModal(s){
-  document.getElementById('modalBody').innerHTML = `
-    <h2>${s.matiere}</h2>
-    <div class="row"><span class="l">Niveau</span><span class="v">${s.niveau}</span></div>
-    ${s.filiere ? `<div class="row"><span class="l">Filière</span><span class="v">${s.filiere}</span></div>` : ''}
-    ${s.groupe ? `<div class="row"><span class="l">Groupe</span><span class="v">${s.groupe}</span></div>` : ''}
-    <div class="row"><span class="l">Jour</span><span class="v">${s.jour}</span></div>
-    <div class="row"><span class="l">Créneau</span><span class="v">${s.creneau}</span></div>
-    <div class="row"><span class="l">Type</span><span class="v">${s.type}</span></div>
-    <div class="row"><span class="l">Salle</span><span class="v">${s.salle}</span></div>
-    <div class="row"><span class="l">Enseignant</span><span class="v">${s.enseignant}</span></div>
-  `;
-  document.getElementById('modal').classList.remove('hidden');
-}
-function fermerModal(){ document.getElementById('modal').classList.add('hidden'); }
-
-function rafraichir(){
-  if (!document.getElementById('gridView').classList.contains('hidden')) rendreGrille();
-  else rendreListe();
-}
-
-document.getElementById('filterNiveau').addEventListener('change', e => { filtres.niveau = e.target.value; rafraichir(); });
-document.getElementById('filterFiliere').addEventListener('change', e => { filtres.filiere = e.target.value; rafraichir(); });
-document.getElementById('filterGroupe').addEventListener('change', e => { filtres.groupe = e.target.value; rafraichir(); });
-document.getElementById('filterJour').addEventListener('change', e => { filtres.jour = e.target.value; rafraichir(); });
-document.getElementById('filterRecherche').addEventListener('input', e => { filtres.recherche = e.target.value; rafraichir(); });
-
-document.getElementById('resetBtn').addEventListener('click', () => {
-  Object.keys(filtres).forEach(k => filtres[k] = '');
-  ['filterNiveau','filterFiliere','filterGroupe','filterJour','filterRecherche'].forEach(id => document.getElementById(id).value='');
-  document.querySelectorAll('.qb').forEach(b => b.classList.toggle('active', b.dataset.quickLevel===''));
-  rafraichir();
-});
-
-document.querySelectorAll('.qb').forEach(btn => {
-  btn.addEventListener('click', () => {
-    filtres.niveau = btn.dataset.quickLevel;
-    document.getElementById('filterNiveau').value = filtres.niveau;
-    document.querySelectorAll('.qb').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    rafraichir();
-  });
-});
-
-document.getElementById('viewGrid').addEventListener('click', () => {
-  document.getElementById('gridView').classList.remove('hidden');
-  document.getElementById('listView').classList.add('hidden');
-  document.getElementById('viewGrid').classList.add('active');
-  document.getElementById('viewList').classList.remove('active');
-  rendreGrille();
-});
-document.getElementById('viewList').addEventListener('click', () => {
-  document.getElementById('listView').classList.remove('hidden');
-  document.getElementById('gridView').classList.add('hidden');
-  document.getElementById('viewList').classList.add('active');
-  document.getElementById('viewGrid').classList.remove('active');
-  rendreListe();
-});
-
-document.getElementById('modalClose').addEventListener('click', fermerModal);
-document.getElementById('modal').addEventListener('click', e => { if (e.target.id === 'modal') fermerModal(); });
-
-document.getElementById('themeToggle').addEventListener('click', () => {
-  const html = document.documentElement;
-  html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-});
-document.getElementById('printBtn').addEventListener('click', () => window.print());
-document.getElementById('shareBtn').addEventListener('click', () => {
-  const url = window.location.href;
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(url).then(() => alert('🔗 Lien copié !'));
-  } else {
-    prompt('Copiez ce lien :', url);
-  }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  chargerDonnees();
-  remplirSelects();
-  rendreGrille();
-});
-/* ===== DONNÉES DE LA LÉGENDE ===== */
-const legendData = {
-  "L1 — LICENCE 1": [
-    {code: "EE171", name: "Maths I"},
-    {code: "EE121", name: "Algorithmique"},
-    {code: "EE173", name: "Physics I"},
-    {code: "EE175", name: "Chemistry I"},
-    {code: "EE123", name: "Free and Open-Source Software"},
-    {code: "EE173L", name: "Physics I Lab"},
-    {code: "EL101", name: "English I"},
-    {code: "EL103", name: "Writing Methods, Ethics and Deontology"}
-  ],
-  "L2 — LICENCE 2": [
-    {code: "EE271", name: "Maths IV"},
-    {code: "EE273", name: "Physics III"},
-    {code: "EE241", name: "Active Devices I"},
-    {code: "EE221", name: "Digital Systems I"},
-    {code: "EE201", name: "Electrical Engineering II"},
-    {code: "EE273L", name: "Physics III Lab"},
-    {code: "EE241L", name: "Active Devices I Lab"},
-    {code: "EE221L", name: "Digital Systems I Lab"},
-    {code: "EE201L", name: "Electrical Engineering II Lab"}
-  ],
-  "L3 — LICENCE 3": [
-    {code: "EE351", name: "Linear Systems II"},
-    {code: "EE361", name: "Electromagnetic Field Theory"},
-    {code: "EE321", name: "Computer Architecture"},
-    {code: "EE331", name: "Power Electronics"},
-    {code: "EE353", name: "Process Control and Instrumentation"},
-    {code: "EE331L", name: "Power Electronics Lab"},
-    {code: "EE353L", name: "Process Control and Instrumentation Lab"},
-    {code: "EE341", name: "Engineering Analysis and Design"}
-  ],
-  "M1 — MASTER 1": [
-    {code: "EE621", name: "Advanced Electronics"},
-    {code: "EE421", name: "Advanced Control Systems"},
-    {code: "EE473", name: "Digital Communications"},
-    {code: "EE459", name: "Embedded Systems"},
-    {code: "EE423", name: "Information Theory"},
-    {code: "EE479", name: "Nonlinear Control"},
-    {code: "EE455", name: "Power Systems"},
-    {code: "EE419", name: "Industrial Automation"},
-    {code: "EE429", name: "Robotics"},
-    {code: "EE471", name: "Optimization Techniques"},
-    {code: "EE441", name: "Digital Signal Processing"},
-    {code: "EE427", name: "Advanced Programming"},
-    {code: "EE475", name: "Machine Learning"},
-    {code: "EE451", name: "Power Electronics Systems"},
-    {code: "EE431", name: "Renewable Energy"},
-    {code: "EE477", name: "Electric Drives"},
-    {code: "EE433", name: "Smart Grids"},
-    {code: "EE461", name: "Antennas and Propagation"},
-    {code: "EE413", name: "Microwave Engineering"},
-    {code: "EE411", name: "Optical Communications"},
-    {code: "EE463", name: "Mobile Networks"},
-    {code: "EE415", name: "Satellite Communications"},
-    {code: "EE417", name: "Network Security"},
-    {code: "EE425", name: "Wireless Communications"}
-  ],
-  "M2 — MASTER 2": [
-    {code: "EE521", name: "Advanced Computer Architecture"},
-    {code: "EE527", name: "Artificial Intelligence"},
-    {code: "EE523", name: "Cloud Computing"},
-    {code: "EE581", name: "Research Methodology"},
-    {code: "EE525", name: "Deep Learning"},
-    {code: "EL501", name: "English for Science"},
-    {code: "EE553", name: "Advanced Control Systems II"},
-    {code: "EE551", name: "Digital Control"},
-    {code: "EE557", name: "Computer Vision"},
-    {code: "EE559", name: "Embedded AI"},
-    {code: "EE555", name: "Robotics II"},
-    {code: "EE539", name: "Power System Dynamics"},
-    {code: "EE529", name: "Advanced Power Electronics"},
-    {code: "EE535", name: "Energy Management"},
-    {code: "EE537", name: "Electric Vehicles"},
-    {code: "EE511", name: "5G Networks"},
-    {code: "EE517", name: "Cybersecurity"},
-    {code: "EE513", name: "IoT"},
-    {code: "EE541", name: "Radar Systems"},
-    {code: "EE515", name: "Advanced Digital Communications"}
-  ]
+const COURSE_NAMES={
+  'EE171':'Maths I','EE121':'Algorithmic','EE173':'Physics I','EE175':'Chemistry I','EE123':'Free and Open-Source Software','EE173L':'Physics I Lab','EL101':'English I','EL103':'Writing Methods, Ethics and Deontology',
+  'EE271':'Maths IV','EE273':'Physics III','EE241':'Active Devices I','EE221':'Digital Systems I','EE201':'Electrical Engineering II','EE273L':'Physics III Lab','EE241L':'Active Devices I Lab','EE221L':'Digital Systems I Lab','EE201L':'Electrical Engineering II Lab',
+  'EE351':'Linear Systems II','EE361':'Electromagnetic Field Theory','EE321':'Computer Architecture','EE331':'Power Electronics','EE353':'Process Control and Instrumentation','EE331L':'Power Electronics Lab','EE353L':'Process Control and Instrumentation Lab','EE341':'Engineering Analysis and Design'
 };
 
-/* ===== GÉNÉRATION ET AFFICHAGE DE LA LÉGENDE ===== */
-function renderLegend() {
-  const container = document.getElementById('legendContent');
-  if (!container) return;
-  
-  container.innerHTML = '';
-  
-  for (const [level, courses] of Object.entries(legendData)) {
-    const card = document.createElement('div');
-    card.className = 'legend-card';
-    
-    let html = `<h3>${level}</h3>`;
-    courses.forEach(c => {
-      html += `
-        <div class="legend-item">
-          <span class="code">${c.code}</span>
-          <span class="name">${c.name}</span>
-        </div>
-      `;
+function getCourseName(code){
+  if(!code)return'';
+  return COURSE_NAMES[code]||'';
+}
+
+let ALL=[],FILTERED=[],VIEW='grid';
+
+function parseCSV(text){
+  const lines=text.trim().split('\n').filter(l=>l.trim());
+  if(lines.length<2)return[];
+  const headers=lines[0].split(',').map(h=>h.trim());
+  const out=[];
+  for(let i=1;i<lines.length;i++){
+    const line=lines[i].trim();
+    if(!line)continue;
+    const vals=line.split(',').map(v=>v.trim());
+    if(vals.length<headers.length)continue;
+    const o={};
+    headers.forEach((h,idx)=>o[h]=(vals[idx]||'').trim());
+    if(!o.Niveau)continue;
+    const rawJour=o.Jour||'';
+    const jour=DAY_MAP[rawJour]||rawJour;
+    out.push({niveau:o.Niveau||'',filiere:o['Filière']||o.Filiere||'Tronc commun',groupe:o.Groupe||'',jour:jour,creneau:o['Créneau']||o.Creneau||'',matiere:o['Matière']||o.Matiere||'',type:o.Type||'',salle:o.Salle||'',enseignant:o.Enseignant||''});
+  }
+  return out;
+}
+
+function init(){
+  ['csv-L1','csv-L2','csv-L3','csv-M1','csv-M2'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el){const s=parseCSV(el.textContent);ALL.push(...s);}
+  });
+  FILTERED=[...ALL];
+  console.log('TOTAL SESSIONS:',ALL.length);
+  populate();updateStats();render();bind();
+}
+
+function populate(){
+  const fs=document.getElementById('filterFiliere');
+  const gs=document.getElementById('filterGroupe');
+  fs.innerHTML='<option value="">Toutes les filières</option>';
+  gs.innerHTML='<option value="">Tous les groupes</option>';
+  [...new Set(ALL.map(s=>s.filiere).filter(Boolean))].sort()
+    .forEach(x=>fs.appendChild(new Option(x,x)));
+  [...new Set(ALL.map(s=>s.groupe).filter(Boolean))].sort()
+    .forEach(x=>gs.appendChild(new Option(x,x)));
+}
+
+function apply(){
+  const n=document.getElementById('filterNiveau').value;
+  const f=document.getElementById('filterFiliere').value;
+  const g=document.getElementById('filterGroupe').value;
+  const j=document.getElementById('filterJour').value;
+  const s=document.getElementById('filterRecherche').value.toLowerCase().trim();
+  FILTERED=ALL.filter(x=>{
+    if(n&&x.niveau!==n)return false;
+    if(f&&x.filiere!==f)return false;
+    if(g&&x.groupe!==g)return false;
+    if(j&&x.jour!==j)return false;
+    if(s){const h=(x.matiere+' '+(getCourseName(x.matiere)||'')+' '+x.salle+' '+x.enseignant+' '+x.groupe+' '+x.filiere).toLowerCase();if(!h.includes(s))return false;}
+    return true;
+  });
+  updateStats();render();
+}
+
+function reset(){
+  ['filterNiveau','filterFiliere','filterGroupe','filterJour','filterRecherche'].forEach(id=>document.getElementById(id).value='');
+  FILTERED=[...ALL];updateStats();render();
+}
+
+function updateStats(){
+  document.getElementById('statTotal').textContent=ALL.length;
+  document.getElementById('statFiltered').textContent=FILTERED.length;
+  document.getElementById('statMatieres').textContent=new Set(FILTERED.map(s=>s.matiere)).size;
+  document.getElementById('statEnseignants').textContent=new Set(FILTERED.map(s=>s.enseignant)).size;
+}
+
+function render(){VIEW==='grid'?renderGrid():renderList();}
+
+function renderGrid(){
+  const b=document.getElementById('gridBody');b.innerHTML='';
+  if(!FILTERED.length){b.innerHTML='<div class="es"><div class="ic">🔍</div><p>Aucune séance ne correspond à vos critères.</p></div>';return;}
+  const map={};
+  SLOTS.forEach(c=>{map[c]={};DAYS.forEach(j=>map[c][j]=[]);});
+  FILTERED.forEach(s=>{if(map[s.creneau]&&map[s.creneau][s.jour])map[s.creneau][s.jour].push(s);});
+  SLOTS.forEach(c=>{
+    const r=document.createElement('div');r.className='gr';
+    const tc=document.createElement('div');tc.className='gc tc';tc.textContent=c;r.appendChild(tc);
+    DAYS.forEach(j=>{
+      const cell=document.createElement('div');cell.className='gc';
+      const ses=map[c][j];
+      if(!ses.length){cell.innerHTML='<span style="opacity:.15">—</span>';}
+      else{const cw=document.createElement('div');cw.style.width='100%';ses.forEach(s=>cw.appendChild(card(s)));cell.appendChild(cw);}
+      r.appendChild(cell);
     });
-    
-    card.innerHTML = html;
-    container.appendChild(card);
-  }
+    b.appendChild(r);
+  });
 }
 
-/* ===== FONCTION POUR OUVRIR/FERMER LA LÉGENDE ===== */
-function toggleLegend() {
-  const content = document.getElementById('legendContent');
-  const arrow = document.getElementById('legendArrow');
-  
-  if (content.classList.contains('hidden')) {
-    content.classList.remove('hidden');
-    arrow.style.transform = 'rotate(0deg)';
-  } else {
-    content.classList.add('hidden');
-    arrow.style.transform = 'rotate(-90deg)';
-  }
+function card(s){
+  const d=document.createElement('div');
+  d.className='sess t-'+(s.type||'LECT');
+  const fullName=getCourseName(s.matiere);
+  d.innerHTML='<span class="tb">'+(s.type||'—')+'</span>'+
+    '<span class="m">'+s.matiere+'</span>'+
+    (fullName?'<span class="cn">'+fullName+'</span>':'')+
+    '<span class="s">📍 '+s.salle+'</span>'+
+    '<span class="e">👤 '+s.enseignant+'</span>';
+  d.addEventListener('click',()=>openModal(s));
+  return d;
 }
 
-// Initialiser la légende au chargement de la page
-document.addEventListener('DOMContentLoaded', renderLegend);
+function renderList(){
+  const b=document.getElementById('listBody');b.innerHTML='';
+  if(!FILTERED.length){b.innerHTML='<div class="es"><div class="ic">🔍</div><p>Aucune séance ne correspond à vos critères.</p></div>';return;}
+  const sorted=[...FILTERED].sort((a,b2)=>{const d=DAYS.indexOf(a.jour)-DAYS.indexOf(b2.jour);if(d!==0)return d;return SLOTS.indexOf(a.creneau)-SLOTS.indexOf(b2.creneau);});
+  sorted.forEach(s=>{
+    const it=document.createElement('div');it.className='li';
+    const fullName=getCourseName(s.matiere);
+    it.innerHTML='<span class="jb">'+(DAY_FR[s.jour]||s.jour)+'</span><span class="hh">'+s.creneau+'</span><span class="mm">'+s.matiere+' <small style="opacity:.6">('+s.type+')</small>'+(fullName?'<span class="cn2">'+fullName+'</span>':'')+'</span><span class="ss">📍 '+s.salle+'</span><span class="ee">👤 '+s.enseignant+'</span>';
+    it.addEventListener('click',()=>openModal(s));
+    b.appendChild(it);
+  });
+}
+
+function openModal(s){
+  const fullName=getCourseName(s.matiere);
+  const title=fullName?(s.matiere+' — '+fullName):s.matiere;
+  document.getElementById('modalBody').innerHTML='<div class="md"><h2>'+title+'</h2><div class="row"><span class="l">Type</span><span class="v">'+({LECT:'Cours magistral',REC:'TD / Révision',LAB:'TP / Laboratoire'}[s.type]||s.type)+'</span></div><div class="row"><span class="l">Niveau</span><span class="v">'+s.niveau+'</span></div><div class="row"><span class="l">Filière</span><span class="v">'+s.filiere+'</span></div><div class="row"><span class="l">Groupe</span><span class="v">'+s.groupe+'</span></div><div class="row"><span class="l">Jour</span><span class="v">'+(DAY_FR[s.jour]||s.jour)+'</span></div><div class="row"><span class="l">Horaire</span><span class="v">'+s.creneau+'</span></div><div class="row"><span class="l">Salle</span><span class="v">'+s.salle+'</span></div><div class="row"><span class="l">Enseignant</span><span class="v">'+s.enseignant+'</span></div></div>';
+  document.getElementById('modal').classList.remove('hidden');
+}
+
+function closeModal(){document.getElementById('modal').classList.add('hidden');}
+
+function switchView(v){
+  VIEW=v;
+  document.getElementById('viewGrid').classList.toggle('active',v==='grid');
+  document.getElementById('viewList').classList.toggle('active',v==='list');
+  document.getElementById('gridView').classList.toggle('hidden',v!=='grid');
+  document.getElementById('listView').classList.toggle('hidden',v!=='list');
+  render();
+}
+
+function bind(){
+  ['filterNiveau','filterFiliere','filterGroupe','filterJour'].forEach(id=>document.getElementById(id).addEventListener('change',apply));
+  let tm;
+  document.getElementById('filterRecherche').addEventListener('input',()=>{clearTimeout(tm);tm=setTimeout(apply,250);});
+  document.getElementById('resetBtn').addEventListener('click',reset);
+  document.getElementById('viewGrid').addEventListener('click',()=>switchView('grid'));
+  document.getElementById('viewList').addEventListener('click',()=>switchView('list'));
+  document.getElementById('modalClose').addEventListener('click',closeModal);
+  document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal();});
+  document.getElementById('printBtn').addEventListener('click',()=>window.print());
+  document.getElementById('shareBtn').addEventListener('click',async()=>{
+    const shareData={title:'IGEE — Emploi du temps 2026/2027',text:'Emploi du temps IGEE — 2026/2027 — S1',url:window.location.href};
+    try{
+      if(navigator.share){await navigator.share(shareData);}
+      else{await navigator.clipboard.writeText(window.location.href);showPartagerNote('Lien copié !');}
+    }catch(e){}
+  });
+  document.querySelectorAll('[data-quick-level]').forEach(btn=>btn.addEventListener('click',()=>{
+    document.getElementById('filterNiveau').value=btn.dataset.quickLevel;
+    apply();
+    document.querySelector('.ts')?.scrollIntoView({behavior:'smooth',block:'start'});
+  }));
+  document.getElementById('themeToggle').addEventListener('click',()=>{
+    const cur=document.documentElement.getAttribute('data-theme');
+    const nxt=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',nxt);
+    localStorage.setItem('theme',nxt);
+    document.getElementById('themeToggle').textContent=nxt==='dark'?'☀️':'🌙';
+  });
+  const saved=localStorage.getItem('theme')||'light';
+  document.documentElement.setAttribute('data-theme',saved);
+  document.getElementById('themeToggle').textContent=saved==='dark'?'☀️':'🌙';
+}
+
+function showPartagerNote(message){
+  const n=document.createElement('div');n.className='share-note';n.textContent=message;document.body.appendChild(n);setTimeout(()=>n.remove(),1800);
+}
+
+function initLegend(){
+  const toggle=document.getElementById('legendToggle');
+  const content=document.getElementById('legendContent');
+  if(!toggle||!content)return;
+  toggle.addEventListener('click',()=>{
+    toggle.classList.toggle('open');
+    content.classList.toggle('open');
+  });
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  init();
+  initLegend();
+});
 </script>
 
 </body>
