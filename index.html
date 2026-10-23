@@ -1387,17 +1387,17 @@ async function renderAdminImport() {
                     <div id="import-results" style="margin-top:20px;"></div>
                 </div>
 
-                <!-- NOUVEAU BLOC POUR METTRE À JOUR LES GROUPES EN MASSE -->
+                               <!-- NOUVEAU BLOC : METTRE A JOUR NIVEAU, SPECIALITE ET GROUPE -->
                 <div style="background:var(--bg-card);border-radius:12px;padding:24px;box-shadow:0 1px 3px var(--shadow);margin-top:20px;">
-                    <h3 style="margin-bottom:10px;">🔄 Mettre à jour les Groupes (En masse)</h3>
+                    <h3 style="margin-bottom:10px;">🎓 Mettre à jour Niveau, Spécialité & Groupe</h3>
                     <p style="color:var(--text-secondary);font-size:13px;margin-bottom:12px;">
-                        Format : <b>Numéro de carte | Groupe</b> (ex: <code>262631255707 | G01</code>)
+                        Format : <b>Numéro de carte | Niveau | Spécialité | Groupe</b> (ex: <code>222232490417 | M2 | COMPUTER | G1</code>)
                     </p>
-                    <textarea id="update-groups-data" placeholder="262631255707 | G01&#10;262631256318 | G01&#10;262631255004 | G02&#10;..." style="width:100%;min-height:150px;padding:12px;border:1px solid var(--border);border-radius:8px;font-family:monospace;font-size:13px;background:var(--bg-input);color:var(--text-primary);outline:none;"></textarea>
+                    <textarea id="update-all-data" placeholder="222232490417 | M2 | COMPUTER | G1&#10;222231353307 | M2 | COMPUTER | G2&#10;..." style="width:100%;min-height:150px;padding:12px;border:1px solid var(--border);border-radius:8px;font-family:monospace;font-size:13px;background:var(--bg-input);color:var(--text-primary);outline:none;"></textarea>
                     <div style="margin-top:12px;">
-                        <button id="update-groups-btn"style="background:linear-gradient(135deg,#ff9800,#f57c00);color:#fff;border:none;padding:12px 24px;border-radius:8px;font-weight:bold;cursor:pointer;">🚀 Mettre à jour les groupes</button>
+                        <button id="update-all-btn" style="background:linear-gradient(135deg,#ff9800,#f57c00);color:#fff;border:none;padding:12px 24px;border-radius:8px;font-weight:bold;cursor:pointer;">🚀 Mettre à jour (Niveau/Spé/Groupe)</button>
                     </div>
-                    <div id="update-groups-results" style="margin-top:20px;"></div>
+                    <div id="update-all-results" style="margin-top:20px;"></div>
                 </div>
             </div>
         </div>`;
@@ -1407,8 +1407,8 @@ async function renderAdminImport() {
         document.getElementById('import-data').value = await f.text();
     
     });
-document.getElementById('update-groups-btn').addEventListener('click', updateGroupsMassively);
-    document.getElementById('import-btn').addEventListener('click', async () => {
+document.getElementById('update-all-btn').addEventListener('click', updateAllMassively);  
+  document.getElementById('import-btn').addEventListener('click', async () => {
         const raw = document.getElementById('import-data').value.trim();
         if (!raw) return toast('Paste some data first', 'error');
         await runImport(raw);
@@ -1496,12 +1496,13 @@ async function runImport(raw) {
     btn.disabled = false; btn.textContent = '📥 Import Users';
 }
 
-// NOUVELLE FONCTION : Mise à jour de masse des groupes
-async function updateGroupsMassively() {
-    const raw = document.getElementById('update-groups-data').value.trim();
+
+// NOUVELLE FONCTION MAGIQUE : Mise à jour de masse (Niveau + Spécialité + Groupe)
+async function updateAllMassively() {
+    const raw = document.getElementById('update-all-data').value.trim();
     if (!raw) return toast('Colle d\'abord tes données', 'error');
     
-    const btn = document.getElementById('update-groups-btn');
+    const btn = document.getElementById('update-all-btn');
     btn.disabled = true; btn.textContent = 'Mise à jour en cours...';
     
     const lines = raw.split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('#'));
@@ -1511,12 +1512,14 @@ async function updateGroupsMassively() {
 
     for (const line of lines) {
         const parts = line.split('|').map(s => s.trim());
-        if (parts.length < 2) {
-            errors.push(`Ligne ignorée : ${line}`);
+        if (parts.length < 4) {
+            errors.push(`Ligne ignorée (il manque des infos) : ${line}`);
             continue;
         }
         const cardNumber = parts[0];
-        const groupe = parts[1];
+        const niveau = parts[1];
+        const specialite = parts[2];
+        const groupe = parts[3];
 
         try {
             const q = query(collection(db, 'users'), where('cardNumber', '==', cardNumber));
@@ -1529,7 +1532,11 @@ async function updateGroupsMassively() {
             }
             
             const docId = snap.docs[0].id;
-            await updateDoc(doc(db, 'users', docId), { groupe: groupe });
+            await updateDoc(doc(db, 'users', docId), { 
+                niveau: niveau,
+                specialite: specialite,
+                groupe: groupe
+            });
             successCount++;
             
         } catch (err) {
@@ -1538,9 +1545,9 @@ async function updateGroupsMassively() {
         }
     }
 
-    btn.disabled = false; btn.textContent = '🚀 Mettre à jour les groupes';
+    btn.disabled = false; btn.textContent = '🚀 Mettre à jour (Niveau/Spé/Groupe)';
     
-    document.getElementById('update-groups-results').innerHTML = `
+    document.getElementById('update-all-results').innerHTML = `
         <div style="background:linear-gradient(135deg,#42b72a,#369b23);color:#fff;padding:14px 18px;border-radius:8px;margin-bottom:12px;">
             ✅ ${successCount} étudiant(s) mis à jour avec succès.
         </div>
